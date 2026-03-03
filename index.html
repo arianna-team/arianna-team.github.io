@@ -274,25 +274,57 @@
       display: block;
       font-size: 20px;
     }
+    .logo-section {
+      padding: 20px 8vw 50px;
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+    .logo-section.is-disabled {
+      display: none;
+    }
     .logo-row {
-      padding: 20px 8vw 10px;
       color: var(--muted);
       font-size: 13px;
+      margin-bottom: 16px;
     }
     .logos {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-      gap: 24px;
-      padding: 0 8vw 50px;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 18px;
     }
-    .logo-pill {
-      background: white;
-      border: 1px solid var(--line);
-      border-radius: 999px;
-      padding: 12px 18px;
-      text-align: center;
-      font-size: 12px;
-      color: #7b8b98;
+    .logo-card {
+      min-height: 104px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(255, 255, 255, 0.78);
+      border: 1px solid rgba(15, 30, 43, 0.08);
+      border-radius: 20px;
+      padding: 22px 28px;
+      box-shadow: 0 14px 28px rgba(15, 30, 43, 0.06);
+    }
+    .logo-card img {
+      max-width: 100%;
+      max-height: 63px;
+      width: auto;
+      height: auto;
+      display: block;
+      object-fit: contain;
+    }
+    @media (max-width: 1100px) {
+      .logos {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+    }
+    @media (max-width: 780px) {
+      .logos {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+    @media (max-width: 520px) {
+      .logos {
+        grid-template-columns: 1fr;
+      }
     }
     .section {
       padding: 70px 8vw;
@@ -678,15 +710,32 @@
       </div>
     </section>
 
-    <div class="logo-row" data-cms-key="logo_row_title">Companies that use ARIANNA</div>
-    <div class="logos">
-      <div class="logo-pill" data-cms-key="logo_1">Company Logo</div>
-      <div class="logo-pill" data-cms-key="logo_2">Company Logo</div>
-      <div class="logo-pill" data-cms-key="logo_3">Company Logo</div>
-      <div class="logo-pill" data-cms-key="logo_4">Company Logo</div>
-      <div class="logo-pill" data-cms-key="logo_5">Company Logo</div>
-      <div class="logo-pill" data-cms-key="logo_6">Company Logo</div>
-    </div>
+    <section class="logo-section is-disabled" aria-labelledby="customer-logos-title">
+      <div class="logo-row" id="customer-logos-title" data-cms-key="logo_row_title">Companies that work with us:</div>
+      <div class="logos">
+        <div class="logo-card">
+          <img src="images/iseo-logo.svg" alt="ISEO logo" width="220" height="42" decoding="async" />
+        </div>
+        <div class="logo-card">
+          <img src="images/flex-logo.svg" alt="Flex logo" width="220" height="42" decoding="async" />
+        </div>
+        <div class="logo-card">
+          <img src="images/Riello logo.png" alt="Riello logo" width="220" height="42" decoding="async" />
+        </div>
+        <div class="logo-card">
+          <img src="images/Telsy logo.png" alt="Telsy logo" width="220" height="42" decoding="async" />
+        </div>
+        <div class="logo-card">
+          <img src="images/infatron logo.png" alt="Infatron logo" width="220" height="42" decoding="async" />
+        </div>
+        <div class="logo-card">
+          <img src="images/qsd-logo.png" alt="QSD logo" width="220" height="42" decoding="async" />
+        </div>
+        <div class="logo-card">
+          <img src="images/orthofix-logo.svg" alt="Orthofix logo" width="220" height="42" decoding="async" />
+        </div>
+      </div>
+    </section>
 
     <section class="section" id="platform">
       <div class="section-title">
