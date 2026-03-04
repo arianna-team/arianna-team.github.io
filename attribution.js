@@ -108,7 +108,7 @@
     if (containerId.indexOf("contact") !== -1) return "contact";
     if (containerId.indexOf("support") !== -1) return "support";
     if (containerId.indexOf("partner") !== -1) return "partner";
-    if (form.classList.contains("newsletter-form")) return "newsletter";
+    if (form.classList.contains("newsletter-form") || form.closest("#newsletterOverlay")) return "newsletter";
     return "";
   }
 

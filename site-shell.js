@@ -28,7 +28,6 @@
     if (!overlay) return;
 
     var closeButton = overlay.querySelector(".newsletter-close");
-    var form = overlay.querySelector(".newsletter-form");
     var highIntent = document.body.getAttribute("data-newsletter-high-intent") === "true";
 
     function openOverlay() {
@@ -53,12 +52,11 @@
       }, 5000);
     }
 
-    if (form) {
-      form.addEventListener("submit", function () {
-        safeSet("arianna_newsletter_subscribed", "true");
-        closeOverlay();
-      });
-    }
+    overlay.addEventListener("submit", function (event) {
+      if (!event.target.closest(".newsletter-form")) return;
+      safeSet("arianna_newsletter_subscribed", "true");
+      closeOverlay();
+    }, true);
 
     if (closeButton) {
       closeButton.addEventListener("click", function () {
