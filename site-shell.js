@@ -38,7 +38,7 @@
         "  color: rgba(255, 255, 255, 0.7);",
         "  display: flex;",
         "  gap: 48px;",
-        "  justify-content: flex-end;",
+        "  justify-content: flex-start;",
         "  align-items: flex-start;",
         "}",
         "footer.site-footer.has-cta {",
