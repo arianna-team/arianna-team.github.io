@@ -92,6 +92,7 @@
         "  display: inline-flex;",
         "  align-items: center;",
         "  justify-content: center;",
+        "  min-width: 132px;",
         "  padding: 12px 20px;",
         "  border-radius: 999px;",
         "  background: #3fbab7;",
