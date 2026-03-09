@@ -42,17 +42,17 @@
         "  align-items: flex-start;",
         "}",
         "footer.site-footer.has-cta {",
-        "  margin-top: -160px;",
+        "  margin-top: 0;",
+        "  padding-top: 24px;",
         "}",
         "footer.site-footer .footer-brand {",
-        "  margin-right: auto;",
         "  padding-top: 10px;",
         "}",
-        "footer.site-footer .footer-brand-copy {",
-        "  display: flex;",
-        "  align-items: flex-start;",
-        "  gap: 18px;",
-        "  margin-top: 12px;",
+        "footer.site-footer .footer-copy {",
+        "  display: grid;",
+        "  gap: 10px;",
+        "  padding-top: 10px;",
+        "  max-width: 420px;",
         "}",
         "footer.site-footer .footer-brand-title {",
         "  margin: 0;",
@@ -60,12 +60,10 @@
         "  font-family: \"Merriweather\", \"Iowan Old Style\", \"Times New Roman\", serif;",
         "  font-size: clamp(24px, 3vw, 36px);",
         "  line-height: 1.1;",
-        "  flex: 0 0 auto;",
         "}",
         "footer.site-footer .footer-brand-body {",
         "  margin: 0;",
-        "  max-width: 320px;",
-        "  flex: 1 1 auto;",
+        "  max-width: 360px;",
         "}",
         "footer.site-footer .footer-brand-link {",
         "  display: inline-flex;",
@@ -83,6 +81,31 @@
         "}",
         "footer.site-footer .footer-brand-link svg .cls-1 {",
         "  fill: #3fbab7;",
+        "}",
+        "footer.site-footer .footer-actions {",
+        "  display: grid;",
+        "  gap: 10px;",
+        "  align-content: start;",
+        "  padding-top: 10px;",
+        "}",
+        "footer.site-footer .footer-actions .footer-cta {",
+        "  display: inline-flex;",
+        "  align-items: center;",
+        "  justify-content: center;",
+        "  padding: 12px 20px;",
+        "  border-radius: 999px;",
+        "  background: #3fbab7;",
+        "  color: #0f1e2b;",
+        "  font-weight: 600;",
+        "  font-size: 14px;",
+        "  line-height: 1;",
+        "  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease, color 0.2s ease;",
+        "}",
+        "footer.site-footer .footer-actions .footer-cta:hover {",
+        "  background: #f28a1a;",
+        "  color: #ffffff;",
+        "  box-shadow: 0 12px 24px rgba(15, 30, 43, 0.18);",
+        "  transform: translateY(-1px);",
         "}",
         "footer.site-footer h4 {",
         "  color: white;",
@@ -110,7 +133,8 @@
         "  align-self: start;",
         "}",
         ".cta > div:last-child {",
-        "  padding-top: 10px;",
+        "  padding-top: 0;",
+        "  margin-top: 0;",
         "}",
         "@media (max-width: 720px) {",
         "  footer.site-footer {",
@@ -121,14 +145,21 @@
         "    padding: 32px 8vw 40px;",
         "  }",
         "  footer.site-footer.has-cta {",
-        "    margin-top: -120px;",
+        "    margin-top: 0;",
+        "    padding-top: 24px;",
         "  }",
         "  footer.site-footer .footer-brand {",
-        "    margin-right: 0;",
+        "    padding-top: 0;",
         "  }",
-        "  footer.site-footer .footer-brand-copy {",
+        "  footer.site-footer .footer-copy {",
         "    display: grid;",
         "    gap: 10px;",
+        "    padding-top: 0;",
+        "  }",
+        "  footer.site-footer .footer-actions {",
+        "    grid-auto-flow: row;",
+        "    justify-items: start;",
+        "    padding-top: 0;",
         "  }",
         "  footer.site-footer .footer-company,",
         "  footer.site-footer .footer-contact {",
@@ -138,6 +169,7 @@
         "  }",
         "  .cta > div:last-child {",
         "    padding-top: 0;",
+        "    margin-top: 0;",
         "  }",
         "}"
       ].join("\n");
@@ -145,11 +177,37 @@
     }
 
     footer.classList.add("site-footer");
-    if (footer.previousElementSibling && footer.previousElementSibling.classList.contains("cta")) {
+
+    var ctaLinks = [
+      { href: "book-a-demo.html", text: "Free Demo" },
+      { href: "free-trial.html", text: "Free Trial" }
+    ];
+    var ctaSection = footer.previousElementSibling && footer.previousElementSibling.classList.contains("cta")
+      ? footer.previousElementSibling
+      : null;
+    if (ctaSection) {
+      var links = ctaSection.querySelectorAll("a[href]");
+      if (links.length) {
+        ctaLinks = Array.prototype.map.call(links, function (link) {
+          return {
+            href: link.getAttribute("href") || "#",
+            text: (link.textContent || "").trim() || "Learn more"
+          };
+        });
+      }
+      ctaSection.style.display = "none";
+    }
+
+    if (ctaSection) {
       footer.classList.add("has-cta");
     } else {
       footer.classList.remove("has-cta");
     }
+
+    var footerActionsHtml = ctaLinks.map(function (link) {
+      return '  <a class="footer-cta" href="' + link.href + '">' + link.text + "</a>";
+    }).join("\n");
+
     footer.innerHTML = [
       '<div class="footer-brand">',
       '  <a class="footer-brand-link" aria-label="ARIANNA" href="index.html">',
@@ -174,12 +232,15 @@
       '      </g>',
       '    </svg>',
       '  </a>',
-      '  <div class="footer-brand-copy">',
-      '    <p class="footer-brand-title">See ARIANNA in action</p>',
-      '    <p class="footer-brand-body">Book a demo or Trial to explore vulnerability management workflows for your industry.</p>',
-      '  </div>',
       '</div>',
-      '<div>',
+      '<div class="footer-copy">',
+      '  <p class="footer-brand-title">See ARIANNA in action</p>',
+      '  <p class="footer-brand-body">Book a demo or Trial to explore vulnerability management workflows for your industry.</p>',
+      '</div>',
+      '<div class="footer-actions">',
+      footerActionsHtml,
+      '</div>',
+      '<div class="footer-company">',
       '  <h4><a href="company.html">Company</a></h4>',
       '  <p><a href="company.html#about">About ARIANNA</a></p>',
       '  <p><a href="company.html#careers">Careers</a></p>',
