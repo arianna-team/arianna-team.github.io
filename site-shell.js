@@ -195,8 +195,8 @@
     footer.classList.add("site-footer");
 
     var ctaLinks = [
-      { href: "book-a-demo.html", text: "Free Demo" },
-      { href: "free-trial.html", text: "Free Trial" }
+      { href: "book-a-demo.html", text: "Book a free Demo" },
+      { href: "free-trial.html", text: "Start a free Trial" }
     ];
     var ctaSection = footer.previousElementSibling && footer.previousElementSibling.classList.contains("cta")
       ? footer.previousElementSibling
