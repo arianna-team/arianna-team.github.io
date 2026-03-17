@@ -4,178 +4,38 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>ARIANNA User Manual</title>
-  <meta name="description" content="ARIANNA user manual with indexed navigation for vulnerability management workflows, Device Model lifecycle, reporting, and platform operations." />
+  <meta name="description" content="ARIANNA User Manual in indexed web format." />
   <link rel="canonical" href="https://ariannateam.ai/user-manual.html" />
   <style>
-    :root {
-      --ink: #0f1e2b;
-      --muted: #5b6b7a;
-      --accent: #1aa5a7;
-      --bg: #f4f7f8;
-      --card: #ffffff;
-      --line: #e2e8ec;
-    }
+    :root { --ink:#0f1e2b; --muted:#5b6b7a; --accent:#1aa5a7; --bg:#f4f7f8; --card:#fff; --line:#e2e8ec; }
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
-    body {
-      margin: 0;
-      font-family: "Sora", "Avenir Next", "Helvetica Neue", Arial, sans-serif;
-      color: var(--ink);
-      background: var(--bg);
-    }
+    body { margin:0; font-family:"Sora","Avenir Next","Helvetica Neue",Arial,sans-serif; color:var(--ink); background:var(--bg); }
     a { color: inherit; text-decoration: none; }
-    .nav {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 22px 8vw;
-      position: sticky;
-      top: 0;
-      background: rgba(244, 247, 248, 0.9);
-      backdrop-filter: blur(8px);
-      z-index: 20;
-      border-bottom: 1px solid rgba(226, 232, 236, 0.6);
-    }
-    .logo { height: 88px; width: auto; }
-    .logo img { height: 88px; width: auto; display: block; }
-    .nav-links {
-      display: flex;
-      gap: 26px;
-      font-size: 14px;
-      color: var(--muted);
-    }
-    .nav-links a:hover { color: #3fbab7; }
-    .nav-cta {
-      min-height: 44px;
-      padding: 12px 20px;
-      border-radius: 999px;
-      background: #f28a1a;
-      color: #fff;
-      font-size: 14px;
-      font-weight: 600;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .page {
-      max-width: 1400px;
-      margin: 0 auto;
-      padding: 30px 8vw 80px;
-      display: grid;
-      grid-template-columns: minmax(240px, 300px) minmax(0, 1fr);
-      gap: 28px;
-      align-items: start;
-    }
-    .toc {
-      position: sticky;
-      top: 120px;
-      background: var(--card);
-      border: 1px solid var(--line);
-      border-radius: 16px;
-      padding: 16px;
-      max-height: calc(100vh - 150px);
-      overflow: auto;
-    }
-    .toc h2 {
-      margin: 0 0 10px;
-      font-size: 14px;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--muted);
-    }
-    .toc a {
-      display: block;
-      font-size: 14px;
-      line-height: 1.4;
-      color: var(--muted);
-      padding: 6px 8px;
-      border-radius: 10px;
-    }
-    .toc a:hover {
-      background: rgba(26, 165, 167, 0.12);
-      color: var(--ink);
-    }
-    .manual {
-      background: var(--card);
-      border: 1px solid var(--line);
-      border-radius: 20px;
-      padding: clamp(20px, 3vw, 36px);
-      box-shadow: 0 18px 36px rgba(15, 30, 43, 0.08);
-    }
-    .kicker {
-      font-size: 12px;
-      font-weight: 600;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--accent);
-    }
-    h1 {
-      font-family: "Merriweather", "Times New Roman", serif;
-      font-size: clamp(28px, 4vw, 46px);
-      line-height: 1.15;
-      margin: 10px 0 8px;
-    }
-    .meta {
-      margin: 0 0 22px;
-      color: var(--muted);
-      font-size: 14px;
-      line-height: 1.6;
-    }
-    h2 {
-      font-family: "Merriweather", "Times New Roman", serif;
-      font-size: clamp(22px, 3vw, 34px);
-      margin: 30px 0 10px;
-      scroll-margin-top: 110px;
-    }
-    h3 {
-      margin: 20px 0 8px;
-      font-size: 18px;
-      scroll-margin-top: 110px;
-    }
-    p {
-      margin: 0 0 14px;
-      color: var(--muted);
-      font-size: 16px;
-      line-height: 1.75;
-    }
-    ul, ol {
-      margin: 0 0 16px 20px;
-      color: var(--muted);
-      font-size: 16px;
-      line-height: 1.75;
-    }
-    .inline-ref {
-      color: var(--accent);
-      text-decoration: underline;
-      text-underline-offset: 2px;
-    }
-    .small {
-      font-size: 14px;
-      color: var(--muted);
-    }
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin: 12px 0 20px;
-      font-size: 14px;
-    }
-    th, td {
-      border: 1px solid var(--line);
-      padding: 10px;
-      text-align: left;
-      vertical-align: top;
-    }
-    th { background: #f8fbfc; color: var(--ink); }
-    @media (max-width: 980px) {
-      .page {
-        grid-template-columns: 1fr;
-        gap: 16px;
-      }
-      .toc {
-        position: static;
-        max-height: none;
-      }
-    }
+    .nav { display:flex; align-items:center; justify-content:space-between; padding:22px 8vw; position:sticky; top:0; background:rgba(244,247,248,.9); backdrop-filter: blur(8px); z-index:20; border-bottom:1px solid rgba(226,232,236,.6); }
+    .logo, .logo img { height:88px; width:auto; display:block; }
+    .nav-links { display:flex; gap:26px; font-size:14px; color:var(--muted); }
+    .nav-links a:hover { color:#3fbab7; }
+    .nav-cta { min-height:44px; padding:12px 20px; border-radius:999px; background:#f28a1a; color:#fff; font-size:14px; font-weight:600; display:inline-flex; align-items:center; justify-content:center; }
+    .page { max-width:1460px; margin:0 auto; padding:30px 8vw 80px; display:grid; grid-template-columns:minmax(230px,300px) minmax(0,1fr); gap:28px; align-items:start; }
+    .toc { position:sticky; top:120px; background:var(--card); border:1px solid var(--line); border-radius:16px; padding:16px; max-height:calc(100vh - 150px); overflow:auto; }
+    .toc h2 { margin:0 0 10px; font-size:14px; letter-spacing:.08em; text-transform:uppercase; color:var(--muted); }
+    .toc a { display:block; font-size:14px; line-height:1.35; color:var(--muted); padding:6px 8px; border-radius:10px; }
+    .toc a:hover { background:rgba(26,165,167,.12); color:var(--ink); }
+    .manual { background:var(--card); border:1px solid var(--line); border-radius:20px; padding:clamp(20px,3vw,36px); box-shadow:0 18px 36px rgba(15,30,43,.08); }
+    .kicker { font-size:12px; font-weight:600; letter-spacing:.2em; text-transform:uppercase; color:var(--accent); }
+    h1 { font-family:"Merriweather","Times New Roman",serif; font-size:clamp(28px,4vw,46px); line-height:1.15; margin:10px 0 8px; }
+    .meta { margin:0 0 22px; color:var(--muted); font-size:14px; line-height:1.6; }
+    .manual h2.section-title { font-family:"Merriweather","Times New Roman",serif; font-size:clamp(22px,3vw,34px); margin:30px 0 10px; scroll-margin-top:110px; }
+    .manual h3 { margin:18px 0 6px; font-size:18px; line-height:1.4; color:var(--ink); scroll-margin-top:110px; }
+    .docx-body p { margin:0 0 12px; font-size:15px; line-height:1.7; color:var(--muted); }
+    .docx-body p.title-note { font-size:13px; color:var(--muted); }
+    .docx-body ul { margin:0 0 14px 22px; padding:0; color:var(--muted); }
+    .docx-body li { margin:0 0 8px; font-size:15px; line-height:1.65; }
+    .docx-body table { width:100%; border-collapse:collapse; margin:12px 0 16px; font-size:14px; color:var(--muted); }
+    .docx-body td, .docx-body th { border:1px solid var(--line); padding:10px; text-align:left; vertical-align:top; }
+    .docx-body b, .docx-body strong { color:var(--ink); }
+    @media (max-width:980px) { .page { grid-template-columns:1fr; gap:16px; } .toc { position:static; max-height:none; } }
   </style>
 </head>
 <body>
@@ -204,142 +64,1249 @@
   <main class="page">
     <aside class="toc" aria-label="Manual index">
       <h2>Index</h2>
-      <a href="#introduction">Introduction</a>
-      <a href="#project">Vulnerability Management Project</a>
-      <a href="#vm-process">Vulnerability Management Process</a>
-      <a href="#device-model">Device Model</a>
-      <a href="#processing-units">Processing Units</a>
-      <a href="#components">Components and Groups</a>
-      <a href="#getting-started">Getting Started</a>
-      <a href="#sca-tools">SCA Tools</a>
-      <a href="#reporting">Vulnerability Reporting</a>
-      <a href="#lifecycle">Device Model Lifecycle</a>
-      <a href="#triage">Triage and Prioritization</a>
-      <a href="#policy">Policy and Deadlines</a>
-      <a href="#exports">Exports and Auditing</a>
-      <a href="#integrations">CI/CD Integration</a>
-      <a href="#users">Users and Roles</a>
-      <a href="#security">Password and Access Security</a>
-      <a href="#references">References</a>
+      <div id="toc-links"></div>
     </aside>
 
     <article class="manual">
       <div class="kicker">Product Documentation</div>
       <h1>ARIANNA User Manual</h1>
-      <p class="meta">Revision v2.0.0 · March 6, 2026 · Security Pattern s.r.l. · Confidential (NDA)</p>
-
-      <h2 id="introduction">Introduction</h2>
-      <p>ARIANNA supports device manufacturers with an efficient and scalable vulnerability management process across the full product lifecycle. The platform combines <a class="inline-ref" href="#device-model">Device Model Management</a>, <a class="inline-ref" href="#reporting">continuous vulnerability monitoring and reporting</a>, and <a class="inline-ref" href="#triage">workflow-based triage and prioritization</a>.</p>
-      <p>Core capabilities include:</p>
-      <ul>
-        <li>HBOM + SBOM modeling for hardware and software visibility.</li>
-        <li>Daily correlation with vulnerability intelligence sources.</li>
-        <li>End-to-end status tracking from discovery to closure/disclosure.</li>
-        <li>Audit-ready evidence and exportable reports.</li>
+      <p class="meta">Imported from ARIANNA manual - 2.0.0.docx</p>
+      <div id="manual-content" class="docx-body">
+<p class="p2">ARIANNA User Manual</p>
+<p class="p3"><br></p>
+<p class="p4">Copyright © 2026 Security Pattern s.r.l. - All Rights Reserved</p>
+<p class="p4">This document is private and confidential - Subject to N.D.A.</p>
+<p class="p3"><span class="Apple-converted-space"> </span></p>
+<p class="p1"><br></p>
+<p class="p6"></p>
+<p class="p6">Introduction</p>
+<p class="p2">ARIANNA is a platform designed to help device manufacturers implement an efficient and scalable Vulnerability Management Process throughout the lifecycle of their products.</p>
+<p class="p2">The platform provides a set of integrated capabilities that support the key activities required for effective vulnerability management:</p>
+<ul class="ul1">
+  <li class="li2">Device Model Management</li>
+  <li class="li2">Continuous Vulnerability Monitoring</li>
+  <li class="li2">Vulnerability Management</li>
+  <li class="li2">Reporting and Security Insights</li>
+</ul>
+<p class="p7">Device Model Management (HBOM + SBOM)</p>
+<p class="p2">ARIANNA enables the creation and management of a complete inventory of device components, including both the Hardware Bill of Materials (HBOM) and the Software Bill of Materials (SBOM). This structured representation of the device architecture allows manufacturers to maintain accurate visibility over all hardware and software components used in their products.</p>
+<p class="p7">Continuous Vulnerability Monitoring</p>
+<p class="p2">By correlating HBOM and SBOM information with multiple vulnerability intelligence sources, ARIANNA continuously monitors newly disclosed vulnerabilities that may affect the components used in the device. This ensures that manufacturers are promptly notified when relevant vulnerabilities are discovered.</p>
+<p class="p2">Vulnerability Management</p>
+<p class="p2">ARIANNA supports the full vulnerability management workflow, including vulnerability identification, prioritization, triage, and tracking of remediation or mitigation actions. The platform helps security teams focus on the most relevant vulnerabilities through risk-based and exploitability-based prioritization mechanisms.</p>
+<p class="p2">Reporting and Security Insights</p>
+<p class="p2">ARIANNA generates comprehensive reports intended for both customers and regulatory bodies, supporting transparency and compliance with cybersecurity requirements. These reports enable effective vulnerability tracking, risk evaluation, and informed decision-making throughout the entire vulnerability management lifecycle.</p>
+<p class="p1"><br></p>
+<p class="p2">Vulnerability Management Project<span class="Apple-converted-space"> </span></p>
+<p class="p2">A Vulnerability Management Project in ARIANNA represents the logical container used to monitor and manage the security of a specific product, device, or system over time.</p>
+<p class="p2">Within a project, the security team can create Device Models, track vulnerabilities, and manage the entire vulnerability management lifecycle. It provides a collaborative environment where authorized users can review vulnerability reports, perform triage, update vulnerability status, assign risk levels, and document analysis activities.<span class="Apple-converted-space"> </span></p>
+<p class="p2">By organizing security activities within projects, ARIANNA enables teams to maintain structured vulnerability tracking, prioritize remediation efforts, and ensure continuous monitoring throughout the product lifecycle.</p>
+<p class="p2"></p>
+<p class="p2">Basic Concepts</p>
+<p class="p2">Vulnerability Management Process<span class="Apple-converted-space"> </span></p>
+<p class="p2">The Vulnerability Management Process is a structured and continuous process used by organizations to identify, assess, prioritize, remediate, and monitor security vulnerabilities in hardware, software, and systems. Its objective is to reduce security risks by ensuring that vulnerabilities are detected early and addressed in a timely and controlled manner.</p>
+<p class="p2">ARIANNA envisions a four-stage vulnerability management process that covers the entire lifecycle, from vulnerability detection to final disclosure and communication.</p>
+<p class="p2">Vulnerability Identification</p>
+<p class="p2">The process begins with the identification of vulnerabilities affecting the device or system.<br>
+At this stage, all discovered vulnerabilities are collected from different sources such as vulnerability databases and security advisories. These vulnerabilities represent the initial set of potential security issues that may affect the device.</p>
+<p class="p7">Vulnerability Triage</p>
+<p class="p2">Once vulnerabilities are identified, they enter the triage phase. During this step, each vulnerability is analyzed and evaluated to determine:</p>
+<ul class="ul1">
+  <li class="li2">Whether the vulnerability actually affects the device</li>
+  <li class="li2">The real risk level considering the device context</li>
+  <li class="li2">The priority for remediation</li>
+</ul>
+<p class="p8">As a result of the triage process, vulnerabilities are classified into different outcomes:</p>
+<ul class="ul1">
+  <li class="li2">Applicable vulnerabilities that require remediation or mitigation</li>
+  <li class="li2">Not applicable vulnerabilities that do not affect the device</li>
+  <li class="li2">Accepted vulnerabilities where the risk is formally accepted according to the organization's risk management policy</li>
+</ul>
+<p class="p2">Vulnerability Addressing</p>
+<p class="p2">For vulnerabilities confirmed as applicable and requiring action, the next stage consists of addressing the vulnerability.</p>
+<p class="p8">This may involve:</p>
+<ul class="ul1">
+  <li class="li2">Fixing the vulnerability by applying patches or updating components</li>
+  <li class="li2">Removing the vulnerable component, if not fundamental to implement device functionalities</li>
+  <li class="li2">Implementing mitigation measures to reduce the risk when a fix is not immediately available</li>
+</ul>
+<p class="p2">At the end of this phase, vulnerabilities are typically marked as Fixed or Mitigated.</p>
+<p class="p2">Vulnerability (Dis)Closure</p>
+<p class="p2">The final stage consists of closing or disclosing the vulnerability status.</p>
+<p class="p2">This stage includes:</p>
+<ul class="ul1">
+  <li class="li2">Recording the final resolution status (fixed, mitigated, accepted, or not applicable)</li>
+  <li class="li2">Documenting the analysis and decisions taken during triage</li>
+  <li class="li2">Communicating relevant information internally or externally when required</li>
+</ul>
+<p class="p2">This step ensures traceability, documentation, and proper reporting of vulnerability management activities.</p>
+<p class="p2">Device Model</p>
+<p class="p2">A Device model is the list of components (hardware and software) used inside an IoT system, organized per Processing Units (PUs) and Groups.</p>
+<p class="p2">ARIANNA is mainly focused on monitoring and supporting the management of vulnerabilities of IoT devices. For this reason it’s really important to create a model of the IoT device that takes into account not only the software parts Software Bill Of Material (<b>SBOM</b>) but also the hardware parts Hardware Bill Of Material (<b>HBOM</b>):</p>
+<ul class="ul1">
+  <li class="li2">hardware components can be affected by known vulnerabilities<ul class="ul1">
+    <li class="li2">usually are more critical than software vulnerabilities</li>
+    <li class="li2">most of the time can’t be fixed, so their management requires the implementation of mitigations</li>
+  </ul></li>
+  <li class="li2">vulnerabilities of software components can depend on the hardware where software is executed<ul class="ul1">
+    <li class="li2">some vulnerabilities can be exploited only if the hardware that executes the vulnerable software component has a specific architecture (i.e. the vulnerabilities can be triggered on RISC architectures, not on x86 architectures)</li>
+  </ul></li>
+  <li class="li2">vulnerabilities management can be simplified by taking into account the hardware where the software is executed<ul class="ul1">
+    <li class="li2">some Attack Vector can be excluded</li>
+    <li class="li2">it’s possible to identify if the hardware is used to manage a critical asset or not<span class="Apple-converted-space"> </span></li>
+    <li class="li2">it’s possible to identify if the hardware allows a firmware update (how and with which effort)<span class="Apple-converted-space"> </span></li>
+  </ul></li>
+</ul>
+<p class="p2">Once the main hardware blocks have been identified, the complexity of the software part of each block must be managed.<span class="Apple-converted-space"> </span></p>
+<p class="p2">In many cases each hardware block executes a single software binary, while in other cases the software part is represented by multiple binaries executed by the same hardware block.</p>
+<p class="p2">To make the device model more usable, and to simplify the vulnerability management, the device model is enriched with two additional elements:</p>
+<ul class="ul1">
+  <li class="li2">Processing Units (PU)</li>
+  <li class="li2">Groups</li>
+</ul>
+<p class="p2">Processing Unit</p>
+<p class="p2">A Processing Unit is a discrete hardware component within a system that performs computational, control, storage, or security-related functions.</p>
+<p class="p2">Within the ARIANNA framework, a <i>Processing Unit</i> is a logical construct used to group related hardware and/or software components. This grouping facilitates the structured representation of an IoT device under monitoring, enabling clearer mapping of components, their interactions, and any associated security considerations.</p>
+<p class="p2">Processing Units are not, by definition, directly associated with specific known vulnerabilities. Instead, a Processing Unit represents a logical block comprising hardware and/or software components. These components are subject to monitoring, and any detected or reported vulnerabilities are associated with the relevant components contained within the Processing Unit.</p>
+<p class="p2">A Processing Unit may operate autonomously or in coordination with other units and may be programmable or fixed-function. For the purposes of this specification, a Processing Unit encompasses the following categories:</p>
+<p class="p2">Microcontroller Unit (MCU)</p>
+<p class="p2">An integrated circuit combining a processor core, memory, and peripheral interfaces, optimized for embedded control applications.</p>
+<p class="p2">Microprocessor Unit (MPU)</p>
+<p class="p2">A processor core, typically without integrated memory or peripherals, designed for general-purpose or high-performance computing.</p>
+<p class="p2">Memory</p>
+<p class="p2">A hardware element (volatile or non-volatile) dedicated to storing instructions, data, or intermediate processing results.</p>
+<p class="p2">Hardware Module</p>
+<p class="p2">A dedicated functional block or subsystem implemented in hardware to execute specific operations (e.g., digital signal processing, encryption acceleration, I/O control).</p>
+<p class="p2">Secure Element (SE)</p>
+<p class="p2">A tamper-resistant hardware component providing secure storage of cryptographic material and execution of sensitive operations.</p>
+<p class="p2">Stored information</p>
+<p class="p2">A Processing Unit is identified by:</p>
+<ul class="ul1">
+  <li class="li2">Unique identifier</li>
+  <li class="li2">Name</li>
+  <li class="li2">Description</li>
+  <li class="li2">Type<ul class="ul1">
+    <li class="li2">Microprocessor</li>
+    <li class="li2">Microcontroller</li>
+    <li class="li2">Hardware Module</li>
+    <li class="li2">Secure Element</li>
+    <li class="li2">Memory</li>
+  </ul></li>
+  <li class="li2">System Type<ul class="ul1">
+    <li class="li2">Windows</li>
+    <li class="li2">Linux</li>
+    <li class="li2">Third-party binary</li>
+    <li class="li2">ROM Code</li>
+    <li class="li2">Real Time OS</li>
+    <li class="li2">Bare Metal</li>
+  </ul></li>
+  <li class="li2">Hardware Vendor name &amp; Part number</li>
+  <li class="li2">Interfaces</li>
+</ul>
+<p class="p2">Components</p>
+<p class="p2">The basic element that composes a Device Model is the component.</p>
+<p class="p2">A component can represent a hardware or software resource identified within the service or the device to be monitored. During monitoring, each component of the device model is used to identify relevant vulnerabilities.</p>
+<p class="p2">A SW or HW Component is identified by:</p>
+<ul class="ul1">
+  <li class="li2">Unique Identifier</li>
+  <li class="li2">Ecosystem</li>
+  <li class="li2">Type</li>
+  <li class="li2">Vendor name</li>
+  <li class="li2">Name</li>
+  <li class="li2">Version</li>
+  <li class="li2">License</li>
+  <li class="li2">Group</li>
+</ul>
+<p class="p2">Types</p>
+<p class="p2">Component types are derived from CycloneDX specifications.</p>
+<table cellspacing="0" cellpadding="0" class="t1">
+  <tbody>
+    <tr>
+      <td valign="middle" class="td1">
+        <p class="p9"><b>TYPE</b></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p9"><b>LABEL</b></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p9"><b>USAGE</b></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td1">
+        <p class="p2">device</p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p9">HW</p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p2">Hardware components. It includes ROM code that can’t be updated, is considered hardware (NIST identify ROM code as “o”)</p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td1">
+        <p class="p2">firmware</p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p9">FW</p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p2">Binary code provided by third parties.</p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td1">
+        <p class="p2">library</p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p9">LIB</p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p2">Software libraries (custom or from third parties) and applications from third parties</p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td1">
+        <p class="p2">application</p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p9">APP</p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p2">Customer application</p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td1">
+        <p class="p2">operating-system</p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p9">OS</p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p2">Operating system (kernel, windows, linux, freertos …)</p>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<p class="p2">Status</p>
+<table cellspacing="0" cellpadding="0" class="t1">
+  <tbody>
+    <tr>
+      <td valign="middle" class="td1">
+        <p class="p9"><b>STATUS</b></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p9"><b>USAGE</b></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p9"><b>CONTROL</b></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td1">
+        <p class="p2">ACTIVE</p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p2">Active component</p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p2">Default status</p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td1">
+        <p class="p2">NOT ACTIVE</p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p2">Removed component (after update)</p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p2">Set by ARIANNA after Device Model update</p>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<p class="p2">Group</p>
+<p class="p2">A Group is an aggregation of components within the same Processing Unit. Such aggregations are defined according to the specific layer to which the components belong:</p>
+<ul class="ul1">
+  <li class="li2">Hardware layer: it contains a single group that collects all the hardware components of the processing unit, such as the MCU or MPU, all the active hardware interfaces, processing cores, and other physical elements.</li>
+  <li class="li2">Firmware layer (for MCU-based systems): this layer includes a group that aggregates all software components contained within the firmware binary. If multiple firmware binaries are present, separate groups are defined for each binary.</li>
+  <li class="li2">OS layer (for MPU-based systems): this layer includes a group that collects all the components included in the operating system, such as the kernel, system libraries, and standard applications.</li>
+  <li class="li2">Application layer (for MPU-based systems): this layer may consist of multiple groups, each corresponding to a specific customer application. Each group includes the software components used by the customer to develop and implement that application.</li>
+</ul>
+<p class="p2">Vulnerability</p>
+<p class="p2">A vulnerability is a weakness, flaw, or defect present in a system component that could be exploited by a threat actor. Within the context of system architecture and security management, vulnerabilities may exist in both hardware and software elements.</p>
+<p class="p2">In particular:</p>
+<ul class="ul1">
+  <li class="li2">A hardware vulnerability affects a component listed in the Hardware Bill of Materials (HBOM). It may arise from design flaws, implementation issues, misconfigurations, or undocumented behaviors in hardware elements such as processors, interfaces, controllers, or other physical components of the processing unit.</li>
+  <li class="li2">A software vulnerability affects a component listed in the Software Bill of Materials (SBOM). These vulnerabilities may originate from coding errors, insecure libraries, outdated dependencies, improper configurations, or flaws in the operating system, firmware, or application software.</li>
+</ul>
+<p class="p2">When exploited, a vulnerability can allow a threat actor to compromise one or more fundamental security properties of a system:</p>
+<ul class="ul1">
+  <li class="li2">Confidentiality, by gaining unauthorized access to sensitive data.</li>
+  <li class="li2">Integrity, by modifying data, code, or system behavior in an unauthorized manner.</li>
+  <li class="li2">Availability, by disrupting or preventing normal system operation.</li>
+</ul>
+<p class="p2"></p>
+<p class="p2">Getting Started</p>
+<p class="p1"><br></p>
+<p class="p2">Device description</p>
+<p class="p2">This stage is performed once during the initial analysis phase of the device under evaluation. The objective of this activity is to identify all Processing Units (PUs) that compose the device and, for each PU, determine the type of software environment executed on top of it.</p>
+<p class="p2">A Processing Unit represents any hardware element capable of executing code or managing device functionality, such as microcontrollers, application processors, secure elements, or dedicated hardware modules. Accurately identifying and describing these units is essential to correctly map the device architecture and to support subsequent security analysis activities.</p>
+<p class="p8">For each identified Processing Unit, the following attributes must be specified:</p>
+<ul class="ul1">
+  <li class="li2">Name: A descriptive identifier assigned to the Processing Unit (PU). The name should clearly reflect the role or function of the PU within the device architecture (e.g., Main Application Processor, Connectivity MCU, Security Controller). It is used to easily reference the Processing Unit throughout the project documentation and during the security analysis process.</li>
+  <li class="li2">Description: A brief functional description of the role performed by the PU within the device architecture (e.g., communication controller, main application processor, secure authentication module).</li>
+  <li class="li2">Hardware Type: Classification of the hardware category of the PU, such as MCU (Microcontroller Unit), MPU (Microprocessor Unit), Memory, Secure Element, or Hardware Module.</li>
+  <li class="li2">System Type: The type of system or execution environment running on the Processing Unit. Examples include Bare Metal, Real-Time Operating System (RTOS), Linux-based system, Windows-based system, Android system, Third-Party Binary, or ROM Code.</li>
+  <li class="li2">Hardware Vendor Name and Part Number: Identification of the manufacturer and the specific component model used for the Processing Unit. This information is important for traceability and for correlating hardware components with known vulnerabilities.</li>
+  <li class="li2">Communication Interfaces: A list of hardware or logical communication channels used by the PU to interact with other components within the device or with external systems. Examples include UART, SPI, I²C, Ethernet, BLE, or other wired and wireless interfaces.</li>
+  <li class="li2">Application Layer Description (if present): A description of the technologies or frameworks used to develop the application layer running on the Processing Unit. Examples may include programming languages and frameworks such as PHP, Python, JavaScript, or other runtime environments.</li>
+</ul>
+<p class="p2">Device Model creation</p>
+<p class="p2">This procedure is executed each time a new firmware version is deployed. Its objective is to identify all hardware and software components (HBOM and SBOM) present in every Processing Unit (PU) within the device.</p>
+<p class="p2">ARIANNA provides dedicated support for the creation and management of both the HBOM and the SBOM, enabling an accurate representation of the device architecture and its associated components.</p>
+<p class="p8">Hardware components (HBOM)</p>
+<p class="p2">The HBOM is typically defined once during the initial device analysis and remains unchanged unless a hardware revision of the device is introduced.</p>
+<p class="p2">Hardware components are identified based on the information collected during the Device Description stage. This information typically includes the names of the active hardware interfaces, the vendor name and the part numbers of the main hardware elements such as the MCU, MPU, Secure Element (SE), or other hardware modules present in the device.</p>
+<p class="p2">At this stage, no additional analysis activities are required from the user: the identification of hardware components relies on the information already provided during the device description phase.</p>
+<p class="p2">Using the information available in the ARIANNA Database, each identified component is then automatically analyzed in order to determine whether it includes additional internal or associated components. This process allows the system to expand the hardware component list by identifying embedded elements, subcomponents, or integrated modules that may not be explicitly declared in the initial device description.</p>
+<p class="p2">This automated enrichment step ensures a more complete representation of the device hardware architecture, which is necessary for subsequent security and vulnerability analysis activities.</p>
+<p class="p8">Software components (SBOM)</p>
+<p class="p2">Software components are identified based on the software stack deployed on each Processing Unit (PU).</p>
+<p class="p2">To support this activity, ARIANNA provides dedicated Software Composition Analysis (SCA) tools that can be executed either in the build environment or directly in the target environment, depending on the system configuration and the availability of the software artifacts.</p>
+<p class="p2">The complexity of the software component identification process varies according to the nature of the system running on each Processing Unit:</p>
+<ul class="ul1">
+  <li class="li2">In the case of a hardware module, the list of identifiable software components may be limited to the firmware binary provided by the module manufacturer. In such cases, the internal structure of the software stack may not be accessible, and the analysis may only reference the provided binary as a single software component.</li>
+  <li class="li2">In the case of a Microcontroller Unit (MCU), the analysis may include all the software components provided by the silicon vendor, such as low-level drivers, Hardware Abstraction Layer (HAL) libraries, and the toolchain used to build the firmware. In addition, the analysis may also include third-party libraries integrated into the firmware to implement specific protocols or functionalities, such as a Bluetooth software stack or other communication and application libraries.</li>
+  <li class="li2">In the case of a Microprocessor Unit (MPU) running a full operating system, the analysis becomes more complex. The identification of software components must include both the Operating System layer (e.g., kernel, system libraries, and standard utilities) and the application layer, which consists of all customer-developed or third-party applications running on top of the operating system.</li>
+</ul>
+<p class="p2">Each System Type and application framework is supported by a specific SCA tool or analysis script. These tools automate the extraction of software component information and help generate an accurate Software Bill of Materials (SBOM).</p>
+<p class="p2">The generated list of software components typically includes detailed information such as:</p>
+<ul class="ul1">
+  <li class="li2">Component vendor and name</li>
+  <li class="li2">Component version</li>
+  <li class="li2">Component license</li>
+  <li class="li2">Component dependencies</li>
+  <li class="li2">Group name</li>
+  <li class="li2">List of patched CVEs</li>
+</ul>
+<p class="p2">This information is essential for subsequent vulnerability identification and risk assessment activities, as it enables the correlation of software components with publicly known security vulnerabilities.</p>
+<p class="p2">Since the creation of the Software Bill of Materials (SBOM) is primarily oriented toward vulnerability management, the use of ARIANNA SCA tools ensures accurate component identification. In particular, these tools are designed to identify only relevant components, namely those that can be associated with entries in public vulnerability databases.</p>
+<p class="p2">Additionally, the tools enforce precise and standardized component naming, which is essential for correctly correlating identified components with known vulnerabilities. Without consistent naming conventions, mapping software components to vulnerability databases would be unreliable or, in some cases, impossible.</p>
+<p class="p2">As a result, the use of ARIANNA SCA tools significantly improves the accuracy and effectiveness of vulnerability correlation and security analysis.</p>
+<p class="p10"><br></p>
+<p class="p10"><br></p>
+<p class="p2">Software Composition Analysis (SCA) tools<span class="Apple-converted-space"> </span></p>
+<p class="p2">ARIANNA provides a set of Software Composition Analysis (SCA) tools designed to support the accurate creation of the Software Bill of Materials (SBOM) without requiring access to proprietary source code or performing intrusive analysis on target devices.</p>
+<p class="p2">Execution Model</p>
+<p class="p2">The ARIANNA SCA tools are delivered as scripts (Python, Bash, or PowerShell) that can be executed directly within the development or build environment according to the system under analysis.</p>
+<p class="p2">These scripts analyze the software environment and generate an output file in CSV format, containing the list of identified software components.</p>
+<p class="p2">The generated CSV file must then be uploaded to the ARIANNA platform, either through the Web User Interface or via REST APIs. Once uploaded, ARIANNA processes the data and automatically generates the final SBOM.</p>
+<p class="p2">Benefits</p>
+<p class="p2">The ARIANNA methodology is designed to minimize impact on the development workflow and the deployed device. In particular:</p>
+<ul class="ul1">
+  <li class="li2">Source code disclosure is not required, allowing manufacturers to maintain full control over proprietary software assets.</li>
+  <li class="li2">No reverse engineering of binaries is performed, avoiding the generation of inaccurate SBOMs that may include missing components or incorrectly identified versions.</li>
+  <li class="li2">No agents are installed on target devices, ensuring a non-invasive approach that does not interfere with firmware or software maintenance.</li>
+</ul>
+<p class="p2">Agent-based approaches can introduce operational complexity, as such agents would need to be maintained and updated throughout the device lifecycle. ARIANNA avoids this issue by relying on external analysis tools executed in the development environment.</p>
+<p class="p2">Environment-Specific Analysis Tools</p>
+<p class="p2">Because different software environments require different analysis techniques, ARIANNA provides multiple SCA tools, each designed for a specific technology stack or execution environment.</p>
+<p class="p2">Examples include:</p>
+<ul class="ul1">
+  <li class="li2">Operating System analysis (e.g., Debian, Ubuntu, Alpine, YOCTO, Buildroot, OpenWRT, Windows, Android)</li>
+  <li class="li2">Application layer analysis (e.g., .NET, Python, PHP, JavaScript)</li>
+  <li class="li2">MCU SDK analysis (e.g., Espressif ESP-IDF, STMicroelectronics STM32Cube SDK, NXP MCUXpresso SDK, Zephyr)</li>
+  <li class="li2">Cloud and container environments analysis</li>
+</ul>
+<p class="p2">This modular approach ensures accurate component identification across a wide range of software ecosystems.</p>
+<p class="p2">CI/CD Integration</p>
+<p class="p2">ARIANNA SCA tools can be easily integrated into CI/CD pipelines, enabling automated SBOM generation as part of the software development lifecycle.</p>
+<p class="p2">For example:</p>
+<ul class="ul1">
+  <li class="li2">SCA scripts can be automatically executed after each firmware or software release.</li>
+  <li class="li2">Using the ARIANNA REST APIs, it is possible to:<ul class="ul1">
+    <li class="li2">Upload the generated CSV output files to update an existing device model</li>
+    <li class="li2">Automatically trigger the generation of a new vulnerability report</li>
+  </ul></li>
+</ul>
+<p class="p2">This integration enables continuous vulnerability monitoring, ensuring that each new firmware or software release is immediately evaluated against the latest vulnerability intelligence.</p>
+<p class="p2">Vulnerability Report creation</p>
+<p class="p2">Vulnerability Reports are automatically generated by ARIANNA on a daily basis to provide continuous visibility into the security posture of the analyzed device.</p>
+<p class="p2">ARIANNA performs daily vulnerability monitoring for every device under analysis based on its Device Model, relying on an internal database that maps hardware and software components to their associated vulnerabilities. By correlating the HBOM and SBOM information with vulnerability intelligence sources, ARIANNA can automatically detect newly disclosed vulnerabilities that may affect the monitored devices.</p>
+<p class="p2">To maintain up-to-date vulnerability intelligence, ARIANNA continuously monitors several public vulnerability databases, including:</p>
+<ul class="ul1">
+  <li class="li2">NIST National Vulnerability Database (NVD)</li>
+  <li class="li2">CVE.org</li>
+  <li class="li2">GitHub Security Advisories</li>
+  <li class="li2">European Vulnerability Database (EUVD)</li>
+</ul>
+<p class="p2">For each identified vulnerability, ARIANNA also collects additional security intelligence to support vulnerability prioritization and risk evaluation. This includes information such as:</p>
+<ul class="ul1">
+  <li class="li2">Known Exploited Vulnerabilities from the CISA KEV Catalog</li>
+  <li class="li2">Exploit availability and exploit maturity level (e.g., Proof-of-Concept exploit or weaponized exploit)</li>
+  <li class="li2">EPSS (Exploit Prediction Scoring System) index, which estimates the probability of exploitation</li>
+  <li class="li2">CWE (Common Weakness Enumeration) classification information</li>
+</ul>
+<p class="p2">By aggregating and correlating these data sources, ARIANNA enables effective vulnerability prioritization and risk assessment, helping security teams focus on vulnerabilities that pose the greatest risk to the device.</p>
+<p class="p2">Device Model lifecycle management</p>
+<p class="p2">A Device Model represents a specific combination of hardware and software deployed in the field. For this reason, during the device lifecycle, the Device Model must be periodically updated or adjusted:<span class="Apple-converted-space"> </span></p>
+<ul class="ul1">
+  <li class="li2">The HBOM typically remains constant, since the hardware architecture of the device does not change during its lifecycle.</li>
+  <li class="li2">The SBOM must instead be updated every time a new firmware or software version is released, such as in the case of operating system updates, application updates, or firmware updates.</li>
+</ul>
+<p class="p2">ARIANNA allows manufacturers to create and manage multiple versions of a Device Model, while keeping track of their evolution over time. To maintain clear control over the different Device Models, it is important to define a consistent versioning strategy. Common approaches include:</p>
+<ul class="ul1">
+  <li class="li2">Semantic Versioning: uses a three-part version number (MAJOR.MINOR.PATCH). The different fields indicate breaking changes, new features, or bug fixes.</li>
+  <li class="li2">Calendar Versioning: Uses dates (for example YY.MM or Year.Release) to indicate versions, reflecting the device model creation time.</li>
+</ul>
+<p class="p2">When a new version of a Device Model is created, the SBOM may change in several ways:</p>
+<ul class="ul1">
+  <li class="li2">New components may be added</li>
+  <li class="li2">Existing components may be updated</li>
+  <li class="li2">Existing components may be removed</li>
+</ul>
+<p class="p2">As a consequence, the vulnerability status associated with the device may also change:</p>
+<ul class="ul1">
+  <li class="li2">New vulnerabilities may be reported<ul class="ul1">
+    <li class="li2">if a new component is introduced</li>
+    <li class="li2">if an existing component is updated</li>
+  </ul></li>
+  <li class="li2">Existing vulnerabilities may maintain their status or be automatically closed<ul class="ul1">
+    <li class="li2">if the affected component is updated to a non-vulnerable version</li>
+    <li class="li2">if the affected component is removed from the system</li>
+  </ul></li>
+</ul>
+<p class="p2">These updates and vulnerability status adjustments are automatically handled by the ARIANNA platform, ensuring that vulnerability reports remain accurate and aligned with the current device configuration.</p>
+<p class="p1"><br></p>
+<p class="p2"></p>
+<p class="p2">Vulnerability Report</p>
+<p class="p2">Each report includes the following information:</p>
+<ul class="ul1">
+  <li class="li2">Device Model: The specific device model to which the analysis applies, with a structured inventory of all identified components, organized by Processing Unit (PU) and Groups</li>
+  <li class="li2">Identified Vulnerabilities: A list of vulnerabilities associated with the device model, based on the correlation between the identified components and publicly available vulnerability databases.</li>
+  <li class="li2">Vulnerability Details: Relevant information associated with each vulnerability, such as identifiers, severity, affected components, and references.</li>
+  <li class="li2">Vulnerability Management Status: The current management status of each identified vulnerability<span class="Apple-converted-space"> </span></li>
+  <li class="li2">Highlights and Prioritization Advice: Key findings and recommendations to support the prioritization of remediation activities.</li>
+</ul>
+<p class="p2">These reports provide all the information to support the continuous vulnerability management process, enabling organizations to monitor newly disclosed vulnerabilities, assess their impact on the device, and prioritize appropriate mitigation or remediation actions.</p>
+<p class="p2">Overview &amp; Statistics section</p>
+<p class="p2">This section of the report contains charts and graphs that provide a visual overview of the current security status of the device under analysis. These visual indicators help stakeholders quickly understand the vulnerability landscape and monitor the evolution of security risks over time.</p>
+<p class="p8">The dashboard typically includes the following metrics:</p>
+<ul class="ul1">
+  <li class="li2">Number of Open and Closed Vulnerabilities: A summary of vulnerabilities that are currently unresolved versus those that have been closed.</li>
+  <li class="li2">Risk Associated with Open Vulnerabilities: An aggregated representation of the overall risk level associated with currently open vulnerabilities.</li>
+  <li class="li2">Priority Level of Open Vulnerabilities: A classification of open vulnerabilities based on their remediation priority (high or low).</li>
+  <li class="li2">Justification Associated with Closed Vulnerabilities: Documentation of the reasons for closing vulnerabilities, such as components removed, patched or updated, risk accepted, not applicable or false positives.</li>
+  <li class="li2">Number of Open Vulnerabilities Over Time: A trend chart showing how the total number of unresolved vulnerabilities evolves over time.</li>
+  <li class="li2">Risk Level of Open Vulnerabilities Over Time: A graphical representation of how the overall risk associated with open vulnerabilities changes throughout the monitoring period.</li>
+  <li class="li2">New Vulnerability Notifications and Vulnerability Closures Over Time: A timeline showing the rate at which new vulnerabilities are identified and existing vulnerabilities are resolved.</li>
+</ul>
+<p class="p8">These visual metrics support <b>continuous monitoring and decision-making</b>, enabling security teams to track vulnerability trends, evaluate the effectiveness of remediation activities, and prioritize security efforts accordingly.</p>
+<p class="p2">Device Model section</p>
+<p class="p2">This section describes the Device Model, listing all hardware and software components identified during the Device Model creation stage.</p>
+<p class="p2">Components are organized according to the Processing Units (PUs) that compose the device. Each PU is described in a dedicated subsection, providing a clear view of the components associated with that specific processing unit.</p>
+<p class="p2">Within each Processing Unit, components are further organized into groups, which aggregate components according to their origin or functional layer (for example, operating system components, customer applications, firmware components, or third-party libraries).</p>
+<p class="p2">For each component, it is possible to review the associated vulnerabilities, enabling a detailed understanding of the security posture of the device.</p>
+<p class="p2">Component Type</p>
+<p class="p2">Specifies the category of the component, such as software library, hardware component, binary, or application.</p>
+<p class="p2">Component Vendor Name</p>
+<p class="p2">Identifies the supplier or manufacturer of the component.</p>
+<p class="p2">Component Name</p>
+<p class="p2">The unique name of the component as defined by the vendor.</p>
+<p class="p2">Component Version</p>
+<p class="p2">Indicates the specific version or build of the component currently used in the device.</p>
+<p class="p2">Component License</p>
+<p class="p2">Provides information about the licensing model of the component (e.g., GPL, MIT, proprietary).</p>
+<p class="p2">Component Status</p>
+<p class="p2">Indicates whether the component is currently ACTIVE or NOT ACTIVE within the device configuration.</p>
+<p class="p2">Component Group</p>
+<p class="p2">Specifies the group to which the component belongs, allowing components to be aggregated based on their origin or functional role (e.g., operating system, firmware, customer application).</p>
+<p class="p2">Component Dependencies</p>
+<p class="p2">Provides information about dependencies between components, helping to understand the relationships within the software stack.</p>
+<p class="p2">Component Vulnerability counters</p>
+<p class="p2">Each component is associated with vulnerability counters that indicate:</p>
+<ul class="ul1">
+  <li class="li2">the number of open vulnerabilities, classified by risk level</li>
+  <li class="li2">the number of closed vulnerabilities</li>
+</ul>
+<p class="p2">This structure makes it possible to sort and analyze components based on the number of open vulnerabilities, enabling users to quickly identify components that represent the most critical security risks within the device.</p>
+<p class="p2">Component Warnings</p>
+<p class="p2">Each component may be associated with a set of warnings that provide additional information about its status or highlight situations that may require attention from the security team.</p>
+<p class="p2">Informative Warnings</p>
+<p class="p2">Informative warnings indicate changes in the component status between different versions of the Device Model. These warnings help track the evolution of the software across device model versions:<span class="Apple-converted-space"> </span></p>
+<ul class="ul1">
+  <li class="li2">New Component: indicates that the component has been added in the current version of the Device Model.</li>
+  <li class="li2">Updated Component: indicates that the component has been updated to a new version in the current Device Model.</li>
+  <li class="li2">Downgraded Component: indicates that the component has been replaced with an older version compared to the previous Device Model.</li>
+  <li class="li2">Removed Component: indicates that the component has been removed from the current Device Model.</li>
+</ul>
+<p class="p2">Warnings Requiring Special Attention</p>
+<p class="p2">Some warnings may require manual verification or corrective actions by the security team:</p>
+<ul class="ul1">
+  <li class="li2">Unmapped Component: indicates that the component is not present in the ARIANNA internal database. As a result, ARIANNA cannot currently identify vulnerabilities associated with that component. This situation may occur if the component does not appear in public vulnerability databases and therefore is not yet tracked in ARIANNA. In such cases, the absence of vulnerabilities may be legitimate, but the component should still be reviewed to confirm its identification.</li>
+  <li class="li2">Unversioned Component: indicates that the component version was not provided during the Device Model creation stage. This may happen for several reasons:<ul class="ul1">
+    <li class="li2">The SCA tool was not able to automatically retrieve the version information from the development environment.</li>
+    <li class="li2">The version information is not available in the analyzed context.</li>
+  </ul></li>
+</ul>
+<p class="p11">When the version is unknown, ARIANNA reports all vulnerabilities potentially associated with the component, regardless of the version. This conservative approach ensures that no relevant vulnerabilities are missed, but it may also generate false positives. For this reason, the security team should attempt to manually retrieve and specify the correct version whenever possible.</p>
+<p class="p2">Vulnerabilities section</p>
+<p class="p2">This section provides a complete list of vulnerabilities affecting the device under analysis.</p>
+<p class="p2">While the Device Model section presents vulnerabilities organized by component, this section displays them as a flat list, offering a consolidated view of all vulnerabilities associated with the device.</p>
+<p class="p2">To provide a clearer understanding of the current status of the vulnerability management process, the vulnerabilities are organized into several subsections that reflect the different stages of the management workflow:</p>
+<ul class="ul1">
+  <li class="li2">Unmanaged: vulnerabilities that have been notified but have not yet been evaluated by the security team.</li>
+  <li class="li2">In Triage: Vulnerabilities for which the triage process is currently ongoing, including analysis of applicability, impact, and risk level.</li>
+  <li class="li2">In Progress: Vulnerabilities for which remediation or mitigation activities are currently being implemented.</li>
+  <li class="li2">Planned Closure: Vulnerabilities for which remediation or mitigation activities have been completed, but whose final resolution will be delivered in the next software or firmware release. If the resolution involves actions such as component updates, patches, or component removal, ARIANNA will automatically detect and confirm the closure in the first vulnerability report generated for the next version of the Device Model.</li>
+  <li class="li2">Closed: Vulnerabilities that have already been successfully managed and resolved, either through remediation, mitigation, risk acceptance, or confirmation of non-applicability.</li>
+  <li class="li2">Reopened: Vulnerabilities that were previously closed but have been reopened, either manually by the security team or automatically by ARIANNA, for example due to new vulnerability information or changes in the device configuration.</li>
+</ul>
+<p class="p2">The vulnerability information included in the report is designed to provide the necessary metrics and intelligence to support prioritization, enabling the security team to efficiently manage triage, remediation, and mitigation activities within the vulnerability management process.</p>
+<p class="p8">Vulnerability External ID</p>
+<p class="p2">This refers to the unique identifier assigned to a vulnerability in the public database where it was disclosed. In most cases, this identifier is a CVE (Common Vulnerabilities and Exposures) ID, which is used to uniquely identify a specific vulnerability.</p>
+<p class="p2">The usage of a well known identifier enables a vulnerability to be consistently referenced across different platforms, tools, and security sources, ensuring a common and standardized way to track and discuss vulnerabilities.</p>
+<p class="p8">Creation Date</p>
+<p class="p8">The date when the vulnerability was first reported or discovered in external databases. This date helps track how long a vulnerability has been known in the security community and may be used to prioritize updates and remediation efforts.</p>
+<p class="p8">Update Date</p>
+<p class="p8">The most recent date when information about the vulnerability was updated in external databases, whether it’s new patches, mitigations, or any changes in its severity or status.<span class="Apple-converted-space"> </span></p>
+<p class="p2">Description</p>
+<p class="p8">A detailed description of the vulnerability, including how it works, the systems it affects, and its potential impact. This helps security professionals understand the nature of the vulnerability and its relevance to their environment.</p>
+<p class="p8">Remediations</p>
+<p class="p8">List of known mitigations and fixes:</p>
+<ul class="ul1">
+  <li class="li12">Mitigations are steps or measures that can be taken to reduce the likelihood or impact of the vulnerability. This might include configuration changes, temporary workarounds, or specific guidance on preventing exploitation.</li>
+  <li class="li13">Fixes are patches or component updates released by vendors to address the vulnerability.<span class="Apple-converted-space"> </span></li>
+</ul>
+<p class="p8">Exploits</p>
+<p class="p2">List of known exploits and their maturity level. It refers to any documented attempts, tools, or techniques that can actively exploit the vulnerability.</p>
+<p class="p2">The maturity level indicates how developed and usable the exploit is:</p>
+<ul class="ul1">
+  <li class="li2">Exploit Ready: The exploit is fully weaponized and ready to be used by automated tools or attack frameworks.</li>
+  <li class="li2">Exploit Verified: Public exploit code exists and has been verified by a trusted source.</li>
+  <li class="li2">Proof of Concept (PoC): Public exploit code is available, but it has not yet been verified by a trusted source.</li>
+</ul>
+<p class="p2">When available, links to the exploit code or related resources may also be included to help the security team better understand the exploit technique, attack method, and potential impact.</p>
+<p class="p2">Weakness Class (CWE)</p>
+<p class="p2">The Common Weakness Enumeration (CWE) is a classification system used to categorize software weaknesses and vulnerabilities. It provides a standardized taxonomy that helps identify the underlying type of flaw in software or hardware, such as improper input validation, buffer overflows, or authentication issues.</p>
+<p class="p2">By mapping vulnerabilities to a CWE category, security teams can better understand the root cause of the issue, support risk analysis, and identify appropriate mitigation strategies.</p>
+<p class="p2">KEV</p>
+<p class="p2">This field is a boolean value indicating whether the vulnerability is classified as a Known Exploited Vulnerability (KEV) according to one of the authoritative intelligence sources monitored by ARIANNA.</p>
+<p class="p2">Examples of these sources include:</p>
+<ul class="ul1">
+  <li class="li2">Publicly reported vulnerabilities listed in the CISA Known Exploited Vulnerabilities (KEV) catalog</li>
+  <li class="li2">Vulnerabilities with verified exploitation evidence referenced in the European Vulnerability Database (EUVD)</li>
+</ul>
+<p class="p2">By aggregating information from these sources, this metric provides greater visibility into vulnerabilities that are known to be actively exploited in real-world environments.</p>
+<p class="p1"><br></p>
+<p class="p2">Severity</p>
+<p class="p2">The Common Vulnerability Scoring System (CVSS) provides a numeric score (ranging from 0 to 10) that represents the severity of a vulnerability. The CVSS provides a way to capture the principal characteristics of a vulnerability, and produce a numerical score reflecting its severity, as well as a textual representation of that score. The numerical score can then be translated into a qualitative representation (such as low, medium, high, and critical) to help organizations properly assess and prioritize their vulnerability management processes.</p>
+<p class="p2">CVSS is not used as a measure of risk.</p>
+<p class="p2">Attack Vector</p>
+<p class="p2">This metric reflects the context by which vulnerability exploitation is possible. Can have the following values:</p>
+<ul class="ul1">
+  <li class="li2"><b>Network</b>: a vulnerability exploitable with network access means the vulnerable component is bound to the network stack and the attacker's path is through OSI layer 3 (the network layer). Such a vulnerability is often termed "remotely exploitable" and can be thought of as an attack being exploitable one or more network hops away (e.g. across layer 3 boundaries from routers). An example of a network attack is an attacker causing a denial of service (DoS) by sending a specially crafted TCP packet from across the public Internet.</li>
+  <li class="li2"><b>Adjacent</b>: A vulnerability exploitable with adjacent network access means the vulnerable component is bound to the network stack, however the attack is limited to the same shared physical (e.g. Bluetooth, IEEE 802.11), or logical (e.g. local IP subnet) network, and cannot be performed across an OSI layer 3 boundary (e.g. a router). An example of an Adjacent attack would be an ARP (IPv4) or neighbor discovery (IPv6) flood leading to a denial of service on the local LAN segment. See also CVE 2013 6014.</li>
+  <li class="li2"><b>Local: </b>A vulnerability exploitable with Local access means that the vulnerable component is not bound to the network stack, and the attacker's path is via read/write/execute capabilities. In some cases, the attacker may be logged in locally in order to exploit the vulnerability, otherwise, she may rely on User Interaction to execute a malicious file.</li>
+  <li class="li2"><b>Physical</b>: A vulnerability exploitable with Physical access requires the attacker to physically touch or manipulate the vulnerable component. Physical interaction may be brief (e.g. evil maid attack) or persistent. An example of such an attack is a cold boot attack which allows an attacker to access to disk encryption keys after gaining physical access to the system, or peripheral attacks such as Firewire/USB Direct Memory Access attacks.</li>
+</ul>
+<p class="p2">EPSS</p>
+<p class="p2">The Exploit Prediction Scoring System (EPSS) is a data-driven effort for estimating the likelihood (probability) that a software vulnerability will be exploited in the wild. The goal is to better prioritize vulnerability remediation efforts. While other industry standards have been useful for capturing innate characteristics of a vulnerability and provide measures of severity, they are limited in their ability to assess threats. EPSS fills that gap because it uses current threat information from CVE and real-world exploit data. The EPSS model produces a probability score between 0 and 1 (0 and 100%). The higher the score, the greater the probability that a vulnerability will be exploited.</p>
+<p class="p2">Risk</p>
+<p class="p2">This metric represents the risk associated with a vulnerability, and is defined by the customer (according to the procedure defined internally to the company). By default its value is set equal to severity class. It can have one of the following values:</p>
+<ul class="ul1">
+  <li class="li2">Undefined</li>
+  <li class="li2">Low</li>
+  <li class="li2">Medium</li>
+  <li class="li2">High</li>
+  <li class="li2">Critical</li>
+</ul>
+<p class="p2">Age</p>
+<p class="p2">This value represents the time passed since the first notification by ARIANNA.</p>
+<p class="p2">Status</p>
+<p class="p2">This value indicates the detailed status of the vulnerability within the ARIANNA vulnerability management pipeline.</p>
+<p class="p2">A vulnerability can be in one of these status:</p>
+<ul class="ul1">
+  <li class="li2"><b>Open</b><b></b><ul class="ul1">
+    <li class="li2"><b>UNMANAGED</b></li>
+    <li class="li2"><b>IN TRIAGE</b></li>
+    <li class="li2"><b>IN PROGRESS</b></li>
+    <li class="li2"><b>PLANNED CLOSURE</b></li>
+    <ul class="ul1">
+      <li class="li2"><b>PLANNED MITIGATION<span class="Apple-converted-space"> </span></b></li>
+      <ul class="ul1">
+        <li class="li2">Mitigation will be implemented to reduce risk (before moving to ACCEPTED)</li>
       </ul>
-
-      <h2 id="project">Vulnerability Management Project</h2>
-      <p>A Vulnerability Management Project is the operational container for one product/device/system. It allows teams to create Device Models, review vulnerability reports, perform triage, update risk and status, and track remediation over time.</p>
-      <p>Projects are designed for continuous collaboration across security, engineering, and compliance stakeholders.</p>
-
-      <h2 id="vm-process">Vulnerability Management Process</h2>
-      <h3>1. Identification</h3>
-      <p>Collect newly disclosed vulnerabilities from monitored sources and map them to relevant components.</p>
-      <h3>2. Triage</h3>
-      <p>Assess applicability, device-context risk, and remediation priority. Outcomes include applicable, not applicable, or accepted risk.</p>
-      <h3>3. Addressing</h3>
-      <p>Apply updates, patches, removals, or mitigations depending on feasibility and operational impact.</p>
-      <h3>4. Closure and Disclosure</h3>
-      <p>Finalize status, preserve action traceability, and communicate required information internally/externally.</p>
-
-      <h2 id="device-model">Device Model</h2>
-      <p>The Device Model is the full component inventory (HBOM + SBOM), organized by Processing Units and Groups. ARIANNA emphasizes hardware context because exploitability and remediation options can depend on architecture, interfaces, and update mechanisms.</p>
-      <p>See also <a class="inline-ref" href="#lifecycle">Device Model lifecycle management</a>.</p>
-
-      <h2 id="processing-units">Processing Units</h2>
-      <p>A Processing Unit (PU) is a logical hardware block (MCU, MPU, memory, secure element, hardware module) used to structure component and vulnerability analysis.</p>
-      <p>Each PU should include: name, description, type, system type, vendor/part number, interfaces, and component set.</p>
-
-      <h2 id="components">Components and Groups</h2>
-      <p>Components represent monitored hardware or software items and are the basis for vulnerability correlation.</p>
-      <p>Groups aggregate components by layer/function (hardware, firmware, OS, application) to simplify triage and reporting.</p>
-      <table>
-        <thead>
-          <tr><th>Component Type</th><th>Label</th><th>Usage</th></tr>
-        </thead>
-        <tbody>
-          <tr><td>device</td><td>HW</td><td>Hardware elements and ROM code</td></tr>
-          <tr><td>firmware</td><td>FW</td><td>Third-party firmware binaries</td></tr>
-          <tr><td>library</td><td>LIB</td><td>Libraries and third-party applications</td></tr>
-          <tr><td>application</td><td>APP</td><td>Customer applications</td></tr>
-          <tr><td>operating-system</td><td>OS</td><td>Kernel and operating system layer</td></tr>
-        </tbody>
-      </table>
-
-      <h2 id="getting-started">Getting Started</h2>
-      <h3>Device Description (initial)</h3>
-      <p>Identify all PUs and document execution environments and interfaces. This stage seeds HBOM generation and later vulnerability context.</p>
-      <h3>Device Model Creation (per release)</h3>
-      <p>HBOM typically stays stable unless hardware changes. SBOM is updated for each firmware/software release. ARIANNA tools assist accurate SBOM extraction and normalization.</p>
-
-      <h2 id="sca-tools">Software Composition Analysis (SCA) Tools</h2>
-      <p>ARIANNA provides environment-specific SCA scripts (Python/Bash/PowerShell) that run in build/dev environments and output component data in CSV for platform upload.</p>
-      <ul>
-        <li>No source code disclosure required.</li>
-        <li>No reverse engineering required.</li>
-        <li>No agent installation on target device.</li>
+      <li class="li2"><b>PLANNED REMOVAL</b></li>
+      <ul class="ul1">
+        <li class="li2">Vulnerability will be REMEDIATED by removing the component</li>
       </ul>
-      <p>Supported environments include OS distributions, application stacks (.NET/Python/PHP/JavaScript), MCU SDKs, and cloud/container contexts.</p>
-
-      <h2 id="reporting">Vulnerability Reporting</h2>
-      <p>ARIANNA generates daily reports and enriches each vulnerability with severity, exploitability, KEV, EPSS, CWE, and lifecycle status.</p>
-      <p>Report sections include:</p>
-      <ul>
-        <li>Overview and statistics (open/closed trends, risk trends, deadlines).</li>
-        <li>Device Model view (component-centric analysis).</li>
-        <li>Vulnerability list (workflow-centric view).</li>
-        <li>Highlights and prioritization cues.</li>
+      <li class="li2"><b>PLANNED UPDATE</b></li>
+      <ul class="ul1">
+        <li class="li2">Vulnerability will be REMEDIATED by updating the component</li>
       </ul>
-
-      <h2 id="lifecycle">Device Model Lifecycle</h2>
-      <p>ARIANNA tracks multiple model versions over time. On new releases, component changes can trigger new vulnerability notifications or automatic closures where affected components are updated/removed.</p>
-      <p>Recommended versioning strategies: semantic versioning or calendar versioning.</p>
-
-      <h2 id="triage">Triage and Prioritization</h2>
-      <p>The pre-triage engine supports high/low priority classification based on configured policy criteria:</p>
-      <ul>
-        <li>Risk-based: severity/risk class.</li>
-        <li>Exploitability-based: KEV membership, EPSS thresholds, exploit maturity, attack vector realism.</li>
+      <li class="li2"><b>PLANNED PATCH</b></li>
+      <ul class="ul1">
+        <li class="li2">Vulnerability will be REMEDIATED by patching the component</li>
       </ul>
-      <p>ARIANNA supports decision-making, but final risk acceptance and remediation choices remain with the security team.</p>
-
-      <h2 id="policy">Policy and Deadlines</h2>
-      <p>Organizations can configure remediation timeframes by risk level and monitor Expiring/Expired items. This enables policy enforcement and supports regulatory compliance objectives.</p>
-
-      <h2 id="exports">Exports and Auditing</h2>
-      <p>Reports can be exported in machine-readable formats (CycloneDX, SPDX, VEX) and human-readable PDF outputs for audits, customer communication, and internal governance.</p>
-
-      <h2 id="integrations">CI/CD Integration</h2>
-      <p>Through REST APIs, pipelines can create Device Model versions, upload SCA outputs, trigger report generation, and retrieve filtered high-priority vulnerabilities.</p>
-
-      <h2 id="users">Users and Roles</h2>
-      <p>ARIANNA defines System Administrator and Regular User roles (Project Owner, Member, Observer) with scoped permissions for administration, triage actions, and read-only access.</p>
-
-      <h2 id="security">Password and Access Security</h2>
-      <p>Password policy includes minimum complexity requirements (length, uppercase/lowercase/digit/special character). Password recovery is handled with email verification and secure reset flow.</p>
-
-      <h2 id="references">References</h2>
-      <p class="small">Use these references while reading triage and reporting sections:</p>
-      <ul>
-        <li><a class="inline-ref" href="https://nvd.nist.gov/" target="_blank" rel="noopener noreferrer">NIST National Vulnerability Database (NVD)</a></li>
-        <li><a class="inline-ref" href="https://www.cve.org/" target="_blank" rel="noopener noreferrer">CVE Program (MITRE)</a></li>
-        <li><a class="inline-ref" href="https://github.com/advisories" target="_blank" rel="noopener noreferrer">GitHub Security Advisories</a></li>
-        <li><a class="inline-ref" href="https://www.cisa.gov/known-exploited-vulnerabilities-catalog" target="_blank" rel="noopener noreferrer">CISA KEV Catalog</a></li>
-        <li><a class="inline-ref" href="https://www.first.org/epss/" target="_blank" rel="noopener noreferrer">FIRST EPSS</a></li>
+    </ul>
+  </ul></li>
+  <li class="li2"><b>Closed</b><b></b><ul class="ul1">
+    <li class="li2"><b>NOT APPLICABLE</b></li>
+    <ul class="ul1">
+      <li class="li2">Vulnerable feature or component not used<span class="Apple-converted-space"> </span></li>
+      <li class="li2">Vulnerability associated to the wrong component<span class="Apple-converted-space"> </span></li>
+      <li class="li2">Vulnerability associated to the wrong component version</li>
+    </ul>
+    <li class="li2"><b>REMEDIATED</b></li>
+    <ul class="ul1">
+      <li class="li2"><b>COMPONENT REMOVED</b></li>
+      <ul class="ul1">
+        <li class="li2">Vulnerability no more present in the system after component removal</li>
       </ul>
+      <li class="li2"><b>COMPONENT UPDATED</b></li>
+      <ul class="ul1">
+        <li class="li2">vulnerability no more present in the system after component update</li>
+      </ul>
+      <li class="li2"><b>COMPONENT PATCHED</b></li>
+      <ul class="ul1">
+        <li class="li2">vulnerability no more present in the system after component patch</li>
+      </ul>
+    </ul>
+    <li class="li2"><b>FALSE POSITIVE</b></li>
+    <ul class="ul1">
+      <li class="li2">Vulnerability re-assesed after initial notification</li>
+    </ul>
+    <li class="li2"><b>ACCEPTED</b></li>
+    <ul class="ul1">
+      <li class="li2">Vulnerability threat accepted due to low risk (low impact or low likelihood)</li>
+    </ul>
+  </ul></li>
+</ul>
+<p class="p2">Triage &amp; assessment information</p>
+<p class="p2">A set of information provided to support the triage process. These details help the security team assess the vulnerability more effectively, enabling a better understanding of its impact, relevance, and priority within the vulnerability management process.</p>
+<p class="p2">Action history</p>
+<p class="p2">Record of all actions performed during the vulnerability management process. It includes the history of status changes, notes, and risk updates made by the security team.</p>
+<p class="p2">The action history serves as evidence of the analysis and decisions taken over time, ensuring traceability and transparency in the vulnerability assessment and management activities.</p>
+<p class="p2">Prioritization section</p>
+<p class="p2">In this section, vulnerabilities are automatically classified as High or Low priority by the ARIANNA Pre-Triage &amp; Prioritization Engine. This initial classification helps the security team quickly identify the vulnerabilities that require immediate attention, supporting a more efficient triage and remediation process.</p>
+<p class="p2">Highlights section</p>
+<p class="p8">In this section, vulnerabilities are automatically classified according to different criteria to improve visibility and help the security team focus on the most relevant items.</p>
+<p class="p8">The following categories are used:</p>
+<ul class="ul1">
+  <li class="li2">New Vulnerabilities: Vulnerabilities that have been recently notified.</li>
+  <li class="li2">Latest Actions: Vulnerabilities for which a recent status change has been performed.</li>
+  <li class="li2">Expired: Vulnerabilities that have not yet been closed and whose remediation deadline, defined in the vulnerability management policy, has already passed.</li>
+  <li class="li2">Expiring: Vulnerabilities that are still open and approaching the deadline defined by the vulnerability management policy.</li>
+  <li class="li2">Top CWE: Vulnerabilities associated with a CWE included in widely recognized risk lists, such as the Mitre Top 25 or the OWASP Top 10. These weaknesses are commonly linked to high-impact or frequently exploited security issues.</li>
+</ul>
+<p class="p1"><br></p>
+<p class="p1"><br></p>
+<p class="p1"><br></p>
+<p class="p2"></p>
+<p class="p2">Features</p>
+<p class="p2">Device Model lifecycle management</p>
+<p class="p2">SBOM &amp; HBOM creation</p>
+<p class="p2">ARIANNA provides dedicated SCA tools to create a precise model of the device to be monitored. Such Device Model includes both software and hardware components (SBOM &amp; HBOM), proprietary or from third parties. Once the first device model has been created, users can keep it up to date after changes to the software stack or after addition/removal of components.<span class="Apple-converted-space"> </span></p>
+<p class="p2">Device Model update</p>
+<p class="p2">Device Model evolves during the device lifecycle</p>
+<ul class="ul1">
+  <li class="li2">HBOM remains constant</li>
+  <li class="li2">SBOM must be updated every time a new FW / SW is released</li>
+</ul>
+<p class="p2">When a new version of the Device Model is created, ARIANNA allows to maintain a link with an old Device Model, to keep valid the Triage activities already done:</p>
+<ul class="ul1">
+  <li class="li2">Old Vulnerabilities maintain the status or could be automatically closed<ul class="ul1">
+    <li class="li2">If the affected component is UPDATED</li>
+    <li class="li2">If the affected component is REMOVED</li>
+  </ul></li>
+  <li class="li2">New Vulnerabilities could be notified<ul class="ul1">
+    <li class="li2">If a new component is added</li>
+    <li class="li2">If an old component is UPDATED</li>
+  </ul></li>
+</ul>
+<p class="p2">Continuous Vulnerability monitoring</p>
+<p class="p2">ARIANNA monitors all relevant vulnerability and exploit databases daily, implementing continuous monitoring and reporting of known vulnerabilities.<span class="Apple-converted-space"> </span></p>
+<p class="p2">Vulnerability Management Process support</p>
+<p class="p2">ARIANNA supports a comprehensive vulnerability management process through the implementation of a predefined management pipeline. Each stage of this pipeline is represented by a specific label that users can assign to identified vulnerabilities, indicating their current status within the process. All actions are logged to maintain a detailed record of both open and closed vulnerabilities, ensuring traceability and demonstrating compliance with standards and regulations during audits.</p>
+<p class="p2">Allowed Actions</p>
+<p class="p2">Users can take multiple actions on vulnerabilities:</p>
+<ul class="ul1">
+  <li class="li2">change vulnerability status</li>
+  <li class="li2">add notes</li>
+  <li class="li2">change risk class</li>
+</ul>
+<p class="p2">Notes</p>
+<p class="p2">Any annotation added by the security team that is relevant to the vulnerability management process. These notes may include analysis details, decisions, assumptions, or additional context that support the evaluation, prioritization, or remediation of the vulnerability.</p>
+<p class="p2">Risk</p>
+<p class="p2">The vulnerability risk level is initially determined based on its severity. After the triage and risk assessment process, the security team may adjust the risk classification to better reflect the actual impact and relevance of the vulnerability in the specific context of the device under analysis.</p>
+<p class="p2">Status change</p>
+<p class="p2">The security team can update the status of a vulnerability to reflect its current stage in the vulnerability management pipeline. This ensures that the vulnerability tracking accurately represents the progress of analysis, mitigation, and remediation activities.</p>
+<p class="p2">The security team can take one of the following action to update the vulnerability status:</p>
+<ul class="ul1">
+  <li class="li2"><b>IN TRIAGE</b></li>
+  <li class="li2"><b>IN PROGRESS</b></li>
+  <li class="li2"><b>PLANNED CLOSURE</b><ul class="ul1">
+    <li class="li2"><b>PLANNED MITIGATION<span class="Apple-converted-space"> </span></b></li>
+    <ul class="ul1">
+      <li class="li2">Mitigation will be implemented to reduce risk (before moving to ACCEPTED)</li>
+    </ul>
+    <li class="li2"><b>PLANNED REMOVAL</b></li>
+    <ul class="ul1">
+      <li class="li2">Vulnerability will be REMEDIATED by removing the component</li>
+    </ul>
+    <li class="li2"><b>PLANNED UPDATE</b></li>
+    <ul class="ul1">
+      <li class="li2">Vulnerability will be REMEDIATED by updating the component</li>
+    </ul>
+    <li class="li2"><b>PLANNED PATCH</b></li>
+    <ul class="ul1">
+      <li class="li2">Vulnerability will be REMEDIATED by patching the component</li>
+    </ul>
+  </ul></li>
+  <li class="li2"><b>NOT APPLICABLE</b><b></b></li>
+  <li class="li2"><b>REMEDIATED</b><b></b><ul class="ul1">
+    <li class="li2"><b>COMPONENT PATCHED</b><b></b></li>
+  </ul></li>
+  <li class="li2"><b>ACCEPTED</b><b></b></li>
+</ul>
+<p class="p2">In case of patch, component upgraded, component removed or false positive the vulnerability status is automatically changed by ARIANNA.</p>
+<p class="p2">Pre-Triage &amp; Automatic Prioritization</p>
+<p class="p2">To support accurate risk prioritization, ARIANNA aggregates and correlates information from multiple vulnerability intelligence sources.</p>
+<p class="p2">The ARIANNA Pre-Triage &amp; Prioritization Engine is designed to support an efficient and scalable vulnerability management process by automatically pre-triaging identified vulnerabilities and prioritizing them according to risk level and exploitability criteria.<span class="Apple-converted-space"> </span></p>
+<p class="p2">Given the potentially large number of vulnerabilities associated with modern software and hardware supply chains, the pre-triage process enables organizations to focus their analysis efforts on the vulnerabilities that represent the highest security risk for the device under analysis.</p>
+<p class="p2">The objective of the pre-triage engine is therefore to reduce the operational effort required for manual vulnerability triage, while ensuring that vulnerabilities with the greatest potential impact are promptly analyzed and addressed.</p>
+<p class="p2">Vulnerability Classification</p>
+<p class="p8">The prioritization engine analyzes several security indicators associated to each vulnerability, including:</p>
+<ul class="ul1">
+  <li class="li12">Attack Vector</li>
+  <li class="li2">Known Exploited Vulnerabilities (KEV)</li>
+  <li class="li2">Exploit Maturity</li>
+  <li class="li2">Exploit Prediction Scoring System (EPSS)</li>
+  <li class="li13">Vulnerability Severity Scores</li>
+</ul>
+<p class="p2">Based on customer-specific configuration, the pre-triage engine automatically classifies identified vulnerabilities into two categories:</p>
+<ul class="ul1">
+  <li class="li2">High Priority: Vulnerabilities that are considered to present an immediate threat and therefore require prompt triage and analysis. These vulnerabilities should be assessed by the security team in order to determine a more accurate risk level and to define and implement the appropriate remediation or mitigation actions.</li>
+  <li class="li2">Low Priority: Vulnerabilities that are considered to present a lower or less immediate threat. For these vulnerabilities, detailed triage and remediation activities may be temporarily postponed, allowing the security team to focus on higher-priority issues.</li>
+</ul>
+<p class="p8">This classification mechanism helps organizations optimize resource allocation within the vulnerability management process.</p>
+<p class="p8">It is important to note that the ARIANNA Pre-Triage &amp; Prioritization Engin does not perform any automatic mitigation or remediation actions. It only provides decision-support information, while the final evaluation and risk acceptance decisions remain under the responsibility of the security team.</p>
+<p class="p2">Prioritization Criteria</p>
+<p class="p8">The ARIANNA Pre-Triage &amp; Prioritization Engine supports multiple prioritization strategies that can be configured according to the organization’s vulnerability management policy.</p>
+<p class="p2">Risk-Based Prioritization</p>
+<p class="p2">Vulnerabilities may be prioritized based on their initial risk level. The initial risk level is determined according to the severity score provided by the source that reported the vulnerability, such as public vulnerability databases or security advisories.</p>
+<p class="p2">A typical configuration consists of prioritizing only CRITICAL and HIGH-risk vulnerabilities for immediate triage and analysis.</p>
+<p class="p2">Following the triage process, the risk level can be reassessed and refined. This refined evaluation takes into account not only the characteristics of the vulnerability but also the specific context of the device, including:</p>
+<ul class="ul1">
+  <li class="li2">the operational environment in which the device is deployed</li>
+  <li class="li2">the assets and functionalities impacted</li>
+  <li class="li2">any existing mitigations or security controls already implemented in the system</li>
+</ul>
+<p class="p2">This contextual analysis allows the security team to determine a more accurate risk level and then to define the most appropriate vulnerability management strategy. Once the risk level has been reassessed and refined, a vulnerability may be reclassified as low priority. In such cases, corrective actions may be postponed or scheduled according to the organization’s risk management policy.</p>
+<p class="p2">Exploitability-Based Prioritization</p>
+<p class="p2">Vulnerabilities may also be prioritized based on their likelihood of exploitation.</p>
+<p class="p2">The pre-triage engine can automatically prioritize vulnerabilities that:</p>
+<ul class="ul1">
+  <li class="li2">Are present in the ARIANNA KEV catalogue (Known Exploited Vulnerabilities)</li>
+  <li class="li2">Show a high probability of exploitation in the near future, according to the EPSS (Exploit Prediction Scoring System)For example, vulnerabilities with EPSS scores above a defined threshold (e.g., EPSS &gt; 10%) may be prioritized for immediate triage.</li>
+  <li class="li2">Can realistically be exploited on the target device according to the attack vector</li>
+</ul>
+<p class="p2">The ARIANNA Known Exploited Vulnerabilities (KEV) catalogue aggregates vulnerabilities for which evidence of active exploitation exists.</p>
+<p class="p2">This catalogue includes vulnerabilities identified from multiple authoritative and intelligence sources, such as:</p>
+<ul class="ul1">
+  <li class="li2">Publicly reported vulnerabilities listed in the CISA Known Exploited Vulnerabilities (KEV) catalogue</li>
+  <li class="li2">Vulnerabilities that are actively exploited, as observed through canary systems or honeypot servers</li>
+  <li class="li2">Vulnerabilities with verified exploitation evidence referenced in the European Vulnerability Database (EUVD)</li>
+  <li class="li2">Vulnerabilities for which weaponized or verified exploits have been identified through ARIANNA intelligence sources</li>
+</ul>
+<p class="p2">By aggregating information from these sources, the catalogue provides enhanced visibility into vulnerabilities that are actively exploited or highly likely to be exploited in real-world environments.</p>
+<p class="p2">By aggregating multiple data sources, the ARIANNA KEV catalogue provides broader and faster coverage of actively exploited vulnerabilities compared to individual public databases.</p>
+<p class="p2">Benefits</p>
+<p class="p8">The ARIANNA Pre-Triage Engine &amp; Prioritization<span class="Apple-converted-space">  </span>provides several operational benefits:</p>
+<ul class="ul1">
+  <li class="li12">Reduced manual triage effort</li>
+  <li class="li2">Faster identification of high-risk vulnerabilities</li>
+  <li class="li2">Improved prioritization of remediation activities</li>
+  <li class="li2">Continuous monitoring of vulnerability intelligence sources</li>
+  <li class="li13">Lower operational costs associated with vulnerability management</li>
+</ul>
+<p class="p2">By automating the early stages of vulnerability prioritization, ARIANNA enables organizations to maintain an efficient, scalable, and proactive vulnerability management process.</p>
+<p class="p2">Automatic Notification</p>
+<p class="p2">When a vulnerability report is created, new High-priority vulnerabilities are notified by email to all users that can access the report, ensuring that the relevant stakeholders are promptly informed and can take the necessary actions.</p>
+<p class="p2">Advanced vulnerability &amp; component search engine</p>
+<p class="p2">An advanced search engine that enables users to identify and analyze components and vulnerabilities in a report.</p>
+<p class="p1"><br></p>
+<ul class="ul1">
+  <li class="li2">Component Filtering: Components within a Device Model can be filtered based on criteria such as type, status, or name, making it easier to quickly locate specific components.</li>
+  <li class="li2">Vulnerability Filtering: Vulnerabilities within a report can be filtered according to their associated attributes, allowing the security team to efficiently focus on relevant vulnerabilities during analysis and triage.</li>
+</ul>
+<p class="p2">Vulnerability Management Policy<span class="Apple-converted-space"> </span></p>
+<p class="p2">Users can ensure that vulnerabilities are addressed within the required remediation timeframes, whether defined by internal policies or by external regulations and standards.</p>
+<p class="p2">The remediation policy is based on the vulnerability risk level, ensuring that higher-risk vulnerabilities are resolved within shorter and stricter timeframes.</p>
+<p class="p2">The system also notifies users when a vulnerability is approaching its resolution deadline, enabling the security team to take timely action and maintain compliance with the defined policy.</p>
+<p class="p2">Reports for Auditing</p>
+<p class="p2">Security teams can export formal reports to demonstrate that a consistent and effective vulnerability management process is in place within the organization.</p>
+<p class="p2">Device Model reports (including SBOM and HBOM) and vulnerability reports can be exported with different levels of detail in widely adopted machine-readable formats, such as CycloneDX, SPDX, and VEX, enabling integration with other security and compliance tools.</p>
+<p class="p2">Reports can also be exported in human-readable formats, such as PDF, to support review, documentation, and sharing with stakeholders.</p>
+<p class="p1"><br></p>
+<p class="p2"></p>
+<p class="p2">Vulnerability &amp; Component databases</p>
+<p class="p2">ARIANNA maintains an internal vulnerability database that is updated daily by aggregating and consolidating data from multiple public vulnerability sources. In addition to this external data, some vulnerabilities and associated information are curated or created directly by the ARIANNA team to ensure accuracy and completeness.</p>
+<p class="p8">At present, ARIANNA daily imports vulnerabilities from the following public vulnerability databases:</p>
+<ul class="ul1">
+  <li class="li12"><b>NIST National Vulnerability Database (NVD)</b>: This is a comprehensive and widely used database maintained by the National Institute of Standards and Technology (NIST) in the United States. It provides detailed information about publicly disclosed vulnerabilities, including severity scores, descriptions, and references to other sources. The ARIANNA platform imports vulnerabilities from the NVD to ensure it has access to critical information about known security issues.</li>
+  <li class="li2"><b>Github Security Advisory (GHSA)</b>: is a standardized identifier system used by GitHub to catalog and track security vulnerabilities in open-source software packages. Each advisory receives a unique GHSA ID (e.g., GHSA-xxxx-xxxx-xxxx) and contains details about the affected versions, severity, and recommended fixes.</li>
+  <li class="li13"><b>CVE.org (MITRE)</b>: CVE (Common Vulnerabilities and Exposures) is a publicly available list of known cybersecurity vulnerabilities and exposures. Managed by MITRE, CVE provides a standardized identification system for vulnerabilities. ARIANNA imports vulnerabilities from CVE.org to align with this widely recognized standard for identifying and categorizing security issues.</li>
+</ul>
+<p class="p2">Each vulnerability source can identify vulnerability using different unique identifiers. For example:</p>
+<ul class="ul1">
+  <li class="li2">NIST NVD and CVE.org use CVE</li>
+  <li class="li2">GHSA use GHSA ID</li>
+</ul>
+<p class="p2">In case ARIANNA detects that two external identifiers are referring to the same vulnerability, the two identifiers are linked to the same vulnerability. It means that in ARIANNA DB there will be only one vulnerability with two different external identifiers.</p>
+<p class="p8">By importing vulnerabilities information from well-known and authoritative databases, ARIANNA ensures its internal vulnerability database remains comprehensive and up-to-date with the latest security information available to the broader security community.</p>
+<p class="p2">Vulnerability enrichment procedure</p>
+<p class="p8">In order to enhance the quality and comprehensiveness of the vulnerability report, ARIANNA implements a process of <b>enriching vulnerability data</b>. This is achieved by retrieving additional information from various trusted external sources (CISA KEV catalog, exploits databases, EPSS values).</p>
+<p class="p2">By importing vulnerabilities information from well-known and authoritative databases, ARIANNA ensures its internal vulnerability database remains comprehensive and up-to-date with the latest security information available to the broader security community.</p>
+<p class="p2">CISA KEV catalog</p>
+<p class="p2">CISA Known Exploited Vulnerabilities (KEV) are used as an authoritative source to identify vulnerabilities that are actively exploited in real-world attacks.</p>
+<p class="p2">By systematically retrieving all CVEs listed in the CISA KEV catalog, ARIANNA platform ensures immediate visibility into vulnerabilities that present a proven and ongoing threat, rather than a theoretical risk.</p>
+<p class="p2">Inclusion in the KEV list indicates that exploitation has been confirmed by government-backed intelligence and observed across multiple threat campaigns.</p>
+<p class="p2">Mapping internal vulnerability findings against the KEV catalog enables rapid prioritization of issues that require urgent remediation, mitigation, or compensating controls.</p>
+<p class="p2">This capability supports an exploit-first risk assessment model, where vulnerabilities with confirmed exploitation are elevated regardless of their original severity score.</p>
+<p class="p2">Leveraging CISA KEV data strengthens both operational security and regulatory alignment by demonstrating continuous monitoring of trusted threat-intelligence sources and timely response to vulnerabilities with demonstrated real-world impact.</p>
+<p class="p2">ExploitDB &amp; Metasploit</p>
+<p class="p8">ExploitDB and Metasploit are leveraged as complementary threat-intelligence sources to systematically retrieve and correlate all known exploits associated with identified CVEs.</p>
+<p class="p8">By ingesting ExploitDB records, we gain visibility into publicly disclosed, proof-of-concept, and weaponized exploits published by the security research community, providing concrete evidence that a vulnerability can be practically abused.</p>
+<p class="p8">Metasploit further strengthens this assessment by indicating whether an exploit has been operationalized into a reusable, automated attack module, significantly lowering the attacker’s effort and skill threshold.</p>
+<p class="p8">The association of CVEs with exploits from these repositories allows vulnerabilities to be evaluated not only on theoretical severity, but on real-world exploit availability and maturity.</p>
+<p class="p8">This approach supports an exploitability-driven prioritization model, enabling faster identification of vulnerabilities that pose an immediate and credible risk.</p>
+<p class="p8">As a result, remediation efforts can be focused on issues with demonstrated attack feasibility, improving both risk reduction effectiveness and regulatory defensibility.</p>
+<p class="p2">Exploit Prediction Scoring System (EPSS)</p>
+<p class="p14"><span class="s1"><b><i>The Exploit Prediction Scoring System (EPSS), managed by FIRST, is an open-source framework designed to estimate the probability (with a score from 0 to 1, or 0-100%) that a specific software vulnerability (CVE) will be actively exploited in the wild within a 30-day period. This score is updated daily and is a crucial tool for organizations, as it helps </i></b></span><span class="s2">you to</span><span class="s1"><b><i> properly prioritize patch management activities.</i></b><b><i></i></b></span></p>
+<p class="p2"></p>
+<p class="p2">Advanced topic</p>
+<p class="p2">CI/CD pipeline integration</p>
+<p class="p2">ARIANNA provides a set of powerful APIs that enable security teams to build automation and integrate vulnerability management into their development workflows.</p>
+<p class="p2">The ARIANNA API allows seamless integration of automated security checks within CI/CD pipelines by offering programmatic access to key vulnerability management functions.</p>
+<p class="p2">Through dedicated endpoints, pipelines can automatically create new Device Model versions, upload the information required to generate SBOMs, trigger the creation of new vulnerability reports, and retrieve the latest report for a specific Device Model version. The API also allows teams to filter and retrieve only high-priority vulnerabilities, enabling faster and more efficient security decision-making during the development process.</p>
+<p class="p2">Type of Users</p>
+<p class="p2">The ARIANNA platform distinguishes between two types of users, each with specific roles and permissions: System Administrator and Regular User.</p>
+<p class="p2">System Administrator</p>
+<p class="p2">The System Administrator role, typically assigned to ARIANNA personnel, is responsible for platform management and can perform administrative actions to support regular users and maintain the proper functioning of the system.</p>
+<p class="p2">Regular User</p>
+<p class="p2">The Regular User is the standard ARIANNA platform user. it can be assigned to one or more vulnerability management projects active on the platform with different roles.</p>
+<p class="p8">ARIANNA distinguishes between three roles for Regular Users, each with unique authorizations and permissions:</p>
+<ul class="ul1">
+  <li class="li2">Project Owner<span class="Apple-converted-space"> </span></li>
+  <li class="li2">Project Member</li>
+  <li class="li2">Project Observer</li>
+</ul>
+<p class="p8">This distinction ensures that each type of user has access only to the features necessary for their function, supporting a secure and well-organized platform environment.</p>
+<p class="p2">Project Owner</p>
+<p class="p8">This role has full administrative privileges within a vulnerability management project, including the ability to manage project settings, invite or remove users, assign roles, access vulnerability reports and actively take actions on identified vulnerabilities.</p>
+<p class="p2">Project Member</p>
+<p class="p8">This role has only access to vulnerability reports and can actively take actions on identified vulnerabilities, but does not have any administrative privileges like managing project settings and managing project users.</p>
+<p class="p2">Project Observer</p>
+<p class="p8">This role allows users to view the project and its information but does not grant the ability to make any changes to project configuration and project content.</p>
+<p class="p8">User lifecycle</p>
+<p class="p8">The ARIANNA platform provides a controlled process for user creation and user status management, ensuring secure and regulated access.</p>
+<p class="p2">User creation</p>
+<p class="p2">Only the System Administrator can create new user accounts through the platform’s administrative interface.</p>
+<p class="p2">To reduce the exposure of personal data, the account creation process requires only a minimal set of information, such as the username and the contact email.</p>
+<p class="p2">Once the account is created, the user information is stored in the ARIANNA database, a random password is automatically generated, and an email is sent to the user with the account credentials.</p>
+<p class="p2">User role management</p>
+<p class="p2">System Administrator can:</p>
+<ul class="ul1">
+  <li class="li2">assign Project Owner role to a Regular Users for all vulnerability management projects</li>
+  <li class="li2">assign Project Member role to a Regular Users for all vulnerability management projects</li>
+  <li class="li2">assign Project Observer role to a Regular Users for all vulnerability management projects</li>
+</ul>
+<p class="p2">Project Owner os be able to:</p>
+<ul class="ul1">
+  <li class="li2">assign Project Owner role to a Regular Users for the owned project</li>
+  <li class="li2">assign Project Member role to a Regular Users for the owned project</li>
+  <li class="li2">assign Project Observer role to a Regular Users for the owned project</li>
+</ul>
+<p class="p2">Project Member and Project Observer can’t manage Users roles in any conditions.</p>
+<p class="p2">User allowed actions</p>
+<table cellspacing="0" cellpadding="0" class="t1">
+  <tbody>
+    <tr>
+      <td valign="middle" class="td1">
+        <p class="p1"><br></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p15">ADMIN</p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p15">USER</p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td1">
+        <p class="p1"><br></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p1"><br></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p15">OWN</p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p15">MEM</p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p15">OBS</p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td1">
+        <p class="p16">Add user to ARIANNA platform</p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p1"><br></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p17"><br></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p17"><br></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p17"><br></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td1">
+        <p class="p16">Create project</p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p1"><br></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p17"><br></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p17"><br></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p17"><br></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td1">
+        <p class="p16">Activate/Deactivate project</p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p1"><br></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p17"><br></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p17"><br></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p17"><br></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td1">
+        <p class="p16">Add/Remove User from the list of Project Owners of a specific Project</p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p1"><br></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p15">*</p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p17"><br></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p17"><br></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td1">
+        <p class="p16">Add/Remove User from the list of Project Members of a specific Project</p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p1"><br></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p15">*</p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p17"><br></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p17"><br></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td1">
+        <p class="p16">Add/Remove User from the list of Project Observers of a specific Project</p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p1"><br></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p15">*</p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p17"><br></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p17"><br></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td1">
+        <p class="p16">Change policy &amp; Configure prioritization Engine</p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p1"><br></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p17"><br></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p17"><br></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p17"><br></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td1">
+        <p class="p16">Create new device model version</p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p1"><br></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p1"><br></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p1"><br></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p1"><br></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td1">
+        <p class="p16">Upload device model data</p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p1"><br></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p1"><br></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p1"><br></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p1"><br></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td1">
+        <p class="p16">Deactivate device model version monitoring</p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p1"><br></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p1"><br></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p1"><br></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p1"><br></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td1">
+        <p class="p16">Download report</p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p1"><br></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p1"><br></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p1"><br></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p1"><br></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td1">
+        <p class="p16">Access &amp; Navigate report - Device Model</p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p1"><br></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p1"><br></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p1"><br></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p1"><br></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td1">
+        <p class="p16">Access &amp; Navigate report - Vulnerabilities</p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p1"><br></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p1"><br></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p1"><br></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p1"><br></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td1">
+        <p class="p16">Access &amp; Navigate report - Vulnerabilities details</p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p1"><br></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p1"><br></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p1"><br></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p1"><br></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td1">
+        <p class="p16">Access &amp; Navigate report - Bookmarks</p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p1"><br></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p1"><br></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p1"><br></p>
+      </td>
+      <td valign="middle" class="td1">
+        <p class="p1"><br></p>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<p class="p18"><i>*Only for specific projects</i><i></i></p>
+<p class="p2">Password management</p>
+<p class="p8">Password strength rules are crucial for ensuring the security of user accounts in the ARIANNA system. These rules help protect against unauthorized access and potential breaches.<span class="Apple-converted-space"> </span></p>
+<p class="p8">Password strength rules</p>
+<p class="p8">Below are the required password strength rules for the ARIANNA users:</p>
+<ul class="ul1">
+  <li class="li2"><b>Minimum Length</b><ul class="ul1">
+    <li class="li2">Passwords must be at least 8 characters long. This ensures a basic level of complexity.</li>
+  </ul></li>
+  <li class="li2"><b>Maximum Length</b><ul class="ul1">
+    <li class="li2">Passwords should be no longer than 64 characters to prevent excessively long passwords that may complicate storage or processing.</li>
+  </ul></li>
+  <li class="li2"><b>Character Variety</b><ul class="ul1">
+    <li class="li2">Must include at least one uppercase letter (A-Z).</li>
+    <li class="li2">Must include at least one lowercase letter (a-z).</li>
+    <li class="li2">Must include at least one digit (0-9).</li>
+    <li class="li2">Must include at least one special character from the set (e.g., !, @, #, $, %, ^, &amp;, *, (, )).</li>
+  </ul></li>
+</ul>
+<p class="p8">Passwords that don’t meet the strength requirements are rejected during account creation or password change attempts.</p>
+<p class="p8">The system does not impose an expiration date on valid passwords.</p>
+<p class="p8">By enforcing these password strength rules, the ARIANNA platform can significantly improve the overall security of user accounts, making it harder for attackers to compromise accounts through weak or common passwords.</p>
+<p class="p2">Password recovery</p>
+<p class="p8">In case of forgotten passwords, users can initiate a password reset through a secure process that involves a verification code sent via email, to confirm the user's identity.</p>
+      </div>
     </article>
   </main>
 
+  <script>
+    (function() {
+      const root = document.getElementById('manual-content');
+      if (!root) return;
+
+      const chapterTitles = new Set([
+        'Introduction','Vulnerability Management Project','Basic Concepts','Getting Started','Features','Advanced topic','Type of Users','User lifecycle','Password management'
+      ]);
+      const subheadings = new Set([
+        'Device Model Management (HBOM + SBOM)','Continuous Vulnerability Monitoring','Vulnerability Management','Reporting and Security Insights',
+        'Vulnerability Management Process','Vulnerability Identification','Vulnerability Triage','Vulnerability Addressing','Vulnerability (Dis)Closure',
+        'Device Model','Processing Unit','Microcontroller Unit (MCU)','Microprocessor Unit (MPU)','Memory','Hardware Module','Secure Element (SE)','Stored information',
+        'Components','Types','Status','Group','Vulnerability','Device description','Device Model creation','Hardware components (HBOM)','Software components (SBOM)',
+        'Software Composition Analysis (SCA) tools','Execution Model','Benefits','Environment-Specific Analysis Tools','CI/CD Integration',
+        'Device Model lifecycle management','SBOM & HBOM creation','Device Model update','Continuous Vulnerability monitoring',
+        'Vulnerability Management Process support','Allowed Actions','Notes','Risk','Status change','Pre-Triage & Automatic Prioritization','Vulnerability Classification','Prioritization Criteria',
+        'CI/CD pipeline integration','System Administrator','Regular User','Project Owner','Project Member','Project Observer','User creation','User role management',
+        'Password strength rules','Password recovery'
+      ]);
+      const removeIfExact = new Set(['ARIANNA User Manual']);
+
+      const slug = (txt) => txt.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
+
+      root.querySelectorAll('p').forEach((p) => {
+        const text = (p.textContent || '').replace(/ /g, ' ').trim();
+        if (!text) { p.remove(); return; }
+        if (removeIfExact.has(text)) { p.remove(); return; }
+        if (/^Copyright ©/.test(text) || /^This document is private and confidential/.test(text)) { p.classList.add('title-note'); }
+
+        if (chapterTitles.has(text)) {
+          const h2 = document.createElement('h2');
+          h2.className = 'section-title';
+          h2.textContent = text;
+          h2.id = slug(text);
+          p.replaceWith(h2);
+          return;
+        }
+
+        if (subheadings.has(text) || p.classList.contains('p7')) {
+          const h3 = document.createElement('h3');
+          h3.textContent = text;
+          p.replaceWith(h3);
+          return;
+        }
+      });
+
+      const toc = document.getElementById('toc-links');
+      if (toc) {
+        root.querySelectorAll('h2.section-title').forEach((h2) => {
+          if (!h2.id) h2.id = slug(h2.textContent || 'section');
+          const a = document.createElement('a');
+          a.href = '#' + h2.id;
+          a.textContent = h2.textContent || '';
+          toc.appendChild(a);
+        });
+      }
+    })();
+  </script>
   <script src="site-shell.js"></script>
 </body>
 </html>

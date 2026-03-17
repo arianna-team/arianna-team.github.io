@@ -23,6 +23,28 @@
     }
   }
 
+  function initGlobalFont() {
+    if (!document.getElementById("global-font-spinnaker-link")) {
+      var link = document.createElement("link");
+      link.id = "global-font-spinnaker-link";
+      link.rel = "stylesheet";
+      link.href = "https://fonts.googleapis.com/css2?family=Spinnaker&display=swap";
+      document.head.appendChild(link);
+    }
+
+    if (!document.getElementById("global-font-spinnaker-style")) {
+      var style = document.createElement("style");
+      style.id = "global-font-spinnaker-style";
+      style.textContent = [
+        "body,",
+        "body *:not(code):not(pre):not(kbd):not(samp) {",
+        "  font-family: \"Spinnaker\", Arial, Helvetica, sans-serif !important;",
+        "}"
+      ].join("\n");
+      document.head.appendChild(style);
+    }
+  }
+
   function initSharedFooter() {
     var footer = document.querySelector("footer");
     if (!footer) return;
@@ -386,6 +408,7 @@
   }
 
   onReady(function () {
+    initGlobalFont();
     initSharedFooter();
     initNewsletterOverlay();
     initMobileNav();
