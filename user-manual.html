@@ -1,0 +1,345 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ARIANNA User Manual</title>
+  <meta name="description" content="ARIANNA user manual with indexed navigation for vulnerability management workflows, Device Model lifecycle, reporting, and platform operations." />
+  <link rel="canonical" href="https://ariannateam.ai/user-manual.html" />
+  <style>
+    :root {
+      --ink: #0f1e2b;
+      --muted: #5b6b7a;
+      --accent: #1aa5a7;
+      --bg: #f4f7f8;
+      --card: #ffffff;
+      --line: #e2e8ec;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: "Sora", "Avenir Next", "Helvetica Neue", Arial, sans-serif;
+      color: var(--ink);
+      background: var(--bg);
+    }
+    a { color: inherit; text-decoration: none; }
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 22px 8vw;
+      position: sticky;
+      top: 0;
+      background: rgba(244, 247, 248, 0.9);
+      backdrop-filter: blur(8px);
+      z-index: 20;
+      border-bottom: 1px solid rgba(226, 232, 236, 0.6);
+    }
+    .logo { height: 88px; width: auto; }
+    .logo img { height: 88px; width: auto; display: block; }
+    .nav-links {
+      display: flex;
+      gap: 26px;
+      font-size: 14px;
+      color: var(--muted);
+    }
+    .nav-links a:hover { color: #3fbab7; }
+    .nav-cta {
+      min-height: 44px;
+      padding: 12px 20px;
+      border-radius: 999px;
+      background: #f28a1a;
+      color: #fff;
+      font-size: 14px;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .page {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 30px 8vw 80px;
+      display: grid;
+      grid-template-columns: minmax(240px, 300px) minmax(0, 1fr);
+      gap: 28px;
+      align-items: start;
+    }
+    .toc {
+      position: sticky;
+      top: 120px;
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 16px;
+      max-height: calc(100vh - 150px);
+      overflow: auto;
+    }
+    .toc h2 {
+      margin: 0 0 10px;
+      font-size: 14px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    .toc a {
+      display: block;
+      font-size: 14px;
+      line-height: 1.4;
+      color: var(--muted);
+      padding: 6px 8px;
+      border-radius: 10px;
+    }
+    .toc a:hover {
+      background: rgba(26, 165, 167, 0.12);
+      color: var(--ink);
+    }
+    .manual {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: clamp(20px, 3vw, 36px);
+      box-shadow: 0 18px 36px rgba(15, 30, 43, 0.08);
+    }
+    .kicker {
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+    h1 {
+      font-family: "Merriweather", "Times New Roman", serif;
+      font-size: clamp(28px, 4vw, 46px);
+      line-height: 1.15;
+      margin: 10px 0 8px;
+    }
+    .meta {
+      margin: 0 0 22px;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.6;
+    }
+    h2 {
+      font-family: "Merriweather", "Times New Roman", serif;
+      font-size: clamp(22px, 3vw, 34px);
+      margin: 30px 0 10px;
+      scroll-margin-top: 110px;
+    }
+    h3 {
+      margin: 20px 0 8px;
+      font-size: 18px;
+      scroll-margin-top: 110px;
+    }
+    p {
+      margin: 0 0 14px;
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.75;
+    }
+    ul, ol {
+      margin: 0 0 16px 20px;
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.75;
+    }
+    .inline-ref {
+      color: var(--accent);
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+    .small {
+      font-size: 14px;
+      color: var(--muted);
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 12px 0 20px;
+      font-size: 14px;
+    }
+    th, td {
+      border: 1px solid var(--line);
+      padding: 10px;
+      text-align: left;
+      vertical-align: top;
+    }
+    th { background: #f8fbfc; color: var(--ink); }
+    @media (max-width: 980px) {
+      .page {
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+      .toc {
+        position: static;
+        max-height: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div id="nutshell-boot-384033"></div>
+  <script>
+    (function(n,u,t){n[u]=n[u]||function(){(n[u].q=n[u].q||[]).push(arguments)}}(window,'Nutsheller'));
+    Nutsheller('boot', {instance: '384033', authToken: 'Sc-ahUXFJgom3dQWJ3HR5NXWCgwxLu6S6WpS9d2JtHA.2', target: 'nutshell-boot-384033'});
+  </script>
+  <script type="module" src="https://growth.ariannateam.ai/nutsheller-esm.js"></script>
+
+  <nav class="nav">
+    <a class="logo" aria-label="ARIANNA" href="index.html"><img src="images/Arianna_logo_RGB.svg" alt="ARIANNA logo" /></a>
+    <div class="nav-links">
+      <a href="index.html">Platform</a>
+      <a href="industries.html">Industries</a>
+      <a href="compliance.html">Compliance</a>
+      <a href="resources.html">Resources</a>
+      <a href="partners.html">Partners</a>
+    </div>
+    <div style="display:flex;gap:12px;flex-wrap:wrap;align-items:center;">
+      <a class="nav-cta" href="book-a-demo.html">Book a free Demo</a>
+      <a class="nav-cta" href="free-trial.html">Start a free Trial</a>
+    </div>
+  </nav>
+
+  <main class="page">
+    <aside class="toc" aria-label="Manual index">
+      <h2>Index</h2>
+      <a href="#introduction">Introduction</a>
+      <a href="#project">Vulnerability Management Project</a>
+      <a href="#vm-process">Vulnerability Management Process</a>
+      <a href="#device-model">Device Model</a>
+      <a href="#processing-units">Processing Units</a>
+      <a href="#components">Components and Groups</a>
+      <a href="#getting-started">Getting Started</a>
+      <a href="#sca-tools">SCA Tools</a>
+      <a href="#reporting">Vulnerability Reporting</a>
+      <a href="#lifecycle">Device Model Lifecycle</a>
+      <a href="#triage">Triage and Prioritization</a>
+      <a href="#policy">Policy and Deadlines</a>
+      <a href="#exports">Exports and Auditing</a>
+      <a href="#integrations">CI/CD Integration</a>
+      <a href="#users">Users and Roles</a>
+      <a href="#security">Password and Access Security</a>
+      <a href="#references">References</a>
+    </aside>
+
+    <article class="manual">
+      <div class="kicker">Product Documentation</div>
+      <h1>ARIANNA User Manual</h1>
+      <p class="meta">Revision v2.0.0 · March 6, 2026 · Security Pattern s.r.l. · Confidential (NDA)</p>
+
+      <h2 id="introduction">Introduction</h2>
+      <p>ARIANNA supports device manufacturers with an efficient and scalable vulnerability management process across the full product lifecycle. The platform combines <a class="inline-ref" href="#device-model">Device Model Management</a>, <a class="inline-ref" href="#reporting">continuous vulnerability monitoring and reporting</a>, and <a class="inline-ref" href="#triage">workflow-based triage and prioritization</a>.</p>
+      <p>Core capabilities include:</p>
+      <ul>
+        <li>HBOM + SBOM modeling for hardware and software visibility.</li>
+        <li>Daily correlation with vulnerability intelligence sources.</li>
+        <li>End-to-end status tracking from discovery to closure/disclosure.</li>
+        <li>Audit-ready evidence and exportable reports.</li>
+      </ul>
+
+      <h2 id="project">Vulnerability Management Project</h2>
+      <p>A Vulnerability Management Project is the operational container for one product/device/system. It allows teams to create Device Models, review vulnerability reports, perform triage, update risk and status, and track remediation over time.</p>
+      <p>Projects are designed for continuous collaboration across security, engineering, and compliance stakeholders.</p>
+
+      <h2 id="vm-process">Vulnerability Management Process</h2>
+      <h3>1. Identification</h3>
+      <p>Collect newly disclosed vulnerabilities from monitored sources and map them to relevant components.</p>
+      <h3>2. Triage</h3>
+      <p>Assess applicability, device-context risk, and remediation priority. Outcomes include applicable, not applicable, or accepted risk.</p>
+      <h3>3. Addressing</h3>
+      <p>Apply updates, patches, removals, or mitigations depending on feasibility and operational impact.</p>
+      <h3>4. Closure and Disclosure</h3>
+      <p>Finalize status, preserve action traceability, and communicate required information internally/externally.</p>
+
+      <h2 id="device-model">Device Model</h2>
+      <p>The Device Model is the full component inventory (HBOM + SBOM), organized by Processing Units and Groups. ARIANNA emphasizes hardware context because exploitability and remediation options can depend on architecture, interfaces, and update mechanisms.</p>
+      <p>See also <a class="inline-ref" href="#lifecycle">Device Model lifecycle management</a>.</p>
+
+      <h2 id="processing-units">Processing Units</h2>
+      <p>A Processing Unit (PU) is a logical hardware block (MCU, MPU, memory, secure element, hardware module) used to structure component and vulnerability analysis.</p>
+      <p>Each PU should include: name, description, type, system type, vendor/part number, interfaces, and component set.</p>
+
+      <h2 id="components">Components and Groups</h2>
+      <p>Components represent monitored hardware or software items and are the basis for vulnerability correlation.</p>
+      <p>Groups aggregate components by layer/function (hardware, firmware, OS, application) to simplify triage and reporting.</p>
+      <table>
+        <thead>
+          <tr><th>Component Type</th><th>Label</th><th>Usage</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>device</td><td>HW</td><td>Hardware elements and ROM code</td></tr>
+          <tr><td>firmware</td><td>FW</td><td>Third-party firmware binaries</td></tr>
+          <tr><td>library</td><td>LIB</td><td>Libraries and third-party applications</td></tr>
+          <tr><td>application</td><td>APP</td><td>Customer applications</td></tr>
+          <tr><td>operating-system</td><td>OS</td><td>Kernel and operating system layer</td></tr>
+        </tbody>
+      </table>
+
+      <h2 id="getting-started">Getting Started</h2>
+      <h3>Device Description (initial)</h3>
+      <p>Identify all PUs and document execution environments and interfaces. This stage seeds HBOM generation and later vulnerability context.</p>
+      <h3>Device Model Creation (per release)</h3>
+      <p>HBOM typically stays stable unless hardware changes. SBOM is updated for each firmware/software release. ARIANNA tools assist accurate SBOM extraction and normalization.</p>
+
+      <h2 id="sca-tools">Software Composition Analysis (SCA) Tools</h2>
+      <p>ARIANNA provides environment-specific SCA scripts (Python/Bash/PowerShell) that run in build/dev environments and output component data in CSV for platform upload.</p>
+      <ul>
+        <li>No source code disclosure required.</li>
+        <li>No reverse engineering required.</li>
+        <li>No agent installation on target device.</li>
+      </ul>
+      <p>Supported environments include OS distributions, application stacks (.NET/Python/PHP/JavaScript), MCU SDKs, and cloud/container contexts.</p>
+
+      <h2 id="reporting">Vulnerability Reporting</h2>
+      <p>ARIANNA generates daily reports and enriches each vulnerability with severity, exploitability, KEV, EPSS, CWE, and lifecycle status.</p>
+      <p>Report sections include:</p>
+      <ul>
+        <li>Overview and statistics (open/closed trends, risk trends, deadlines).</li>
+        <li>Device Model view (component-centric analysis).</li>
+        <li>Vulnerability list (workflow-centric view).</li>
+        <li>Highlights and prioritization cues.</li>
+      </ul>
+
+      <h2 id="lifecycle">Device Model Lifecycle</h2>
+      <p>ARIANNA tracks multiple model versions over time. On new releases, component changes can trigger new vulnerability notifications or automatic closures where affected components are updated/removed.</p>
+      <p>Recommended versioning strategies: semantic versioning or calendar versioning.</p>
+
+      <h2 id="triage">Triage and Prioritization</h2>
+      <p>The pre-triage engine supports high/low priority classification based on configured policy criteria:</p>
+      <ul>
+        <li>Risk-based: severity/risk class.</li>
+        <li>Exploitability-based: KEV membership, EPSS thresholds, exploit maturity, attack vector realism.</li>
+      </ul>
+      <p>ARIANNA supports decision-making, but final risk acceptance and remediation choices remain with the security team.</p>
+
+      <h2 id="policy">Policy and Deadlines</h2>
+      <p>Organizations can configure remediation timeframes by risk level and monitor Expiring/Expired items. This enables policy enforcement and supports regulatory compliance objectives.</p>
+
+      <h2 id="exports">Exports and Auditing</h2>
+      <p>Reports can be exported in machine-readable formats (CycloneDX, SPDX, VEX) and human-readable PDF outputs for audits, customer communication, and internal governance.</p>
+
+      <h2 id="integrations">CI/CD Integration</h2>
+      <p>Through REST APIs, pipelines can create Device Model versions, upload SCA outputs, trigger report generation, and retrieve filtered high-priority vulnerabilities.</p>
+
+      <h2 id="users">Users and Roles</h2>
+      <p>ARIANNA defines System Administrator and Regular User roles (Project Owner, Member, Observer) with scoped permissions for administration, triage actions, and read-only access.</p>
+
+      <h2 id="security">Password and Access Security</h2>
+      <p>Password policy includes minimum complexity requirements (length, uppercase/lowercase/digit/special character). Password recovery is handled with email verification and secure reset flow.</p>
+
+      <h2 id="references">References</h2>
+      <p class="small">Use these references while reading triage and reporting sections:</p>
+      <ul>
+        <li><a class="inline-ref" href="https://nvd.nist.gov/" target="_blank" rel="noopener noreferrer">NIST National Vulnerability Database (NVD)</a></li>
+        <li><a class="inline-ref" href="https://www.cve.org/" target="_blank" rel="noopener noreferrer">CVE Program (MITRE)</a></li>
+        <li><a class="inline-ref" href="https://github.com/advisories" target="_blank" rel="noopener noreferrer">GitHub Security Advisories</a></li>
+        <li><a class="inline-ref" href="https://www.cisa.gov/known-exploited-vulnerabilities-catalog" target="_blank" rel="noopener noreferrer">CISA KEV Catalog</a></li>
+        <li><a class="inline-ref" href="https://www.first.org/epss/" target="_blank" rel="noopener noreferrer">FIRST EPSS</a></li>
+      </ul>
+    </article>
+  </main>
+
+  <script src="site-shell.js"></script>
+</body>
+</html>
