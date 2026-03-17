@@ -16,17 +16,39 @@
     .logo, .logo img { height:88px; width:auto; display:block; }
     .nav-links { display:flex; gap:26px; font-size:14px; color:var(--muted); }
     .nav-links a:hover { color:#3fbab7; }
+    .nav-dropdown { position:relative; padding-bottom:8px; }
+    .nav-dropdown-toggle { display:inline-flex; align-items:center; gap:6px; }
+    .nav-dropdown-caret { font-size:10px; line-height:1; }
+    .nav-dropdown-menu {
+      position:absolute;
+      top:100%;
+      left:0;
+      min-width:160px;
+      padding:8px 0;
+      border-radius:12px;
+      border:1px solid rgba(226,232,236,0.9);
+      background:#ffffff;
+      box-shadow:0 12px 24px rgba(15,30,43,0.12);
+      display:none;
+      flex-direction:column;
+      z-index:20;
+    }
+    .nav-dropdown-menu a { display:block; padding:8px 14px; white-space:nowrap; }
+    .nav-dropdown:hover .nav-dropdown-menu,
+    .nav-dropdown:focus-within .nav-dropdown-menu,
+    .nav-dropdown.is-open .nav-dropdown-menu { display:flex; }
     .nav-cta { min-height:44px; padding:12px 20px; border-radius:999px; background:#f28a1a; color:#fff; font-size:14px; font-weight:600; display:inline-flex; align-items:center; justify-content:center; }
     .page { max-width:1460px; margin:0 auto; padding:30px 8vw 80px; display:grid; grid-template-columns:minmax(230px,300px) minmax(0,1fr); gap:28px; align-items:start; }
     .toc { position:sticky; top:120px; background:var(--card); border:1px solid var(--line); border-radius:16px; padding:16px; max-height:calc(100vh - 150px); overflow:auto; }
     .toc h2 { margin:0 0 10px; font-size:14px; letter-spacing:.08em; text-transform:uppercase; color:var(--muted); }
     .toc a { display:block; font-size:14px; line-height:1.35; color:var(--muted); padding:6px 8px; border-radius:10px; }
+    .toc a.subchapter { font-size:13px; padding-left:20px; opacity:0.95; }
     .toc a:hover { background:rgba(26,165,167,.12); color:var(--ink); }
     .manual { background:var(--card); border:1px solid var(--line); border-radius:20px; padding:clamp(20px,3vw,36px); box-shadow:0 18px 36px rgba(15,30,43,.08); }
     .kicker { font-size:12px; font-weight:600; letter-spacing:.2em; text-transform:uppercase; color:var(--accent); }
-    h1 { font-family:"Merriweather","Times New Roman",serif; font-size:clamp(28px,4vw,46px); line-height:1.15; margin:10px 0 8px; }
+    h1 { font-family:"Merriweather","Iowan Old Style","Times New Roman",serif; font-size:clamp(28px,4vw,46px); line-height:1.15; margin:10px 0 8px; }
     .meta { margin:0 0 22px; color:var(--muted); font-size:14px; line-height:1.6; }
-    .manual h2.section-title { font-family:"Merriweather","Times New Roman",serif; font-size:clamp(22px,3vw,34px); margin:30px 0 10px; scroll-margin-top:110px; }
+    .manual h2.section-title { font-family:"Merriweather","Iowan Old Style","Times New Roman",serif; font-size:clamp(22px,3vw,34px); margin:30px 0 10px; scroll-margin-top:110px; }
     .manual h3 { margin:18px 0 6px; font-size:18px; line-height:1.4; color:var(--ink); scroll-margin-top:110px; }
     .docx-body p { margin:0 0 12px; font-size:15px; line-height:1.7; color:var(--muted); }
     .docx-body p.title-note { font-size:13px; color:var(--muted); }
@@ -36,6 +58,12 @@
     .docx-body td, .docx-body th { border:1px solid var(--line); padding:10px; text-align:left; vertical-align:top; }
     .docx-body b, .docx-body strong { color:var(--ink); }
     @media (max-width:980px) { .page { grid-template-columns:1fr; gap:16px; } .toc { position:static; max-height:none; } }
+    @media (max-width:720px) {
+      .nav { flex-wrap:wrap; row-gap:10px; }
+      .nav-links { display:flex; width:100%; flex-wrap:wrap; gap:14px; order:3; }
+      .nav-dropdown { padding-bottom:0; }
+      .nav-dropdown-menu { position:static; margin-top:6px; box-shadow:none; }
+    }
   </style>
 </head>
 <body>
@@ -49,11 +77,57 @@
   <nav class="nav">
     <a class="logo" aria-label="ARIANNA" href="index.html"><img src="images/Arianna_logo_RGB.svg" alt="ARIANNA logo" /></a>
     <div class="nav-links">
-      <a href="index.html">Platform</a>
-      <a href="industries.html">Industries</a>
-      <a href="compliance.html">Compliance</a>
-      <a href="resources.html">Resources</a>
-      <a href="partners.html">Partners</a>
+      <div class="nav-dropdown">
+        <a class="nav-dropdown-toggle" href="index.html">Platform <span class="nav-dropdown-caret" aria-hidden="true">v</span></a>
+        <div class="nav-dropdown-menu">
+          <a href="index.html#features">Features</a>
+          <a href="index.html#platform">Devices</a>
+          <a href="vulnerability-management-use-cases.html">Vulnerability use cases</a>
+          <a href="index.html#coverage">SBOM support</a>
+        </div>
+      </div>
+      <div class="nav-dropdown">
+        <a class="nav-dropdown-toggle" href="industries.html">Industries <span class="nav-dropdown-caret" aria-hidden="true">v</span></a>
+        <div class="nav-dropdown-menu">
+          <a href="industries.html#automotive">Automotive</a>
+          <a href="industries.html#industrial">Industrial Automation</a>
+          <a href="industries.html#medical">Medical Devices</a>
+          <a href="industries.html#consumer">Consumer Electronics &amp; IoT</a>
+          <a href="industries.html#defense-aerospace">Defense &amp; Aerospace</a>
+          <a href="industries.html#energy-utilities">Energy &amp; Utilities</a>
+          <a href="industries.html#transportation-logistics">Transportation &amp; Logistics</a>
+        </div>
+      </div>
+      <div class="nav-dropdown">
+        <a class="nav-dropdown-toggle" href="resources.html">Resources <span class="nav-dropdown-caret" aria-hidden="true">v</span></a>
+        <div class="nav-dropdown-menu">
+          <a href="resources.html#news">News</a>
+          <a href="resources.html#blog-posts">Blog Posts</a>
+          <a href="resources.html#newsletters">Newsletters</a>
+          <a href="resources.html#articles">Articles</a>
+          <a href="support.html">Support</a>
+          <a href="resources.html#faq">FAQ</a>
+        </div>
+      </div>
+      <div class="nav-dropdown">
+        <a class="nav-dropdown-toggle" href="compliance.html">Compliance <span class="nav-dropdown-caret" aria-hidden="true">v</span></a>
+        <div class="nav-dropdown-menu">
+          <a href="compliance.html">Overview</a>
+          <a href="compliance.html#capabilities">Capabilities</a>
+          <a href="compliance.html#standards">Standards</a>
+          <a href="compliance.html#cra">CRA</a>
+          <a href="compliance.html#red">RED</a>
+        </div>
+      </div>
+      <div class="nav-dropdown">
+        <a class="nav-dropdown-toggle" href="partners.html">Partners <span class="nav-dropdown-caret" aria-hidden="true">v</span></a>
+        <div class="nav-dropdown-menu">
+          <a href="partners.html#partners">Overview</a>
+          <a href="partners.html#implementation-partners">Implementation Partners</a>
+          <a href="partners.html#reseller-partners">Reseller Partners</a>
+          <a href="partners.html#contact">Become a Partner</a>
+        </div>
+      </div>
     </div>
     <div style="display:flex;gap:12px;flex-wrap:wrap;align-items:center;">
       <a class="nav-cta" href="book-a-demo.html">Book a free Demo</a>
@@ -70,7 +144,6 @@
     <article class="manual">
       <div class="kicker">Product Documentation</div>
       <h1>ARIANNA User Manual</h1>
-      <p class="meta">Imported from ARIANNA manual - 2.0.0.docx</p>
       <div id="manual-content" class="docx-body">
 <p class="p2">ARIANNA User Manual</p>
 <p class="p3"><br></p>
@@ -1303,6 +1376,19 @@ At this stage, all discovered vulnerabilities are collected from different sourc
           a.href = '#' + h2.id;
           a.textContent = h2.textContent || '';
           toc.appendChild(a);
+
+          let next = h2.nextElementSibling;
+          while (next && !(next.tagName === 'H2' && next.classList.contains('section-title'))) {
+            if (next.tagName === 'H3') {
+              if (!next.id) next.id = slug((h2.textContent || 'section') + '-' + (next.textContent || 'subchapter'));
+              const sub = document.createElement('a');
+              sub.href = '#' + next.id;
+              sub.textContent = next.textContent || '';
+              sub.className = 'subchapter';
+              toc.appendChild(sub);
+            }
+            next = next.nextElementSibling;
+          }
         });
       }
     })();
