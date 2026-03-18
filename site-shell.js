@@ -28,6 +28,50 @@
     document.head.appendChild(stylesheet);
   }
 
+  function ensureUppercaseTitles() {
+    if (document.getElementById("site-title-case-styles")) return;
+
+    var style = document.createElement("style");
+    style.id = "site-title-case-styles";
+    style.textContent = [
+      "h1,",
+      "h2,",
+      "h3,",
+      ".footer-brand-title {",
+      "  text-transform: uppercase;",
+      "}",
+      "h1 {",
+      "  font-weight: 500;",
+      "}",
+      "h2,",
+      "h3,",
+      ".footer-brand-title {",
+      "  font-weight: 400;",
+      "}"
+    ].join("\n");
+    document.head.appendChild(style);
+  }
+
+  function ensureBorderlessButtons() {
+    if (document.getElementById("site-button-reset-styles")) return;
+
+    var style = document.createElement("style");
+    style.id = "site-button-reset-styles";
+    style.textContent = [
+      ".nav-cta,",
+      ".button,",
+      ".footer-cta,",
+      ".cta a,",
+      ".form-card button,",
+      ".newsletter-form button,",
+      "button {",
+      "  border: none !important;",
+      "  border-color: transparent !important;",
+      "}"
+    ].join("\n");
+    document.head.appendChild(style);
+  }
+
   function safeGet(key) {
     try {
       return window.localStorage.getItem(key);
@@ -409,6 +453,8 @@
 
   onReady(function () {
     ensureMontserratFont();
+    ensureUppercaseTitles();
+    ensureBorderlessButtons();
     initSharedFooter();
     initNewsletterOverlay();
     initMobileNav();
