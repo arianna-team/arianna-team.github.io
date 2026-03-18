@@ -43,7 +43,7 @@
     * { box-sizing: border-box; }
     body {
       margin: 0;
-      font-family: "Sora", "Avenir Next", "Helvetica Neue", Arial, sans-serif;
+      font-family: "Montserrat", "Avenir Next", "Helvetica Neue", Arial, sans-serif;
       color: var(--ink);
       background: var(--bg);
     }
@@ -159,23 +159,37 @@
       color: var(--accent);
     }
     h1 {
-      font-family: "Merriweather", "Iowan Old Style", "Times New Roman", serif;
+      font-family: "Montserrat", "Avenir Next", "Helvetica Neue", Arial, sans-serif;
       font-weight: 700;
       font-size: clamp(30px, 4vw, 50px);
       line-height: 1.1;
       margin: 18px 0 16px;
     }
     h2 {
-      font-family: "Merriweather", "Iowan Old Style", "Times New Roman", serif;
+      font-family: "Montserrat", "Avenir Next", "Helvetica Neue", Arial, sans-serif;
       font-size: clamp(24px, 3vw, 36px);
       margin: 0 0 10px;
     }
     h3 { margin: 14px 0 8px; font-size: 18px; }
+    .feature-card h3 {
+      font-size: clamp(20px, 2vw, 28px);
+      margin: 18px 0 12px;
+    }
     p {
       font-size: 16px;
       color: var(--muted);
       line-height: 1.7;
       margin: 0 0 18px;
+    }
+    ol {
+      margin: 0 0 18px 22px;
+      padding: 0;
+      color: var(--muted);
+    }
+    ol li {
+      color: var(--muted);
+      line-height: 1.7;
+      margin: 0 0 8px;
     }
     .section {
       padding: 50px 8vw;
@@ -249,7 +263,13 @@
     .logo-row {
       padding: 20px 8vw 10px;
       color: var(--muted);
-      font-size: 13px;
+      font-size: 16px;
+      line-height: 1.5;
+      font-weight: 500;
+    }
+    .featured-partner-title {
+      padding: 0 8vw;
+      margin: 0 0 12px;
     }
     .logos {
       display: grid;
@@ -267,11 +287,12 @@
       color: #7b8b98;
     }
     .logo-pill img {
-      max-height: 34px;
+      max-height: 52px;
       max-width: 100%;
       width: auto;
       display: inline-block;
       vertical-align: middle;
+      height: auto;
     }
     .cta {
       background: #0b1823;
@@ -630,11 +651,11 @@
     </div>
   </section>
 
-  <div class="logo-row">Featured partner organisation working with ARIANNA</div>
+  <h2 class="featured-partner-title">Featured partner</h2>
   <div class="logos">
     <div class="logo-pill">
       <a href="https://www.securitypattern.com/" target="_blank" rel="noopener noreferrer">
-        <img src="https://static.wixstatic.com/media/7f112e_35b9131546a74fb48ef8add5830f91ea~mv2.png" alt="Security Pattern logo" loading="lazy" decoding="async" />
+        <img src="images/security-pattern-logo.png" alt="Security Pattern logo" loading="eager" fetchpriority="high" decoding="sync" />
       </a>
     </div>
   </div>

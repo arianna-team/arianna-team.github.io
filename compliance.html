@@ -49,7 +49,7 @@
     * { box-sizing: border-box; }
     body {
       margin: 0;
-      font-family: "Sora", "Avenir Next", "Helvetica Neue", Arial, sans-serif;
+      font-family: "Montserrat", "Avenir Next", "Helvetica Neue", Arial, sans-serif;
       color: var(--ink);
       background: var(--bg);
     }
@@ -165,14 +165,14 @@
       color: var(--accent);
     }
     h1 {
-      font-family: "Merriweather", "Iowan Old Style", "Times New Roman", serif;
+      font-family: "Montserrat", "Avenir Next", "Helvetica Neue", Arial, sans-serif;
       font-weight: 700;
       font-size: clamp(30px, 4vw, 50px);
       line-height: 1.1;
       margin: 18px 0 16px;
     }
     h2 {
-      font-family: "Merriweather", "Iowan Old Style", "Times New Roman", serif;
+      font-family: "Montserrat", "Avenir Next", "Helvetica Neue", Arial, sans-serif;
       font-size: clamp(24px, 3vw, 36px);
       margin: 0 0 10px;
     }
@@ -188,7 +188,7 @@
     }
     .feature-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 22px;
     }
     .feature-card {
@@ -348,7 +348,15 @@
       cursor: pointer;
       color: rgba(255, 255, 255, 0.7);
     }
+    @media (max-width: 1100px) and (min-width: 721px) {
+      .feature-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
     @media (max-width: 720px) {
+      .feature-grid {
+        grid-template-columns: 1fr;
+      }
       .nav {
         flex-wrap: wrap;
         row-gap: 10px;
@@ -483,7 +491,7 @@
   <section class="hero">
     <div>
       <div class="eyebrow" data-cms-key="hero_eyebrow">Compliance</div>
-      <h1 data-cms-key="hero_title">Compliance reporting without the scramble.</h1>
+      <h1 data-cms-key="hero_title">Compliance reporting without the scramble</h1>
       <p data-cms-key="hero_body_1">Generate audit-ready artifacts across SBOM, HBOM, and VEX while keeping vulnerability management in one place.</p>
       <p data-cms-key="hero_body_2">ARIANNA supports device teams as regulations evolve — from EU CRA to sector-specific requirements.</p>
     </div>

@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-CONTENT_DIR="/Users/janjager/projects/Arianna-site/content"
+CONTENT_DIR="./content"
 
 if [ ! -d "$CONTENT_DIR" ]; then
   echo "Content directory not found: $CONTENT_DIR" >&2

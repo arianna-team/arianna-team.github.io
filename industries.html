@@ -43,7 +43,7 @@
     * { box-sizing: border-box; }
     body {
       margin: 0;
-      font-family: "Sora", "Avenir Next", "Helvetica Neue", Arial, sans-serif;
+      font-family: "Montserrat", "Avenir Next", "Helvetica Neue", Arial, sans-serif;
       color: var(--ink);
       background: var(--bg);
     }
@@ -159,20 +159,24 @@
       color: var(--accent);
     }
     h1 {
-      font-family: "Merriweather", "Iowan Old Style", "Times New Roman", serif;
+      font-family: "Montserrat", "Avenir Next", "Helvetica Neue", Arial, sans-serif;
       font-weight: 700;
       font-size: clamp(30px, 4vw, 50px);
       line-height: 1.1;
       margin: 18px 0 16px;
     }
     h2 {
-      font-family: "Merriweather", "Iowan Old Style", "Times New Roman", serif;
+      font-family: "Montserrat", "Avenir Next", "Helvetica Neue", Arial, sans-serif;
       font-size: clamp(24px, 3vw, 36px);
       margin: 0 0 10px;
     }
     h3 {
       margin: 14px 0 8px;
       font-size: 18px;
+    }
+    .card h2 {
+      font-size: clamp(20px, 2vw, 28px);
+      margin: 18px 0 12px;
     }
     p {
       font-size: 16px;
@@ -185,7 +189,7 @@
     }
     .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 22px;
     }
     .card {
@@ -201,8 +205,19 @@
     .icon {
       width: 44px;
       height: 44px;
-      border-radius: 12px;
-      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .icon svg,
+    .icon .lucide {
+      width: 44px;
+      height: 44px;
+      stroke: var(--accent);
+      fill: none;
+      stroke-width: 1.9;
+      stroke-linecap: round;
+      stroke-linejoin: round;
     }
     .list {
       margin: 10px 0 0;
@@ -347,7 +362,15 @@
       cursor: pointer;
       color: rgba(255, 255, 255, 0.7);
     }
+    @media (max-width: 1100px) and (min-width: 721px) {
+      .grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
     @media (max-width: 720px) {
+      .grid {
+        grid-template-columns: 1fr;
+      }
       .nav {
         flex-wrap: wrap;
         row-gap: 10px;
@@ -489,7 +512,7 @@
       <p data-cms-key="hero_body_2">Designed to help device manufacturers identify, triage, mitigate, and report vulnerabilities with compliance support for major industry standards.</p>
     </div>
     <div class="card">
-      <div class="icon"></div>
+      <div class="icon" aria-hidden="true"><i data-lucide="shield-check"></i></div>
       <h3 data-cms-key="hero_card_title">Regulatory-ready workflows</h3>
       <p data-cms-key="hero_card_body">Align vulnerability management with post-market surveillance, SBOM reporting, and global compliance programs.</p>
     </div>
@@ -498,7 +521,7 @@
   <section class="section section-divider">
     <div class="grid">
       <div class="card" id="automotive">
-        <div class="icon"></div>
+        <div class="icon icon-automotive" aria-hidden="true"><i data-lucide="car-front"></i></div>
         <h2 data-cms-key="auto_title">Automotive</h2>
         <p data-cms-key="auto_body">The automotive sector faces strict cybersecurity requirements for connected and autonomous vehicles. ARIANNA enables manufacturers and tier suppliers to build complete SBOMs/HBOMs, continuously monitor vulnerabilities, and manage them according to defined policies throughout the product lifecycle.</p>
         <h3>How ARIANNA is Used</h3>
@@ -515,7 +538,7 @@
       </div>
 
       <div class="card" id="industrial">
-        <div class="icon"></div>
+        <div class="icon icon-industrial" aria-hidden="true"><i data-lucide="factory"></i></div>
         <h2 data-cms-key="industrial_title">Industrial Automation</h2>
         <p data-cms-key="industrial_body">Industrial automation systems such as PLCs, SCADA, and control networks require robust vulnerability management and compliance with operational technology cybersecurity standards. ARIANNA’s platform helps by providing precise component inventories and continual risk assessment.</p>
         <h3>How ARIANNA is Used</h3>
@@ -532,7 +555,7 @@
       </div>
 
       <div class="card" id="medical">
-        <div class="icon"></div>
+        <div class="icon icon-medical" aria-hidden="true"><i data-lucide="heart-pulse"></i></div>
         <h2 data-cms-key="medical_title">Medical Devices</h2>
         <p data-cms-key="medical_body">Medical device manufacturers must ensure device security and comply with regional medical regulations where cybersecurity evidence (such as SBOMs) plays a critical role in submissions. ARIANNA supports the inventory, vulnerability management, and reporting that regulators expect.</p>
         <h3>How ARIANNA is Used</h3>
@@ -550,7 +573,7 @@
       </div>
 
       <div class="card" id="consumer">
-        <div class="icon"></div>
+        <div class="icon icon-iot" aria-hidden="true"><i data-lucide="radio-tower"></i></div>
         <h2 id="iot" data-cms-key="iot_title">Consumer Electronics &amp; IoT</h2>
         <p data-cms-key="iot_body">Connected consumer devices must adhere to best practices and emerging consumer cybersecurity guidelines. ARIANNA can generate and maintain component inventories and provide compliance artifacts for regulators and partners alike.</p>
         <h3>How ARIANNA is Used</h3>
@@ -568,7 +591,7 @@
       </div>
 
       <div class="card" id="defense-aerospace">
-        <div class="icon"></div>
+        <div class="icon icon-defense" aria-hidden="true"><i data-lucide="shield"></i></div>
         <h2 data-cms-key="defense_title">Defense &amp; Aerospace</h2>
         <p data-cms-key="defense_body">Defense and aerospace systems require strict supply chain control, long lifecycle maintenance, and vulnerability traceability across software and hardware components. ARIANNA helps teams maintain trusted inventories and continuously assess risk for mission-critical products.</p>
         <h3>How ARIANNA is Used</h3>
@@ -586,7 +609,7 @@
       </div>
 
       <div class="card" id="energy-utilities">
-        <div class="icon"></div>
+        <div class="icon icon-energy" aria-hidden="true"><i data-lucide="zap"></i></div>
         <h2 data-cms-key="energy_title">Energy &amp; Utilities</h2>
         <p data-cms-key="energy_body">Energy generation, transmission, and utility infrastructure depend on resilient operational technology and connected control systems. ARIANNA helps operators and suppliers maintain component transparency and continuously manage vulnerabilities across critical assets.</p>
         <h3>How ARIANNA is Used</h3>
@@ -604,7 +627,7 @@
       </div>
 
       <div class="card" id="transportation-logistics">
-        <div class="icon"></div>
+        <div class="icon icon-transport" aria-hidden="true"><i data-lucide="truck"></i></div>
         <h2 data-cms-key="transport_title">Transportation &amp; Logistics</h2>
         <p data-cms-key="transport_body">Transportation and logistics platforms rely on connected vehicles, fleet systems, and digital infrastructure that must stay secure and available. ARIANNA enables operators and suppliers to manage software and hardware exposure across distributed transport environments.</p>
         <h3>How ARIANNA is Used</h3>
@@ -622,7 +645,7 @@
       </div>
 
       <div class="card">
-        <div class="icon"></div>
+        <div class="icon icon-cross" aria-hidden="true"><i data-lucide="blocks"></i></div>
         <h2 data-cms-key="cross_title">Cross-Industry Compliance &amp; Reporting</h2>
         <p data-cms-key="cross_body">Across all industries, ARIANNA accelerates compliance preparedness and demonstrates sound cybersecurity practices by combining automated SBOM/HBOM generation with continuous vulnerability management.</p>
         <h3>Key Compliance Capabilities</h3>
@@ -677,6 +700,7 @@
       </div>
     </div>
   </div>
+  <script src="https://unpkg.com/lucide@latest"></script>
   <script src="site-shell.js"></script>
   <script>
     (function () {
@@ -689,6 +713,10 @@
           });
         })
         .catch(function () {});
+
+      if (window.lucide && typeof window.lucide.createIcons === "function") {
+        window.lucide.createIcons();
+      }
     })();
   </script>
 </body>
