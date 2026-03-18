@@ -407,6 +407,7 @@
       '  <div class="footer-contact">',
       '    <h4><a href="contact.html">Contact</a></h4>',
       '    <p><a href="support.html">Support</a></p>',
+      '    <p><a href="https://www.linkedin.com/company/arianna-vulnerability-management/" target="_blank" rel="noopener noreferrer">LinkedIn</a></p>',
       '    <p><a href="mailto:hello@ariannateam.ai">hello@ariannateam.ai</a></p>',
       '    <p><a href="tel:+393313482583">+39 331 3482583</a></p>',
       '  </div>',
