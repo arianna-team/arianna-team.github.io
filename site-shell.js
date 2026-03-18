@@ -7,6 +7,27 @@
     }
   }
 
+  function ensureMontserratFont() {
+    if (document.getElementById("site-font-preconnect")) return;
+
+    var preconnect = document.createElement("link");
+    preconnect.id = "site-font-preconnect";
+    preconnect.rel = "preconnect";
+    preconnect.href = "https://fonts.googleapis.com";
+    document.head.appendChild(preconnect);
+
+    var preconnectStatic = document.createElement("link");
+    preconnectStatic.rel = "preconnect";
+    preconnectStatic.href = "https://fonts.gstatic.com";
+    preconnectStatic.crossOrigin = "anonymous";
+    document.head.appendChild(preconnectStatic);
+
+    var stylesheet = document.createElement("link");
+    stylesheet.rel = "stylesheet";
+    stylesheet.href = "https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap";
+    document.head.appendChild(stylesheet);
+  }
+
   function safeGet(key) {
     try {
       return window.localStorage.getItem(key);
@@ -67,7 +88,7 @@
         "footer.site-footer .footer-brand-title {",
         "  margin: 0;",
         "  color: #ffffff;",
-        "  font-family: \"Merriweather\", \"Iowan Old Style\", \"Times New Roman\", serif;",
+        "  font-family: \"Montserrat\", \"Avenir Next\", \"Helvetica Neue\", Arial, sans-serif;",
         "  font-size: clamp(24px, 3vw, 36px);",
         "  line-height: 1.1;",
         "}",
@@ -387,6 +408,7 @@
   }
 
   onReady(function () {
+    ensureMontserratFont();
     initSharedFooter();
     initNewsletterOverlay();
     initMobileNav();
