@@ -72,6 +72,163 @@
     document.head.appendChild(style);
   }
 
+  function ensureSharedCtaStyles() {
+    if (document.getElementById("site-cta-styles")) return;
+
+    var style = document.createElement("style");
+    style.id = "site-cta-styles";
+    style.textContent = [
+      ".cta.site-cta {",
+      "  background: transparent;",
+      "  color: var(--ink, #0f1e2b);",
+      "  padding: 48px 8vw 36px;",
+      "  display: grid;",
+      "  gap: 20px;",
+      "  justify-items: center;",
+      "  text-align: center;",
+      "  border-top: 1px solid var(--line, #e2e8ec);",
+      "}",
+      ".cta.site-cta p {",
+      "  margin: 0;",
+      "  color: var(--muted, #5b6b7a);",
+      "}",
+      ".cta.site-cta .cta-copy {",
+      "  display: grid;",
+      "  gap: 12px;",
+      "  max-width: 720px;",
+      "}",
+      ".cta.site-cta .footer-brand-title {",
+      "  margin: 0;",
+      "  color: var(--ink, #0f1e2b);",
+      "}",
+      ".cta.site-cta .cta-actions {",
+      "  display: flex;",
+      "  gap: 12px;",
+      "  flex-wrap: wrap;",
+      "  justify-content: center;",
+      "}",
+      ".cta.site-cta a {",
+      "  display: inline-flex;",
+      "  align-items: center;",
+      "  justify-content: center;",
+      "  min-height: 44px;",
+      "  padding: 12px 20px;",
+      "  border-radius: 999px;",
+      "  background: #f28a1a;",
+      "  color: #ffffff;",
+      "  font-weight: 600;",
+      "  font-size: 14px;",
+      "  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease, color 0.2s ease;",
+      "}",
+      ".cta.site-cta a:hover {",
+      "  background: #1aa5a7;",
+      "  color: #ffffff;",
+      "  box-shadow: 0 12px 24px rgba(15, 30, 43, 0.18);",
+      "  transform: translateY(-1px);",
+      "}",
+      "@media (max-width: 720px) {",
+      "  .cta.site-cta {",
+      "    padding: 32px 8vw 24px;",
+      "  }",
+      "}"
+    ].join("\n");
+    document.head.appendChild(style);
+  }
+
+  function ensureShowcaseStyles() {
+    if (document.getElementById("site-showcase-styles")) return;
+
+    var style = document.createElement("style");
+    style.id = "site-showcase-styles";
+    style.textContent = [
+      ".site-showcase {",
+      "  padding: 24px 8vw 56px;",
+      "  background: transparent;",
+      "}",
+      ".site-showcase-inner {",
+      "  padding: 0;",
+      "}",
+      ".site-showcase-controls {",
+      "  display: flex;",
+      "  gap: 10px;",
+      "  justify-content: flex-end;",
+      "  margin-bottom: 18px;",
+      "}",
+      ".site-showcase-button {",
+      "  width: 42px;",
+      "  height: 42px;",
+      "  border-radius: 999px;",
+      "  background: #f4f7f8;",
+      "  color: var(--ink, #0f1e2b);",
+      "  display: inline-flex;",
+      "  align-items: center;",
+      "  justify-content: center;",
+      "  cursor: pointer;",
+      "  transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;",
+      "}",
+      ".site-showcase-button:hover {",
+      "  background: #1aa5a7;",
+      "  color: #ffffff;",
+      "  transform: translateY(-1px);",
+      "}",
+      ".site-showcase-viewport {",
+      "  overflow: hidden;",
+      "}",
+      ".site-showcase-track {",
+      "  display: flex;",
+      "  gap: 16px;",
+      "  transition: transform 0.35s ease;",
+      "  will-change: transform;",
+      "}",
+      ".site-showcase-slide {",
+      "  min-width: calc((100% - 32px) / 3);",
+      "}",
+      ".site-showcase-frame {",
+      "  border-radius: 22px;",
+      "  overflow: hidden;",
+      "  border: 1px solid rgba(15, 30, 43, 0.08);",
+      "  background: linear-gradient(180deg, #f8fbfc 0%, #edf2f3 100%);",
+      "}",
+      ".site-showcase-frame img {",
+      "  display: block;",
+      "  width: 100%;",
+      "  height: auto;",
+      "}",
+      ".site-showcase-dots {",
+      "  display: flex;",
+      "  justify-content: center;",
+      "  gap: 8px;",
+      "  margin-top: 16px;",
+      "}",
+      ".site-showcase-dot {",
+      "  width: 10px;",
+      "  height: 10px;",
+      "  border-radius: 999px;",
+      "  background: rgba(15, 30, 43, 0.18);",
+      "  cursor: pointer;",
+      "  transition: background 0.2s ease, transform 0.2s ease;",
+      "}",
+      ".site-showcase-dot.is-active {",
+      "  background: #f28a1a;",
+      "  transform: scale(1.1);",
+      "}",
+      "@media (max-width: 720px) {",
+      "  .site-showcase {",
+      "    padding: 16px 8vw 40px;",
+      "  }",
+      "  .site-showcase-slide {",
+      "    min-width: 100%;",
+      "  }",
+      "}",
+      "@media (max-width: 1024px) and (min-width: 721px) {",
+      "  .site-showcase-slide {",
+      "    min-width: calc((100% - 16px) / 2);",
+      "  }",
+      "}"
+    ].join("\n");
+    document.head.appendChild(style);
+  }
+
   function safeGet(key) {
     try {
       return window.localStorage.getItem(key);
@@ -107,38 +264,17 @@
         "  justify-content: start;",
         "  align-items: flex-start;",
         "}",
-        "footer.site-footer.has-cta {",
-        "  margin-top: 0;",
-        "  padding-top: 24px;",
-        "}",
         "footer.site-footer .footer-brand {",
         "  margin-right: 0;",
         "  padding-top: 10px;",
         "}",
         "footer.site-footer .footer-right {",
         "  display: grid;",
-        "  grid-template-columns: auto auto auto auto;",
+        "  grid-template-columns: auto auto;",
         "  gap: 28px;",
         "  justify-content: start;",
         "  justify-items: start;",
         "  align-items: start;",
-        "}",
-        "footer.site-footer .footer-copy {",
-        "  display: grid;",
-        "  gap: 10px;",
-        "  padding-top: 10px;",
-        "  max-width: 420px;",
-        "}",
-        "footer.site-footer .footer-brand-title {",
-        "  margin: 0;",
-        "  color: #ffffff;",
-        "  font-family: \"Montserrat\", \"Avenir Next\", \"Helvetica Neue\", Arial, sans-serif;",
-        "  font-size: clamp(24px, 3vw, 36px);",
-        "  line-height: 1.1;",
-        "}",
-        "footer.site-footer .footer-brand-body {",
-        "  margin: 0;",
-        "  max-width: 360px;",
         "}",
         "footer.site-footer .footer-brand-link {",
         "  display: inline-flex;",
@@ -156,32 +292,6 @@
         "}",
         "footer.site-footer .footer-brand-link svg .cls-1 {",
         "  fill: #3fbab7;",
-        "}",
-        "footer.site-footer .footer-actions {",
-        "  display: grid;",
-        "  gap: 10px;",
-        "  align-content: start;",
-        "  padding-top: 10px;",
-        "}",
-        "footer.site-footer .footer-actions .footer-cta {",
-        "  display: inline-flex;",
-        "  align-items: center;",
-        "  justify-content: center;",
-        "  min-width: 132px;",
-        "  padding: 12px 20px;",
-        "  border-radius: 999px;",
-        "  background: #3fbab7;",
-        "  color: #0f1e2b;",
-        "  font-weight: 600;",
-        "  font-size: 14px;",
-        "  line-height: 1;",
-        "  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease, color 0.2s ease;",
-        "}",
-        "footer.site-footer .footer-actions .footer-cta:hover {",
-        "  background: #f28a1a;",
-        "  color: #ffffff;",
-        "  box-shadow: 0 12px 24px rgba(15, 30, 43, 0.18);",
-        "  transform: translateY(-1px);",
         "}",
         "footer.site-footer h4 {",
         "  color: white;",
@@ -208,10 +318,6 @@
         "  justify-self: start;",
         "  align-self: start;",
         "}",
-        ".cta > div:last-child {",
-        "  padding-top: 0;",
-        "  margin-top: 0;",
-        "}",
         "@media (max-width: 720px) {",
         "  footer.site-footer {",
         "    display: grid;",
@@ -219,10 +325,6 @@
         "    justify-content: start;",
         "    gap: 16px;",
         "    padding: 32px 8vw 40px;",
-        "  }",
-        "  footer.site-footer.has-cta {",
-        "    margin-top: 0;",
-        "    padding-top: 24px;",
         "  }",
         "  footer.site-footer .footer-brand {",
         "    margin-right: 0;",
@@ -232,25 +334,11 @@
         "    grid-template-columns: 1fr;",
         "    gap: 14px;",
         "  }",
-        "  footer.site-footer .footer-copy {",
-        "    display: grid;",
-        "    gap: 10px;",
-        "    padding-top: 0;",
-        "  }",
-        "  footer.site-footer .footer-actions {",
-        "    grid-auto-flow: row;",
-        "    justify-items: start;",
-        "    padding-top: 0;",
-        "  }",
         "  footer.site-footer .footer-company,",
         "  footer.site-footer .footer-contact {",
         "    grid-column: auto;",
         "    justify-self: start;",
         "    align-self: start;",
-        "  }",
-        "  .cta > div:last-child {",
-        "    padding-top: 0;",
-        "    margin-top: 0;",
         "  }",
         "}"
       ].join("\n");
@@ -276,18 +364,7 @@
           };
         });
       }
-      ctaSection.style.display = "none";
     }
-
-    if (ctaSection) {
-      footer.classList.add("has-cta");
-    } else {
-      footer.classList.remove("has-cta");
-    }
-
-    var footerActionsHtml = ctaLinks.map(function (link) {
-      return '  <a class="footer-cta" href="' + link.href + '">' + link.text + "</a>";
-    }).join("\n");
 
     footer.innerHTML = [
       '<div class="footer-brand">',
@@ -315,13 +392,6 @@
       '  </a>',
       '</div>',
       '<div class="footer-right">',
-      '  <div class="footer-copy">',
-      '    <p class="footer-brand-title">See ARIANNA in action</p>',
-      '    <p class="footer-brand-body">Book a demo or Trial to explore vulnerability management workflows for your industry.</p>',
-      '  </div>',
-      '  <div class="footer-actions">',
-      footerActionsHtml,
-      '  </div>',
       '  <div class="footer-company">',
       '    <h4><a href="company.html">Company</a></h4>',
       '    <p><a href="company.html#about">About ARIANNA</a></p>',
@@ -337,6 +407,150 @@
       '  </div>',
       '</div>'
     ].join("\n");
+
+    ensureSharedCtaStyles();
+
+    if (!ctaSection) {
+      ctaSection = document.createElement("section");
+      ctaSection.className = "cta";
+      footer.parentNode.insertBefore(ctaSection, footer);
+    }
+
+    ctaSection.classList.add("site-cta");
+    ctaSection.innerHTML = [
+      '<div class="cta-copy">',
+      '  <h2 class="footer-brand-title">See ARIANNA in action</h2>',
+      '  <p class="cta-body">Book a demo or Trial to explore vulnerability management workflows for your industry.</p>',
+      '</div>',
+      '<div class="cta-actions">',
+      ctaLinks.map(function (link) {
+        return '  <a href="' + link.href + '">' + link.text + "</a>";
+      }).join("\n"),
+      '</div>'
+    ].join("\n");
+  }
+
+  function initShowcaseCarousel() {
+    var footer = document.querySelector("footer");
+    if (!footer) return;
+
+    ensureShowcaseStyles();
+
+    var imagePaths = [
+      "images/ARIANNA_mockup-1_hires.png",
+      "images/ARIANNA_mockup-2_hires.png",
+      "images/ARIANNA_mockup-3_hires.png",
+      "images/ARIANNA_mockup-4_hires.png"
+    ];
+
+    var showcase = document.querySelector(".site-showcase");
+    if (!showcase) {
+      showcase = document.createElement("section");
+      showcase.className = "site-showcase";
+      footer.parentNode.insertBefore(showcase, footer);
+    }
+
+    showcase.innerHTML = [
+      '<div class="site-showcase-inner">',
+      '  <div class="site-showcase-controls">',
+      '    <button class="site-showcase-button" type="button" aria-label="Previous slide">&#8592;</button>',
+      '    <button class="site-showcase-button" type="button" aria-label="Next slide">&#8594;</button>',
+      '  </div>',
+      '  <div class="site-showcase-viewport">',
+      '    <div class="site-showcase-track">',
+      imagePaths.map(function (path, index) {
+        return [
+          '      <div class="site-showcase-slide" data-slide-index="' + index + '">',
+          '        <div class="site-showcase-frame">',
+          '          <img src="' + path + '" alt="ARIANNA platform screenshot ' + (index + 1) + '" loading="lazy" />',
+          "        </div>",
+          "      </div>"
+        ].join("\n");
+      }).join("\n"),
+      "    </div>",
+      "  </div>",
+      '  <div class="site-showcase-dots">',
+      imagePaths.map(function (_, index) {
+        return '    <button class="site-showcase-dot' + (index === 0 ? " is-active" : "") + '" type="button" aria-label="Go to slide ' + (index + 1) + '" data-dot-index="' + index + '"></button>';
+      }).join("\n"),
+      "  </div>",
+      "</div>"
+    ].join("\n");
+
+    var track = showcase.querySelector(".site-showcase-track");
+    var prevButton = showcase.querySelector('.site-showcase-button[aria-label="Previous slide"]');
+    var nextButton = showcase.querySelector('.site-showcase-button[aria-label="Next slide"]');
+    var dots = Array.prototype.slice.call(showcase.querySelectorAll(".site-showcase-dot"));
+    var currentIndex = 0;
+    var timerId = null;
+
+    function getVisibleSlides() {
+      if (window.matchMedia("(max-width: 720px)").matches) return 1;
+      if (window.matchMedia("(max-width: 1024px)").matches) return 2;
+      return 3;
+    }
+
+    function getMaxIndex() {
+      return Math.max(0, imagePaths.length - getVisibleSlides());
+    }
+
+    function render(index) {
+      var maxIndex = getMaxIndex();
+      if (index < 0) {
+        currentIndex = maxIndex;
+      } else if (index > maxIndex) {
+        currentIndex = 0;
+      } else {
+        currentIndex = index;
+      }
+
+      var slide = showcase.querySelector(".site-showcase-slide");
+      var step = slide ? slide.getBoundingClientRect().width + 16 : 0;
+      track.style.transform = "translateX(" + (currentIndex * -step) + "px)";
+      dots.forEach(function (dot, dotIndex) {
+        dot.style.display = dotIndex <= maxIndex ? "block" : "none";
+        dot.classList.toggle("is-active", dotIndex === currentIndex);
+      });
+    }
+
+    function restartTimer() {
+      if (timerId) window.clearInterval(timerId);
+      timerId = window.setInterval(function () {
+        render(currentIndex + 1);
+      }, 4500);
+    }
+
+    prevButton.addEventListener("click", function () {
+      render(currentIndex - 1);
+      restartTimer();
+    });
+
+    nextButton.addEventListener("click", function () {
+      render(currentIndex + 1);
+      restartTimer();
+    });
+
+    dots.forEach(function (dot) {
+      dot.addEventListener("click", function () {
+        render(Math.min(Number(dot.getAttribute("data-dot-index") || 0), getMaxIndex()));
+        restartTimer();
+      });
+    });
+
+    showcase.addEventListener("mouseenter", function () {
+      if (timerId) window.clearInterval(timerId);
+    });
+
+    showcase.addEventListener("mouseleave", function () {
+      restartTimer();
+    });
+
+    window.addEventListener("resize", function () {
+      render(Math.min(currentIndex, getMaxIndex()));
+    });
+
+    render(0);
+    restartTimer();
   }
 
   function initNewsletterOverlay() {
@@ -456,6 +670,7 @@
     ensureUppercaseTitles();
     ensureBorderlessButtons();
     initSharedFooter();
+    initShowcaseCarousel();
     initNewsletterOverlay();
     initMobileNav();
   });
