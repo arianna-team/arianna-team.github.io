@@ -188,7 +188,7 @@
     }
     .feature-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 22px;
     }
     .feature-card {
@@ -348,7 +348,15 @@
       cursor: pointer;
       color: rgba(255, 255, 255, 0.7);
     }
+    @media (max-width: 1100px) and (min-width: 721px) {
+      .feature-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
     @media (max-width: 720px) {
+      .feature-grid {
+        grid-template-columns: 1fr;
+      }
       .nav {
         flex-wrap: wrap;
         row-gap: 10px;
@@ -483,7 +491,7 @@
   <section class="hero">
     <div>
       <div class="eyebrow" data-cms-key="hero_eyebrow">Compliance</div>
-      <h1 data-cms-key="hero_title">Compliance reporting without the scramble.</h1>
+      <h1 data-cms-key="hero_title">Compliance reporting without the scramble</h1>
       <p data-cms-key="hero_body_1">Generate audit-ready artifacts across SBOM, HBOM, and VEX while keeping vulnerability management in one place.</p>
       <p data-cms-key="hero_body_2">ARIANNA supports device teams as regulations evolve — from EU CRA to sector-specific requirements.</p>
     </div>
