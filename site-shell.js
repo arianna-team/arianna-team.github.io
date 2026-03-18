@@ -262,6 +262,7 @@
       '    <p><a href="company.html#about">About ARIANNA</a></p>',
       '    <p><a href="company.html#careers">Careers</a></p>',
       '    <p><a href="resources.html">Resources</a></p>',
+      '    <p><a href="privacy.html">Privacy &amp; GDPR</a></p>',
       '  </div>',
       '  <div class="footer-contact">',
       '    <h4><a href="contact.html">Contact</a></h4>',
