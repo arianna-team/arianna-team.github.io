@@ -72,6 +72,236 @@
     document.head.appendChild(style);
   }
 
+  function ensureSharedNavStyles() {
+    if (document.getElementById("site-nav-styles")) return;
+
+    var style = document.createElement("style");
+    style.id = "site-nav-styles";
+    style.textContent = [
+      ".nav {",
+      "  display: flex;",
+      "  align-items: center;",
+      "  justify-content: space-between;",
+      "  padding: 22px 8vw;",
+      "  position: sticky;",
+      "  top: 0;",
+      "  background: rgba(244, 247, 248, 0.9);",
+      "  backdrop-filter: blur(8px);",
+      "  z-index: 10;",
+      "  border-bottom: 1px solid rgba(226, 232, 236, 0.6);",
+      "}",
+      ".nav-cta {",
+      "  padding: 10px 18px;",
+      "  background: #f28a1a;",
+      "  color: #ffffff;",
+      "  border-radius: 999px;",
+      "  font-size: 13px;",
+      "  font-weight: 600;",
+      "  min-height: 44px;",
+      "  display: inline-flex;",
+      "  align-items: center;",
+      "  justify-content: center;",
+      "  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;",
+      "}",
+      ".nav-cta:hover {",
+      "  background: #3fbab7;",
+      "  box-shadow: 0 12px 24px rgba(15, 30, 43, 0.18);",
+      "  transform: translateY(-1px);",
+      "}",
+      ".nav .logo img,",
+      ".nav .logo svg {",
+      "  height: 88px;",
+      "  width: auto;",
+      "  display: block;",
+      "}",
+      ".nav-links {",
+      "  display: flex;",
+      "  gap: 26px;",
+      "  font-size: 14px;",
+      "  letter-spacing: 0.02em;",
+      "  color: var(--muted, #5b6b7a);",
+      "}",
+      ".nav-links a {",
+      "  transition: color 0.2s ease;",
+      "}",
+      ".nav-links a:hover,",
+      ".nav-links a:focus-visible,",
+      ".nav-links a:active {",
+      "  color: #3fbab7;",
+      "}",
+      ".nav-dropdown {",
+      "  position: relative;",
+      "  padding-bottom: 8px;",
+      "}",
+      ".nav-dropdown-toggle {",
+      "  display: inline-flex;",
+      "  align-items: center;",
+      "  gap: 6px;",
+      "}",
+      ".nav-dropdown-caret {",
+      "  font-size: 10px;",
+      "  line-height: 1;",
+      "}",
+      ".nav-dropdown-menu {",
+      "  position: absolute;",
+      "  top: 100%;",
+      "  left: 0;",
+      "  min-width: 160px;",
+      "  padding: 8px 0;",
+      "  border-radius: 12px;",
+      "  border: 1px solid rgba(226, 232, 236, 0.9);",
+      "  background: #ffffff;",
+      "  box-shadow: 0 12px 24px rgba(15, 30, 43, 0.12);",
+      "  display: none;",
+      "  flex-direction: column;",
+      "  gap: 0;",
+      "  z-index: 20;",
+      "}",
+      ".nav-dropdown-menu a {",
+      "  display: block;",
+      "  padding: 8px 14px;",
+      "  white-space: nowrap;",
+      "}",
+      ".nav-dropdown:hover .nav-dropdown-menu,",
+      ".nav-dropdown:focus-within .nav-dropdown-menu,",
+      ".nav-dropdown.is-open .nav-dropdown-menu {",
+      "  display: flex;",
+      "}",
+      "@media (max-width: 720px) {",
+      "  .nav {",
+      "    flex-wrap: wrap;",
+      "    row-gap: 10px;",
+      "  }",
+      "  .nav-links {",
+      "    width: 100%;",
+      "    flex-wrap: wrap;",
+      "    gap: 14px;",
+      "    order: 3;",
+      "  }",
+      "  .nav-dropdown {",
+      "    width: 100%;",
+      "    padding-bottom: 0;",
+      "  }",
+      "  .nav-dropdown-menu {",
+      "    position: static;",
+      "    margin-top: 6px;",
+      "    box-shadow: none;",
+      "    min-width: 0;",
+      "  }",
+      "  .nav-cta {",
+      "    margin-left: auto;",
+      "  }",
+      "}"
+    ].join("\n");
+    document.head.appendChild(style);
+  }
+
+  function getSharedNavMarkup() {
+    var isHomePage = /(?:^|\/)index\.html$/.test(window.location.pathname) || /\/$/.test(window.location.pathname);
+    var platformHref = isHomePage ? "#platform" : "index.html";
+
+    return [
+      '<a class="logo" aria-label="ARIANNA" href="index.html">',
+      '  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 206.8 67.1" role="img" aria-label="ARIANNA logo">',
+      '    <defs>',
+      '      <style>',
+      '        .cls-1 { fill: #3fbab7; }',
+      '      </style>',
+      '    </defs>',
+      '    <g>',
+      '      <g id="Laag_1">',
+      '        <polygon points="162.1 20.4 159.4 20.4 159.4 31.2 147.7 20.5 147.7 37 150.4 37 150.4 26.3 162.1 36.9 162.1 20.4"/>',
+      '        <path d="M197.8,25.8l2.9,6.3h-5.9l3-6.3ZM189.3,37h2.9l1.3-2.7h8.5l1.3,2.7h2.9l-8.4-16.5-8.4,16.5Z"/>',
+      '        <path d="M136.5,32h-5.9l3-6.3,3,6.3ZM125.1,37h2.9l1.3-2.7h8.5l1.3,2.7h2.9l-8.4-16.5-8.5,16.5Z"/>',
+      '        <polygon points="183.6 20.4 181 20.4 181 31.2 169.3 20.5 169.3 37 172 37 172 26.3 183.6 36.9 183.6 20.4"/>',
+      '        <path d="M98.7,22.7h4.8c.6,0,1.2.1,1.6.4.4.2.7.6.9.9.2.3.3.7.4,1.1,0,.4,0,.7,0,1,0,.5,0,1-.3,1.4-.2.4-.4.7-.7,1-.3.3-.6.5-1,.6-.4.1-.7.2-1,.2h-4.8v-6.5ZM102.6,31.6c.7.9,1.3,1.9,2,2.8.6.9,1.3,1.7,1.9,2.6h3.1c-1.3-1.8-2.6-3.5-3.9-5.3l-.3-.3.4-.2c1-.4,1.8-1.1,2.5-2,.6-.9.9-2,.9-3.2s-.1-1.6-.4-2.3c-.3-.7-.7-1.3-1.1-1.8-.5-.5-1.1-.9-1.8-1.2-.7-.3-1.5-.4-2.3-.4h-7.5v16.6h2.7v-5.5h3.8Z"/>',
+      '        <rect x="116.3" y="20.4" width="2.7" height="16.6"/>',
+      '        <path d="M85.8,32h-5.9l3-6.3,3,6.3ZM74.4,37h2.9l1.3-2.7h8.5l1.3,2.7h2.9l-8.5-16.5-8.4,16.5Z"/>',
+      '        <path class="cls-1" d="M56.8,56.5V.8H1v55.7h20.5v-3.1H4.1V3.9h49.6v49.5h-14.3v-5.6h8.7V9.5H9.7v38.3h13.2c2.4,0,3.9.5,4.7,1.5,1,1.5.8,4.3-.7,8.3-1,2.8-.5,5.7,1.2,7.4,1,.9,2.3,1.4,3.8,1.4s2.8-.4,3.7-.8l-1.2-2.9c-1.9.7-3.4.7-4.3,0-.9-.8-1-2.5-.4-4.1,1.9-5.2,2-8.8.3-11.2-1.3-1.9-3.7-2.8-7.2-2.8h-10.1V12.6h32.2v32.2h-8.7v11.8h20.5Z"/>',
+      '        <polygon class="cls-1" points="36.3 21.3 36.3 36.1 21.5 36.1 21.5 30 30.7 30 30.7 26.9 18.4 26.9 18.4 39.2 39.4 39.2 39.4 18.2 18.4 18.2 18.4 21.3 36.3 21.3"/>',
+      '      </g>',
+      '    </g>',
+      '  </svg>',
+      '</a>',
+      '<div class="nav-links">',
+      '  <div class="nav-dropdown">',
+      '    <a class="nav-dropdown-toggle" href="' + platformHref + '">Platform <span class="nav-dropdown-caret" aria-hidden="true">v</span></a>',
+      '    <div class="nav-dropdown-menu">',
+      '      <a href="' + (isHomePage ? "#features" : "index.html#features") + '">Features</a>',
+      '      <a href="' + (isHomePage ? "#platform" : "index.html#platform") + '">Devices</a>',
+      '      <a href="vulnerability-management-use-cases.html">Vulnerability use cases</a>',
+      '      <a href="' + (isHomePage ? "#coverage" : "index.html#coverage") + '">SBOM support</a>',
+      '    </div>',
+      '  </div>',
+      '  <div class="nav-dropdown">',
+      '    <a class="nav-dropdown-toggle" href="industries.html">Industries <span class="nav-dropdown-caret" aria-hidden="true">v</span></a>',
+      '    <div class="nav-dropdown-menu">',
+      '      <a href="industries.html#automotive">Automotive</a>',
+      '      <a href="industries.html#industrial">Industrial Automation</a>',
+      '      <a href="industries.html#medical">Medical Devices</a>',
+      '      <a href="industries.html#consumer">Consumer Electronics &amp; IoT</a>',
+      '      <a href="industries.html#defense-aerospace">Defense &amp; Aerospace</a>',
+      '      <a href="industries.html#energy-utilities">Energy &amp; Utilities</a>',
+      '      <a href="industries.html#transportation-logistics">Transportation &amp; Logistics</a>',
+      '    </div>',
+      '  </div>',
+      '  <div class="nav-dropdown">',
+      '    <a class="nav-dropdown-toggle" href="resources.html">Resources <span class="nav-dropdown-caret" aria-hidden="true">v</span></a>',
+      '    <div class="nav-dropdown-menu">',
+      '      <a href="resources.html#news">News</a>',
+      '      <a href="resources.html#blog-posts">Blog Posts</a>',
+      '      <a href="resources.html#newsletters">Newsletters</a>',
+      '      <a href="resources.html#articles">Articles</a>',
+      '      <a href="support.html">Support</a>',
+      '      <a href="resources.html#faq">FAQ</a>',
+      '    </div>',
+      '  </div>',
+      '  <div class="nav-dropdown">',
+      '    <a class="nav-dropdown-toggle" href="compliance.html">Compliance <span class="nav-dropdown-caret" aria-hidden="true">v</span></a>',
+      '    <div class="nav-dropdown-menu">',
+      '      <a href="compliance.html">Overview</a>',
+      '      <a href="compliance.html#capabilities">Capabilities</a>',
+      '      <a href="compliance.html#standards">Standards</a>',
+      '      <a href="compliance.html#cra">CRA</a>',
+      '      <a href="compliance.html#red">RED</a>',
+      '    </div>',
+      '  </div>',
+      '  <div class="nav-dropdown">',
+      '    <a class="nav-dropdown-toggle" href="partners.html">Partners <span class="nav-dropdown-caret" aria-hidden="true">v</span></a>',
+      '    <div class="nav-dropdown-menu">',
+      '      <a href="partners.html#partners">Overview</a>',
+      '      <a href="partners.html#implementation-partners">Implementation Partners</a>',
+      '      <a href="partners.html#reseller-partners">Reseller Partners</a>',
+      '      <a href="partners.html#contact">Become a Partner</a>',
+      '    </div>',
+      '  </div>',
+      '</div>',
+      '<div style="display: flex; gap: 12px; flex-wrap: wrap; align-items: center;">',
+      '  <a class="nav-cta" href="book-a-demo.html">Book a free Demo</a>',
+      '  <a class="nav-cta" href="free-trial.html">Start a free Trial</a>',
+      '</div>'
+    ].join("\n");
+  }
+
+  function initSharedNav() {
+    ensureSharedNavStyles();
+
+    var nav = document.querySelector(".nav");
+    if (!nav) {
+      nav = document.createElement("nav");
+      nav.className = "nav";
+
+      var insertBeforeNode = document.body.firstElementChild;
+      if (insertBeforeNode) {
+        document.body.insertBefore(nav, insertBeforeNode);
+      } else {
+        document.body.appendChild(nav);
+      }
+    }
+
+    nav.innerHTML = getSharedNavMarkup();
+  }
+
   function ensureSharedCtaStyles() {
     if (document.getElementById("site-cta-styles")) return;
 
@@ -671,13 +901,82 @@
     });
   }
 
+  function initNutshellLayoutGuard() {
+    var bootNode = document.getElementById("nutshell-boot-384033");
+    if (!bootNode) return;
+
+    function getHeaderBottom() {
+      var nav = document.querySelector(".nav");
+      return nav ? nav.getBoundingClientRect().bottom : 0;
+    }
+
+    function shouldAdjustElement(node) {
+      if (!node || node === bootNode) return false;
+      if (!(node instanceof HTMLElement || node instanceof HTMLIFrameElement)) return false;
+
+      var id = (node.id || "").toLowerCase();
+      var className = typeof node.className === "string" ? node.className.toLowerCase() : "";
+      var src = node instanceof HTMLIFrameElement ? (node.getAttribute("src") || "").toLowerCase() : "";
+
+      return id.indexOf("nutshell") !== -1 ||
+        className.indexOf("nutshell") !== -1 ||
+        src.indexOf("nutshell") !== -1 ||
+        src.indexOf("growth.ariannateam.ai") !== -1;
+    }
+
+    function adjustElement(node) {
+      if (!shouldAdjustElement(node)) return;
+
+      var style = window.getComputedStyle(node);
+      if (style.position !== "fixed") return;
+
+      var minTop = Math.max(16, Math.round(getHeaderBottom() + 12));
+      var rect = node.getBoundingClientRect();
+
+      if (rect.top < minTop) {
+        node.style.setProperty("top", minTop + "px", "important");
+        node.style.setProperty("bottom", "auto", "important");
+      }
+
+      node.style.setProperty("z-index", "9", "important");
+    }
+
+    function adjustAll() {
+      var nodes = document.querySelectorAll(
+        '[id*="nutshell"], [class*="nutshell"], iframe[src*="nutshell"], iframe[src*="growth.ariannateam.ai"]'
+      );
+
+      nodes.forEach(adjustElement);
+    }
+
+    var observer = new MutationObserver(function () {
+      adjustAll();
+    });
+
+    observer.observe(document.body, {
+      childList: true,
+      subtree: true,
+      attributes: true,
+      attributeFilter: ["style", "class"]
+    });
+
+    window.addEventListener("resize", adjustAll);
+    window.addEventListener("scroll", adjustAll, { passive: true });
+
+    window.setTimeout(adjustAll, 300);
+    window.setTimeout(adjustAll, 1200);
+    adjustAll();
+  }
+
   onReady(function () {
     ensureMontserratFont();
     ensureUppercaseTitles();
     ensureBorderlessButtons();
+    initSharedNav();
     initSharedFooter();
     initShowcaseCarousel();
     initNewsletterOverlay();
     initMobileNav();
+    initNutshellLayoutGuard();
   });
 })();
