@@ -443,10 +443,10 @@
     ensureShowcaseStyles();
 
     var imagePaths = [
-      "images/ARIANNA_mockup-1_hires.png",
-      "images/ARIANNA_mockup-2_hires.png",
-      "images/ARIANNA_mockup-3_hires.png",
-      "images/ARIANNA_mockup-4_hires.png"
+      "images/ARIANNA_mockup-1_showcase.webp",
+      "images/ARIANNA_mockup-2_showcase.webp",
+      "images/ARIANNA_mockup-3_showcase.webp",
+      "images/ARIANNA_mockup-4_showcase.webp"
     ];
 
     var showcase = document.querySelector(".site-showcase");
@@ -464,7 +464,7 @@
         return [
           '      <div class="site-showcase-slide" data-slide-index="' + index + '">',
           '        <div class="site-showcase-frame">',
-          '          <img src="' + path + '" alt="ARIANNA platform screenshot ' + (index + 1) + '" loading="lazy" />',
+          '          <img src="' + path + '" alt="ARIANNA platform screenshot ' + (index + 1) + '" width="1200" height="900" loading="lazy" decoding="async" />',
           "        </div>",
           "      </div>"
         ].join("\n");
