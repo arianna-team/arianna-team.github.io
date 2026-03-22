@@ -198,7 +198,7 @@
 
   function getSharedNavMarkup() {
     var isHomePage = /(?:^|\/)index\.html$/.test(window.location.pathname) || /\/$/.test(window.location.pathname);
-    var platformHref = isHomePage ? "#platform" : "index.html";
+    var platformHref = "index.html";
 
     return [
       '<a class="logo" aria-label="ARIANNA" href="index.html">',
