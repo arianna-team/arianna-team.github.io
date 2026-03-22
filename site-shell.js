@@ -916,6 +916,16 @@
       return nav ? nav.getBoundingClientRect().bottom : 0;
     }
 
+    function getFooterClearance() {
+      var footer = document.querySelector("footer");
+      if (!footer) return 24;
+
+      var footerRect = footer.getBoundingClientRect();
+      var overlap = window.innerHeight - footerRect.top;
+
+      return overlap > 0 ? Math.max(24, Math.round(overlap + 16)) : 24;
+    }
+
     function shouldAdjustElement(node) {
       if (!node || node === bootNode) return false;
       if (!(node instanceof HTMLElement || node instanceof HTMLIFrameElement)) return false;
@@ -937,11 +947,15 @@
       if (style.position !== "fixed") return;
 
       var minTop = Math.max(16, Math.round(getHeaderBottom() + 12));
+      var minBottom = getFooterClearance();
       var rect = node.getBoundingClientRect();
 
       if (rect.top < minTop) {
         node.style.setProperty("top", minTop + "px", "important");
         node.style.setProperty("bottom", "auto", "important");
+      } else {
+        node.style.setProperty("top", "auto", "important");
+        node.style.setProperty("bottom", minBottom + "px", "important");
       }
 
       node.style.setProperty("z-index", "9", "important");
