@@ -1273,11 +1273,28 @@
     }
 
     function adjustAll() {
-      var nodes = document.querySelectorAll(
-        "#chat-iframe, #chat-widget-button-container"
-      );
+      var iframe = document.getElementById("chat-iframe");
+      var widgetContainer = document.getElementById("chat-widget-button-container");
 
-      nodes.forEach(adjustElement);
+      if (iframe) adjustElement(iframe);
+      if (widgetContainer) {
+        adjustElement(widgetContainer);
+
+        var descendants = widgetContainer.querySelectorAll("*");
+        descendants.forEach(function (node) {
+          var style = window.getComputedStyle(node);
+          if (style.position !== "fixed") return;
+
+          if (!node.classList.contains("nutshell-floating-widget")) {
+            node.classList.add("nutshell-floating-widget");
+          }
+
+          node.style.setProperty("top", "50vh", "important");
+          node.style.setProperty("bottom", "auto", "important");
+          node.style.setProperty("left", "auto", "important");
+          node.style.removeProperty("inset");
+        });
+      }
     }
 
     var observer = new MutationObserver(function () {
