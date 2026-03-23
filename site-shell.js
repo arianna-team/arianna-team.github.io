@@ -487,6 +487,7 @@
   }
 
   var CONSENT_STORAGE_KEY = "arianna_cookie_consent_v1";
+  var GA_MEASUREMENT_ID = "G-2SSM196X45";
 
   function safeParseJson(value) {
     if (!value) return null;
@@ -532,6 +533,34 @@
       document.dispatchEvent(new CustomEvent("arianna:open-cookie-settings"));
     }
   };
+
+  function syncGoogleAnalyticsConsent() {
+    window["ga-disable-" + GA_MEASUREMENT_ID] = !allowsConsentCategory("measurement");
+  }
+
+  function initGoogleAnalytics() {
+    syncGoogleAnalyticsConsent();
+    if (!allowsConsentCategory("measurement")) return;
+
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = window.gtag || function () {
+      window.dataLayer.push(arguments);
+    };
+
+    if (!document.getElementById("site-google-gtag")) {
+      var script = document.createElement("script");
+      script.id = "site-google-gtag";
+      script.async = true;
+      script.src = "https://www.googletagmanager.com/gtag/js?id=" + GA_MEASUREMENT_ID;
+      document.head.appendChild(script);
+    }
+
+    if (window.__ariannaGtagConfigured === true) return;
+
+    window.gtag("js", new Date());
+    window.gtag("config", GA_MEASUREMENT_ID);
+    window.__ariannaGtagConfigured = true;
+  }
 
   function ensureCookieBannerStyles() {
     if (document.getElementById("site-cookie-banner-styles")) return;
@@ -735,6 +764,8 @@
 
     function setConsent(status) {
       saveConsentRecord(createConsentRecord(status));
+      syncGoogleAnalyticsConsent();
+      if (status === "accepted") initGoogleAnalytics();
       syncBannerMessage();
       closeBanner();
       document.dispatchEvent(new CustomEvent("arianna:consent-changed", {
@@ -1200,6 +1231,22 @@
         ".nutshell-floating-widget {",
         "  bottom: auto !important;",
         "}",
+        "#chat-widget-button-container > div {",
+        "  position: fixed !important;",
+        "  top: 50vh !important;",
+        "  bottom: auto !important;",
+        "  right: 30px !important;",
+        "  left: auto !important;",
+        "  transform: translateY(-50%) !important;",
+        "}",
+        "@media (max-width: 720px) {",
+        "  #chat-widget-button-container > div {",
+        "    top: auto !important;",
+        "    bottom: 20px !important;",
+        "    right: 10px !important;",
+        "    transform: none !important;",
+        "  }",
+        "}",
         "#chat-widget-button-container .nutshell-floating-widget {",
         "  top: 50vh !important;",
         "  bottom: auto !important;",
@@ -1318,6 +1365,7 @@
     ensureMontserratFont();
     ensureUppercaseTitles();
     ensureBorderlessButtons();
+    initGoogleAnalytics();
     initSharedNav();
     initCookieBanner();
     initSharedFooter();
