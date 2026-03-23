@@ -354,12 +354,12 @@
     <div>
       <div class="eyebrow">Legal</div>
       <h1>Privacy Policy and GDPR Notice</h1>
-      <p>This page explains how ARIANNA handles personal data submitted through the website, how local browser storage is used, and what rights visitors have under the General Data Protection Regulation.</p>
-      <div class="meta">Last updated: March 18, 2026</div>
+      <p>This page explains how ARIANNA handles personal data submitted through the website, how local browser storage and consent preferences are used, and what rights visitors have under the General Data Protection Regulation.</p>
+      <div class="meta">Last updated: March 23, 2026</div>
     </div>
     <aside class="hero-note">
       <h3>Implementation-aware summary</h3>
-      <p>This notice is based on the current site behavior, including contact, demo, trial, partner, support, and newsletter forms, plus local browser storage used for newsletter display preferences and attribution fields.</p>
+      <p>This notice is based on the current site behavior, including contact, demo, trial, partner, support, and newsletter forms, plus local browser storage used for consent preferences, newsletter display preferences, and attribution fields when optional storage is approved.</p>
       <p>This page is intended as a practical website privacy notice and should still be reviewed by legal counsel before publication as a final legal document.</p>
     </aside>
   </section>
@@ -394,7 +394,7 @@
             <li>Inquiry context from demo, trial, support, partner, contact, and newsletter forms.</li>
             <li>Marketing attribution details captured from URL parameters such as `utm_source`, `utm_medium`, `utm_campaign`, `gclid`, `msclkid`, and `fbclid` when present.</li>
             <li>Technical context related to your visit, such as landing page URL, referrer, and timestamps associated with form submission attribution.</li>
-            <li>Preference data stored in your browser to remember newsletter prompt display and similar lightweight site preferences.</li>
+            <li>Preference data stored in your browser to remember cookie consent choices, newsletter prompt display, and similar lightweight site preferences.</li>
           </ul>
           <div class="callout">
             <p>ARIANNA does not intentionally ask visitors to submit special category data through this website. Please do not include sensitive personal data in free-text fields unless it is strictly necessary.</p>
@@ -417,7 +417,7 @@
           <h2>GDPR lawful bases</h2>
           <p>Where GDPR applies, ARIANNA generally relies on one or more of the following lawful bases:</p>
           <ul>
-            <li><strong>Consent:</strong> for newsletter sign-ups and similar opt-in communications.</li>
+            <li><strong>Consent:</strong> for newsletter sign-ups, optional attribution storage, and similar opt-in communications.</li>
             <li><strong>Pre-contractual steps:</strong> when you ask for a demo, trial, partnership discussion, or other information before entering into a business relationship.</li>
             <li><strong>Legitimate interests:</strong> for responding to business inquiries, measuring campaign effectiveness, maintaining the website, preventing abuse, and keeping internal records of communications.</li>
             <li><strong>Legal obligations:</strong> where retention or disclosure is required by applicable law.</li>
@@ -434,12 +434,13 @@
 
         <article class="card" id="storage">
           <h2>Cookies and local storage</h2>
-          <p>The current site uses browser local storage to support lightweight functionality and attribution continuity. For example, the site stores:</p>
+          <p>The current site uses browser local storage to support lightweight functionality and, where approved, optional attribution continuity. For example, the site stores:</p>
           <ul>
+            <li>Your cookie consent choice so the site can remember whether optional storage is enabled.</li>
             <li>Whether the newsletter prompt has been shown, dismissed, or subscribed to.</li>
-            <li>Attribution fields and landing-page metadata so they can be attached to a later form submission.</li>
+            <li>Attribution fields and landing-page metadata so they can be attached to a later form submission, but only after you approve optional storage.</li>
           </ul>
-          <p>These values are stored in your browser rather than displayed publicly, and you can remove them at any time by clearing local site storage in your browser settings.</p>
+          <p>These values are stored in your browser rather than displayed publicly, and you can change your preference through the cookie settings link in the site footer or remove stored values entirely through your browser settings.</p>
         </article>
 
         <article class="card" id="retention">

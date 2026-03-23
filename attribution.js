@@ -36,6 +36,14 @@
     }
   }
 
+  function safeClear() {
+    try {
+      window.localStorage.removeItem(STORAGE_KEY);
+    } catch (error) {
+      // Ignore storage failures; clearing is best-effort.
+    }
+  }
+
   function getUrlAttribution() {
     var params = new URLSearchParams(window.location.search);
     var data = {};
@@ -133,6 +141,27 @@
     });
   }
 
+  function hasMeasurementConsent() {
+    return !!(
+      window.AriannaConsent &&
+      typeof window.AriannaConsent.allows === "function" &&
+      window.AriannaConsent.allows("measurement")
+    );
+  }
+
+  function buildCurrentAttribution() {
+    if (!hasMeasurementConsent()) return {};
+    return safeLoad();
+  }
+
+  function persistCurrentPageAttribution() {
+    if (!hasMeasurementConsent()) return {};
+    var stored = safeLoad();
+    var merged = mergeAttribution(stored, getUrlAttribution());
+    safeSave(merged);
+    return merged;
+  }
+
   function bindForm(form, dataRef) {
     if (!form || form.dataset.ariannaTrackingBound === "true") return;
     form.dataset.ariannaTrackingBound = "true";
@@ -142,7 +171,7 @@
     form.addEventListener("submit", function () {
       var data = dataRef();
       applyAttributionToForm(form, data);
-      pushTrackingEvent(form);
+      if (hasMeasurementConsent()) pushTrackingEvent(form);
     }, true);
   }
 
@@ -153,13 +182,11 @@
     forms.forEach(function (form) { bindForm(form, dataRef); });
   }
 
-  var stored = safeLoad();
-  var merged = mergeAttribution(stored, getUrlAttribution());
-  safeSave(merged);
-
   function currentAttribution() {
-    return safeLoad();
+    return buildCurrentAttribution();
   }
+
+  persistCurrentPageAttribution();
 
   bindFormsInNode(document, currentAttribution);
 
@@ -173,5 +200,14 @@
     });
 
     observer.observe(container, { childList: true, subtree: true });
+  });
+
+  document.addEventListener("arianna:consent-changed", function () {
+    if (hasMeasurementConsent()) {
+      persistCurrentPageAttribution();
+    } else {
+      safeClear();
+    }
+    bindFormsInNode(document, currentAttribution);
   });
 })();

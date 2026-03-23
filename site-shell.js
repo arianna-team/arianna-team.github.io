@@ -486,6 +486,236 @@
     }
   }
 
+  var CONSENT_STORAGE_KEY = "arianna_cookie_consent_v1";
+
+  function safeParseJson(value) {
+    if (!value) return null;
+    try {
+      return JSON.parse(value);
+    } catch (error) {
+      return null;
+    }
+  }
+
+  function loadConsentRecord() {
+    return safeParseJson(safeGet(CONSENT_STORAGE_KEY));
+  }
+
+  function saveConsentRecord(record) {
+    safeSet(CONSENT_STORAGE_KEY, JSON.stringify(record));
+  }
+
+  function createConsentRecord(status) {
+    return {
+      status: status,
+      version: 1,
+      updated_at: new Date().toISOString()
+    };
+  }
+
+  function consentStatus() {
+    var record = loadConsentRecord();
+    var status = record && typeof record.status === "string" ? record.status : "";
+    return status === "accepted" || status === "necessary" ? status : "";
+  }
+
+  function allowsConsentCategory(category) {
+    if (category === "necessary") return true;
+    if (category === "measurement") return consentStatus() === "accepted";
+    return false;
+  }
+
+  window.AriannaConsent = {
+    getStatus: consentStatus,
+    allows: allowsConsentCategory,
+    openPreferences: function () {
+      document.dispatchEvent(new CustomEvent("arianna:open-cookie-settings"));
+    }
+  };
+
+  function ensureCookieBannerStyles() {
+    if (document.getElementById("site-cookie-banner-styles")) return;
+
+    var style = document.createElement("style");
+    style.id = "site-cookie-banner-styles";
+    style.textContent = [
+      ".cookie-banner {",
+      "  position: fixed;",
+      "  right: 24px;",
+      "  bottom: 24px;",
+      "  width: min(420px, calc(100vw - 32px));",
+      "  padding: 22px;",
+      "  border-radius: 24px;",
+      "  background: rgba(11, 24, 35, 0.96);",
+      "  color: rgba(255, 255, 255, 0.86);",
+      "  box-shadow: 0 24px 60px rgba(15, 30, 43, 0.28);",
+      "  z-index: 40;",
+      "  display: none;",
+      "}",
+      ".cookie-banner.is-visible {",
+      "  display: block;",
+      "}",
+      ".cookie-banner h3 {",
+      "  margin: 0 0 10px;",
+      "  color: #ffffff;",
+      "  font-size: 18px;",
+      "}",
+      ".cookie-banner p {",
+      "  margin: 0;",
+      "  font-size: 14px;",
+      "  line-height: 1.65;",
+      "}",
+      ".cookie-banner a {",
+      "  color: #8fd7d9;",
+      "  text-decoration: none;",
+      "}",
+      ".cookie-banner a:hover {",
+      "  color: #ffffff;",
+      "}",
+      ".cookie-banner-actions {",
+      "  display: flex;",
+      "  gap: 10px;",
+      "  flex-wrap: wrap;",
+      "  margin-top: 18px;",
+      "}",
+      ".cookie-banner-actions button {",
+      "  min-height: 44px;",
+      "  padding: 12px 18px;",
+      "  border-radius: 999px;",
+      "  font-size: 13px;",
+      "  font-weight: 600;",
+      "  cursor: pointer;",
+      "  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease, color 0.2s ease;",
+      "}",
+      ".cookie-banner-actions button:hover {",
+      "  transform: translateY(-1px);",
+      "}",
+      ".cookie-banner-accept {",
+      "  background: #f28a1a;",
+      "  color: #ffffff;",
+      "}",
+      ".cookie-banner-accept:hover {",
+      "  background: #1aa5a7;",
+      "  box-shadow: 0 12px 24px rgba(15, 30, 43, 0.18);",
+      "}",
+      ".cookie-banner-necessary {",
+      "  background: rgba(255, 255, 255, 0.1);",
+      "  color: #ffffff;",
+      "}",
+      ".cookie-banner-necessary:hover {",
+      "  background: rgba(255, 255, 255, 0.18);",
+      "}",
+      ".cookie-banner-status {",
+      "  margin-top: 12px;",
+      "  color: rgba(255, 255, 255, 0.62);",
+      "  font-size: 12px;",
+      "}",
+      "@media (max-width: 720px) {",
+      "  .cookie-banner {",
+      "    left: 16px;",
+      "    right: 16px;",
+      "    bottom: 16px;",
+      "    width: auto;",
+      "    padding: 18px;",
+      "    border-radius: 20px;",
+      "  }",
+      "  .cookie-banner-actions {",
+      "    flex-direction: column;",
+      "  }",
+      "  .cookie-banner-actions button {",
+      "    width: 100%;",
+      "  }",
+      "}",
+      "body.cookie-banner-open {",
+      "  padding-bottom: 220px;",
+      "}",
+      "@media (max-width: 720px) {",
+      "  body.cookie-banner-open {",
+      "    padding-bottom: 280px;",
+      "  }",
+      "}"
+    ].join("\n");
+    document.head.appendChild(style);
+  }
+
+  function initCookieBanner() {
+    ensureCookieBannerStyles();
+
+    var banner = document.getElementById("cookieBanner");
+    if (!banner) {
+      banner = document.createElement("aside");
+      banner.id = "cookieBanner";
+      banner.className = "cookie-banner";
+      banner.setAttribute("role", "dialog");
+      banner.setAttribute("aria-live", "polite");
+      banner.setAttribute("aria-label", "Cookie preferences");
+      banner.innerHTML = [
+        '<h3>Cookie preferences</h3>',
+        '<p>We use necessary browser storage to keep the site working. With your approval, we also store attribution details so we can understand which campaigns lead to demo, trial, or contact requests. See our <a href="privacy.html#storage">privacy notice</a>.</p>',
+        '<div class="cookie-banner-actions">',
+        '  <button class="cookie-banner-accept" type="button" data-consent-action="accepted">Accept all</button>',
+        '  <button class="cookie-banner-necessary" type="button" data-consent-action="necessary">Only necessary</button>',
+        "</div>",
+        '<p class="cookie-banner-status" id="cookieBannerStatus"></p>'
+      ].join("\n");
+      document.body.appendChild(banner);
+    }
+
+    var statusNode = banner.querySelector("#cookieBannerStatus");
+
+    function statusText(status) {
+      if (status === "accepted") return "Optional attribution storage is enabled.";
+      if (status === "necessary") return "Only necessary storage is enabled.";
+      return "";
+    }
+
+    function syncBannerMessage() {
+      if (statusNode) statusNode.textContent = statusText(consentStatus());
+    }
+
+    function openBanner(force) {
+      var status = consentStatus();
+      if (!force && status) return;
+      syncBannerMessage();
+      banner.classList.add("is-visible");
+      document.body.classList.add("cookie-banner-open");
+    }
+
+    function closeBanner() {
+      banner.classList.remove("is-visible");
+      document.body.classList.remove("cookie-banner-open");
+    }
+
+    function setConsent(status) {
+      saveConsentRecord(createConsentRecord(status));
+      syncBannerMessage();
+      closeBanner();
+      document.dispatchEvent(new CustomEvent("arianna:consent-changed", {
+        detail: { status: status }
+      }));
+    }
+
+    banner.addEventListener("click", function (event) {
+      var action = event.target && event.target.getAttribute("data-consent-action");
+      if (!action) return;
+      setConsent(action);
+    });
+
+    document.addEventListener("arianna:open-cookie-settings", function () {
+      openBanner(true);
+    });
+
+    document.addEventListener("click", function (event) {
+      var trigger = event.target.closest("[data-cookie-settings-trigger]");
+      if (!trigger) return;
+      event.preventDefault();
+      openBanner(true);
+    });
+
+    syncBannerMessage();
+    openBanner(false);
+  }
+
   function initSharedFooter() {
     var footer = document.querySelector("footer");
     if (!footer) return;
@@ -639,6 +869,7 @@
       '    <p><a href="company.html#careers">Careers</a></p>',
       '    <p><a href="resources.html">Resources</a></p>',
       '    <p><a href="privacy.html">Privacy &amp; GDPR</a></p>',
+      '    <p><a href="privacy.html#storage" data-cookie-settings-trigger="true">Cookie Settings</a></p>',
       '  </div>',
       '  <div class="footer-contact">',
       '    <h4><a href="contact.html">Contact</a></h4>',
@@ -993,6 +1224,7 @@
     ensureUppercaseTitles();
     ensureBorderlessButtons();
     initSharedNav();
+    initCookieBanner();
     initSharedFooter();
     initShowcaseCarousel();
     initNewsletterOverlay();
