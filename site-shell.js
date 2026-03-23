@@ -1142,6 +1142,21 @@
     var bootNode = document.getElementById("nutshell-boot-384033");
     if (!bootNode) return;
 
+    if (!document.getElementById("site-nutshell-layout-styles")) {
+      var nutshellStyle = document.createElement("style");
+      nutshellStyle.id = "site-nutshell-layout-styles";
+      nutshellStyle.textContent = [
+        ".nutshell-floating-widget {",
+        "  bottom: auto !important;",
+        "}",
+        "#chat-widget-button-container .nutshell-floating-widget {",
+        "  top: 50vh !important;",
+        "  bottom: auto !important;",
+        "}"
+      ].join("\n");
+      document.head.appendChild(nutshellStyle);
+    }
+
     function getHeaderBottom() {
       var nav = document.querySelector(".nav");
       return nav ? nav.getBoundingClientRect().bottom : 0;
@@ -1164,8 +1179,12 @@
       var id = (node.id || "").toLowerCase();
       var className = typeof node.className === "string" ? node.className.toLowerCase() : "";
       var src = node instanceof HTMLIFrameElement ? (node.getAttribute("src") || "").toLowerCase() : "";
+      var insideChatButtonContainer = typeof node.closest === "function" && !!node.closest("#chat-widget-button-container");
 
       return id.indexOf("nutshell") !== -1 ||
+        id === "chat-iframe" ||
+        id === "chat-widget-button-container" ||
+        insideChatButtonContainer ||
         className.indexOf("nutshell") !== -1 ||
         src.indexOf("nutshell") !== -1 ||
         src.indexOf("growth.ariannateam.ai") !== -1;
@@ -1177,24 +1196,33 @@
       var style = window.getComputedStyle(node);
       if (style.position !== "fixed") return;
 
+      node.classList.add("nutshell-floating-widget");
+
       var minTop = Math.max(16, Math.round(getHeaderBottom() + 12));
       var minBottom = getFooterClearance();
       var rect = node.getBoundingClientRect();
       var maxTop = Math.max(minTop, Math.round(window.innerHeight - minBottom - rect.height));
       var preferredMidTop = Math.round((window.innerHeight - rect.height) / 2);
 
-      if (window.matchMedia("(max-width: 720px)").matches) {
+      if (node.id === "chat-widget-button-container" || (typeof node.closest === "function" && node.closest("#chat-widget-button-container"))) {
+        node.style.setProperty("top", "50vh", "important");
+        node.style.setProperty("bottom", "auto", "important");
+        node.style.removeProperty("inset");
+      } else if (window.matchMedia("(max-width: 720px)").matches) {
         if (rect.top < minTop) {
           node.style.setProperty("top", minTop + "px", "important");
           node.style.setProperty("bottom", "auto", "important");
+          node.style.setProperty("inset", minTop + "px auto auto auto", "important");
         } else {
           node.style.setProperty("top", "auto", "important");
           node.style.setProperty("bottom", minBottom + "px", "important");
+          node.style.setProperty("inset", "auto auto " + minBottom + "px auto", "important");
         }
       } else {
         var targetTop = Math.max(minTop, Math.min(preferredMidTop, maxTop));
         node.style.setProperty("top", targetTop + "px", "important");
         node.style.setProperty("bottom", "auto", "important");
+        node.style.setProperty("inset", targetTop + "px auto auto auto", "important");
       }
 
       node.style.setProperty("z-index", "9", "important");
@@ -1202,7 +1230,7 @@
 
     function adjustAll() {
       var nodes = document.querySelectorAll(
-        '[id*="nutshell"], [class*="nutshell"], iframe[src*="nutshell"], iframe[src*="growth.ariannateam.ai"]'
+        '[id*="nutshell"], [class*="nutshell"], iframe[src*="nutshell"], iframe[src*="growth.ariannateam.ai"], #chat-iframe, #chat-widget-button-container, #chat-widget-button-container *'
       );
 
       nodes.forEach(adjustElement);
