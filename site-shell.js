@@ -1180,13 +1180,21 @@
       var minTop = Math.max(16, Math.round(getHeaderBottom() + 12));
       var minBottom = getFooterClearance();
       var rect = node.getBoundingClientRect();
+      var maxTop = Math.max(minTop, Math.round(window.innerHeight - minBottom - rect.height));
+      var preferredMidTop = Math.round((window.innerHeight - rect.height) / 2);
 
-      if (rect.top < minTop) {
-        node.style.setProperty("top", minTop + "px", "important");
-        node.style.setProperty("bottom", "auto", "important");
+      if (window.matchMedia("(max-width: 720px)").matches) {
+        if (rect.top < minTop) {
+          node.style.setProperty("top", minTop + "px", "important");
+          node.style.setProperty("bottom", "auto", "important");
+        } else {
+          node.style.setProperty("top", "auto", "important");
+          node.style.setProperty("bottom", minBottom + "px", "important");
+        }
       } else {
-        node.style.setProperty("top", "auto", "important");
-        node.style.setProperty("bottom", minBottom + "px", "important");
+        var targetTop = Math.max(minTop, Math.min(preferredMidTop, maxTop));
+        node.style.setProperty("top", targetTop + "px", "important");
+        node.style.setProperty("bottom", "auto", "important");
       }
 
       node.style.setProperty("z-index", "9", "important");
