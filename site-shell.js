@@ -610,6 +610,30 @@
       "  color: rgba(255, 255, 255, 0.62);",
       "  font-size: 12px;",
       "}",
+      ".cookie-settings-trigger {",
+      "  position: fixed;",
+      "  left: 24px;",
+      "  bottom: 24px;",
+      "  min-height: 44px;",
+      "  padding: 12px 18px;",
+      "  border-radius: 999px;",
+      "  background: rgba(11, 24, 35, 0.92);",
+      "  color: #ffffff;",
+      "  font-size: 13px;",
+      "  font-weight: 600;",
+      "  box-shadow: 0 18px 42px rgba(15, 30, 43, 0.2);",
+      "  cursor: pointer;",
+      "  z-index: 39;",
+      "  display: none;",
+      "}",
+      ".cookie-settings-trigger.is-visible {",
+      "  display: inline-flex;",
+      "  align-items: center;",
+      "  justify-content: center;",
+      "}",
+      ".cookie-settings-trigger:hover {",
+      "  background: #1aa5a7;",
+      "}",
       "@media (max-width: 720px) {",
       "  .cookie-banner {",
       "    left: 16px;",
@@ -624,6 +648,10 @@
       "  }",
       "  .cookie-banner-actions button {",
       "    width: 100%;",
+      "  }",
+      "  .cookie-settings-trigger {",
+      "    left: 16px;",
+      "    bottom: 16px;",
       "  }",
       "}",
       "body.cookie-banner-open {",
@@ -662,6 +690,16 @@
     }
 
     var statusNode = banner.querySelector("#cookieBannerStatus");
+    var floatingTrigger = document.getElementById("cookieSettingsTrigger");
+
+    if (!floatingTrigger) {
+      floatingTrigger = document.createElement("button");
+      floatingTrigger.id = "cookieSettingsTrigger";
+      floatingTrigger.type = "button";
+      floatingTrigger.className = "cookie-settings-trigger";
+      floatingTrigger.textContent = "Cookie preferences";
+      document.body.appendChild(floatingTrigger);
+    }
 
     function statusText(status) {
       if (status === "accepted") return "Optional attribution storage is enabled.";
@@ -669,8 +707,15 @@
       return "";
     }
 
+    function syncFloatingTrigger() {
+      if (!floatingTrigger) return;
+      var shouldShow = !!consentStatus() && !banner.classList.contains("is-visible");
+      floatingTrigger.classList.toggle("is-visible", shouldShow);
+    }
+
     function syncBannerMessage() {
       if (statusNode) statusNode.textContent = statusText(consentStatus());
+      syncFloatingTrigger();
     }
 
     function openBanner(force) {
@@ -679,11 +724,13 @@
       syncBannerMessage();
       banner.classList.add("is-visible");
       document.body.classList.add("cookie-banner-open");
+      syncFloatingTrigger();
     }
 
     function closeBanner() {
       banner.classList.remove("is-visible");
       document.body.classList.remove("cookie-banner-open");
+      syncFloatingTrigger();
     }
 
     function setConsent(status) {
@@ -699,6 +746,10 @@
       var action = event.target && event.target.getAttribute("data-consent-action");
       if (!action) return;
       setConsent(action);
+    });
+
+    floatingTrigger.addEventListener("click", function () {
+      openBanner(true);
     });
 
     document.addEventListener("arianna:open-cookie-settings", function () {
@@ -1177,17 +1228,8 @@
       if (!(node instanceof HTMLElement || node instanceof HTMLIFrameElement)) return false;
 
       var id = (node.id || "").toLowerCase();
-      var className = typeof node.className === "string" ? node.className.toLowerCase() : "";
-      var src = node instanceof HTMLIFrameElement ? (node.getAttribute("src") || "").toLowerCase() : "";
-      var insideChatButtonContainer = typeof node.closest === "function" && !!node.closest("#chat-widget-button-container");
 
-      return id.indexOf("nutshell") !== -1 ||
-        id === "chat-iframe" ||
-        id === "chat-widget-button-container" ||
-        insideChatButtonContainer ||
-        className.indexOf("nutshell") !== -1 ||
-        src.indexOf("nutshell") !== -1 ||
-        src.indexOf("growth.ariannateam.ai") !== -1;
+      return id === "chat-iframe" || id === "chat-widget-button-container";
     }
 
     function adjustElement(node) {
@@ -1196,7 +1238,9 @@
       var style = window.getComputedStyle(node);
       if (style.position !== "fixed") return;
 
-      node.classList.add("nutshell-floating-widget");
+      if (!node.classList.contains("nutshell-floating-widget")) {
+        node.classList.add("nutshell-floating-widget");
+      }
 
       var minTop = Math.max(16, Math.round(getHeaderBottom() + 12));
       var minBottom = getFooterClearance();
@@ -1204,7 +1248,7 @@
       var maxTop = Math.max(minTop, Math.round(window.innerHeight - minBottom - rect.height));
       var preferredMidTop = Math.round((window.innerHeight - rect.height) / 2);
 
-      if (node.id === "chat-widget-button-container" || (typeof node.closest === "function" && node.closest("#chat-widget-button-container"))) {
+      if (node.id === "chat-widget-button-container") {
         node.style.setProperty("top", "50vh", "important");
         node.style.setProperty("bottom", "auto", "important");
         node.style.removeProperty("inset");
@@ -1230,7 +1274,7 @@
 
     function adjustAll() {
       var nodes = document.querySelectorAll(
-        '[id*="nutshell"], [class*="nutshell"], iframe[src*="nutshell"], iframe[src*="growth.ariannateam.ai"], #chat-iframe, #chat-widget-button-container, #chat-widget-button-container *'
+        "#chat-iframe, #chat-widget-button-container"
       );
 
       nodes.forEach(adjustElement);
@@ -1242,9 +1286,7 @@
 
     observer.observe(document.body, {
       childList: true,
-      subtree: true,
-      attributes: true,
-      attributeFilter: ["style", "class"]
+      subtree: true
     });
 
     window.addEventListener("resize", adjustAll);
