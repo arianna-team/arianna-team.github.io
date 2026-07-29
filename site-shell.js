@@ -158,6 +158,7 @@
 
   function replaceNutshellFormContainer(container) {
     if (!container || container.dataset.emergencyFormPaused === "true") return;
+    if (container.id === "nutshell-form-KxPDav") return;
 
     var details = getEmergencyFormDetails(container.id || "");
     var wrapper = document.createElement("div");
