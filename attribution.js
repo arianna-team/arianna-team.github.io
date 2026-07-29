@@ -112,7 +112,7 @@
     var containerId = container ? container.id : "";
 
     if (containerId.indexOf("book-trial") !== -1 || containerId.indexOf("KxPDav") !== -1) return "trial";
-    if (containerId.indexOf("book-demo") !== -1 || containerId.indexOf("home") !== -1) return "demo";
+    if (containerId.indexOf("book-demo") !== -1 || containerId.indexOf("2UrTfL") !== -1 || containerId.indexOf("home") !== -1) return "demo";
     if (containerId.indexOf("contact") !== -1) return "contact";
     if (containerId.indexOf("support") !== -1) return "support";
     if (containerId.indexOf("partner") !== -1) return "partner";
