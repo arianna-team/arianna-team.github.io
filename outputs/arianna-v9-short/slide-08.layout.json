@@ -1,0 +1,1584 @@
+{
+  "schema": "openai.presentation.layout/v4",
+  "unit": "px",
+  "slide": {
+    "aid": "sl/fu18jqh0",
+    "id": "fu18jqh0",
+    "slide": 8,
+    "layoutId": "/ppt/slideLayouts/slideLayout2.xml",
+    "layoutName": "Content",
+    "masterLayoutId": "/ppt/slideMasters/slideMaster1.xml",
+    "frame": {
+      "left": 0,
+      "top": 0,
+      "width": 1066.67,
+      "height": 600
+    }
+  },
+  "theme": {
+    "colorSchemeName": "Security Pattern Color",
+    "colors": {
+      "accent1": "#F7F0EC",
+      "accent2": "#E2492F",
+      "accent3": "#41BAB6",
+      "accent4": "#88B04B",
+      "accent5": "#F1C300",
+      "accent6": "#5E5E5E",
+      "dk1": "#000000",
+      "lt1": "#FFFFFF",
+      "dk2": "#41BAB6",
+      "lt2": "#C5C6C7",
+      "hlink": "#41BAB6",
+      "folHlink": "#41BAB6"
+    },
+    "fontScheme": {
+      "name": "Office",
+      "majorFont": {
+        "latinTypeface": "Arial"
+      },
+      "minorFont": {
+        "latinTypeface": "Arial"
+      }
+    },
+    "typefaces": [
+      "Arial",
+      "Montserrat"
+    ]
+  },
+  "inheritedLayers": [
+    {
+      "scope": "layout",
+      "id": "/ppt/slideLayouts/slideLayout2.xml",
+      "name": "Content",
+      "parentLayoutId": "/ppt/slideMasters/slideMaster1.xml",
+      "backgroundColor": "lt1",
+      "elements": [
+        {
+          "order": 1,
+          "kind": "shape",
+          "scope": "layout",
+          "aid": "template/layout//ppt/slideLayouts/slideLayout2.xml/14",
+          "id": "14",
+          "name": "Google Shape;14;p34",
+          "bbox": [
+            0,
+            0,
+            1066.67,
+            89.2
+          ],
+          "geometry": "rect",
+          "resolvedTextStyle": {
+            "anchor": 2,
+            "verticalAlignment": "middle",
+            "wrap": "square",
+            "autoFit": "none",
+            "insets": {
+              "top": 4.8,
+              "right": 9.6,
+              "bottom": 4.8,
+              "left": 9.6
+            },
+            "useParagraphSpacing": true
+          },
+          "fillColor": "#41BAB7",
+          "lineWidth": 0
+        },
+        {
+          "order": 2,
+          "kind": "shape",
+          "scope": "layout",
+          "aid": "template/layout//ppt/slideLayouts/slideLayout2.xml/15",
+          "id": "15",
+          "name": "Google Shape;15;p34",
+          "bbox": [
+            48.89,
+            117.93,
+            966.1,
+            390.46
+          ],
+          "geometry": "rect",
+          "resolvedTextStyle": {
+            "anchor": 1,
+            "verticalAlignment": "top",
+            "wrap": "square",
+            "autoFit": "shrinkText",
+            "insets": {
+              "top": 4.8,
+              "right": 9.6,
+              "bottom": 4.8,
+              "left": 9.45
+            },
+            "useParagraphSpacing": true
+          },
+          "lineWidth": 0
+        },
+        {
+          "order": 3,
+          "kind": "shape",
+          "scope": "layout",
+          "aid": "template/layout//ppt/slideLayouts/slideLayout2.xml/16",
+          "id": "16",
+          "name": "Google Shape;16;p34",
+          "bbox": [
+            30.15,
+            13.85,
+            1003.58,
+            61.49
+          ],
+          "geometry": "rect",
+          "resolvedTextStyle": {
+            "anchor": 2,
+            "verticalAlignment": "middle",
+            "wrap": "square",
+            "autoFit": "none",
+            "insets": {
+              "top": 4.8,
+              "right": 9.6,
+              "bottom": 4.8,
+              "left": 9.6
+            },
+            "useParagraphSpacing": true
+          },
+          "lineWidth": 0
+        },
+        {
+          "order": 4,
+          "kind": "shape",
+          "scope": "layout",
+          "aid": "template/layout//ppt/slideLayouts/slideLayout2.xml/17",
+          "id": "17",
+          "name": "Google Shape;17;p34",
+          "bbox": [
+            97.97,
+            566.92,
+            882.57,
+            22.62
+          ],
+          "geometry": "rect",
+          "text": "Private & Confidential | Copyright © 2025 Security Pattern s.r.l.",
+          "textPreview": "Private & Confidential | Copyright © 2025 Security Pattern s.r.l.",
+          "resolvedTextStyle": {
+            "anchor": 1,
+            "verticalAlignment": "top",
+            "wrap": "square",
+            "autoFit": "resizeShapeToFitText",
+            "insets": {
+              "top": 4.8,
+              "right": 9.6,
+              "bottom": 4.8,
+              "left": 9.6
+            },
+            "useParagraphSpacing": true
+          },
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "Private & Confidential | Copyright © 2025 Security Pattern s.r.l.",
+              "marginLeft": 0,
+              "indent": 0,
+              "lineSpacingPercent": 100000,
+              "spaceBefore": 0,
+              "spaceAfter": 0,
+              "resolvedTextStyle": {
+                "alignment": "center"
+              },
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "Private & Confidential | Copyright © 2025 Security Pattern s.r.l.",
+                  "fontSize": 10.67,
+                  "typeface": "Montserrat",
+                  "color": "#000000",
+                  "textTransform": "none"
+                }
+              ]
+            }
+          ],
+          "lineWidth": 0
+        },
+        {
+          "order": 5,
+          "kind": "shape",
+          "scope": "layout",
+          "aid": "template/layout//ppt/slideLayouts/slideLayout2.xml/18",
+          "id": "18",
+          "name": "Google Shape;18;p34",
+          "bbox": [
+            988.72,
+            558.72,
+            68.89,
+            31.94
+          ],
+          "geometry": "rect",
+          "text": "‹nr.›",
+          "textPreview": "‹nr.›",
+          "resolvedTextStyle": {
+            "anchor": 2,
+            "verticalAlignment": "middle",
+            "wrap": "square",
+            "autoFit": "none",
+            "insets": {
+              "top": 4.8,
+              "right": 9.6,
+              "bottom": 4.8,
+              "left": 9.6
+            },
+            "useParagraphSpacing": true
+          },
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "‹nr.›",
+              "marginLeft": 0,
+              "indent": 0,
+              "spaceBefore": 0,
+              "spaceAfter": 0,
+              "resolvedTextStyle": {
+                "alignment": "right"
+              },
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "‹nr.›",
+                  "alignment": "right"
+                }
+              ]
+            }
+          ],
+          "lineWidth": 0
+        },
+        {
+          "order": 6,
+          "kind": "image",
+          "scope": "layout",
+          "aid": "template/layout//ppt/slideLayouts/slideLayout2.xml/19",
+          "id": "19",
+          "name": "Google Shape;19;p34",
+          "bbox": [
+            21.67,
+            532.9,
+            51.4,
+            51.34
+          ],
+          "contentType": "image/png",
+          "imageCrop": {
+            "left": 0,
+            "top": 0,
+            "right": 0,
+            "bottom": 0
+          },
+          "asset": {
+            "assetId": "/ppt/media/image2.png",
+            "contentType": "image/png",
+            "byteLength": 20928
+          },
+          "fillImage": {
+            "assetId": "/ppt/media/image2.png",
+            "contentType": "image/png",
+            "byteLength": 20928
+          }
+        },
+        {
+          "order": 7,
+          "kind": "image",
+          "scope": "layout",
+          "aid": "template/layout//ppt/slideLayouts/slideLayout2.xml/20",
+          "id": "20",
+          "name": "Google Shape;20;p34",
+          "bbox": [
+            22.54,
+            533.76,
+            173.88,
+            55.6
+          ],
+          "contentType": "image/png",
+          "imageCrop": {
+            "left": 0,
+            "top": 0,
+            "right": 0,
+            "bottom": 0
+          },
+          "asset": {
+            "assetId": "/ppt/media/image3.png",
+            "contentType": "image/png",
+            "byteLength": 46834
+          },
+          "fillImage": {
+            "assetId": "/ppt/media/image3.png",
+            "contentType": "image/png",
+            "byteLength": 46834
+          }
+        }
+      ]
+    },
+    {
+      "scope": "master",
+      "id": "/ppt/slideMasters/slideMaster1.xml",
+      "type": "master",
+      "backgroundColor": "lt1",
+      "elements": [
+        {
+          "order": 1,
+          "kind": "shape",
+          "scope": "master",
+          "aid": "template/master//ppt/slideMasters/slideMaster1.xml/7",
+          "id": "7",
+          "name": "Google Shape;7;p32",
+          "bbox": [
+            94.44,
+            54.17,
+            610,
+            115.97
+          ],
+          "geometry": "rect",
+          "resolvedTextStyle": {
+            "anchor": 2,
+            "verticalAlignment": "middle",
+            "wrap": "square",
+            "autoFit": "shrinkText",
+            "insets": {
+              "top": 4.8,
+              "right": 9.6,
+              "bottom": 4.8,
+              "left": 9.6
+            },
+            "useParagraphSpacing": true
+          },
+          "lineWidth": 0
+        },
+        {
+          "order": 2,
+          "kind": "shape",
+          "scope": "master",
+          "aid": "template/master//ppt/slideMasters/slideMaster1.xml/8",
+          "id": "8",
+          "name": "Google Shape;8;p32",
+          "bbox": [
+            116.57,
+            194.06,
+            886.76,
+            365.39
+          ],
+          "geometry": "rect",
+          "resolvedTextStyle": {
+            "anchor": 1,
+            "verticalAlignment": "top",
+            "wrap": "square",
+            "autoFit": "shrinkText",
+            "insets": {
+              "top": 4.8,
+              "right": 9.6,
+              "bottom": 4.8,
+              "left": 9.6
+            },
+            "useParagraphSpacing": true
+          },
+          "lineWidth": 0
+        }
+      ]
+    }
+  ],
+  "elements": [
+    {
+      "order": 1,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/yhgn29gr",
+      "id": "132",
+      "name": "Google Shape;132;p8",
+      "bbox": [
+        48.89,
+        117.93,
+        966.1,
+        390.46
+      ],
+      "geometry": "rect",
+      "text": "For each Processing Unit (PU), ARIANNA supports the creation of the SBOM.\nA PU SBOM can combine multiple SBOMs.\nMPUs can include an OS SBOM plus SBOMs for customer applications.\nMCUs can include a bootloader SBOM plus a firmware SBOM.\nComponents in the final SBOM are grouped accordingly.\nEach SBOM is created with support from a dedicated ARIANNA SCA tool.",
+      "textPreview": "For each Processing Unit (PU), ARIANNA supports the creation of the SBOM. | A PU SBOM can combine multiple SBOMs. | MPUs can include an O...",
+      "resolvedFontSize": 32,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 32,
+        "typeface": "Montserrat",
+        "color": "dk1",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "textTransform": "none",
+        "wrap": "square",
+        "autoFit": "shrinkText",
+        "autoFitScale": 1,
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.45
+        },
+        "useParagraphSpacing": true
+      },
+      "textLayout": {
+        "lineCount": 11,
+        "lines": [
+          {
+            "index": 1,
+            "text": "● For each Processing Unit (PU), ARIANNA supports the creation of the SBOM."
+          },
+          {
+            "index": 2,
+            "text": ""
+          },
+          {
+            "index": 3,
+            "text": "● A PU SBOM can combine multiple SBOMs."
+          },
+          {
+            "index": 4,
+            "text": ""
+          },
+          {
+            "index": 5,
+            "text": "o MPUs can include an OS SBOM plus SBOMs for customer applications."
+          },
+          {
+            "index": 6,
+            "text": ""
+          },
+          {
+            "index": 7,
+            "text": "o MCUs can include a bootloader SBOM plus a firmware SBOM."
+          },
+          {
+            "index": 8,
+            "text": ""
+          },
+          {
+            "index": 9,
+            "text": "o Components in the final SBOM are grouped accordingly."
+          },
+          {
+            "index": 10,
+            "text": ""
+          },
+          {
+            "index": 11,
+            "text": "o Each SBOM is created with support from a dedicated ARIANNA SCA tool."
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "For each Processing Unit (PU), ARIANNA supports the creation of the SBOM.",
+          "bulletCharacter": "●",
+          "marginLeft": 269875,
+          "indent": -269875,
+          "lineSpacingPercent": 100000,
+          "spaceBefore": 0,
+          "spaceAfter": 0,
+          "resolvedTextStyle": {
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "For each Processing Unit (PU), ARIANNA supports the creation of the SBOM.",
+              "fontSize": 21.33
+            }
+          ]
+        },
+        {
+          "index": 2,
+          "text": "A PU SBOM can combine multiple SBOMs.",
+          "bulletCharacter": "●",
+          "marginLeft": 269875,
+          "indent": -269875,
+          "lineSpacingPercent": 100000,
+          "spaceBefore": 1000,
+          "spaceAfter": 0,
+          "resolvedTextStyle": {
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "A PU SBOM can combine multiple SBOMs.",
+              "fontSize": 21.33
+            }
+          ]
+        },
+        {
+          "index": 3,
+          "text": "MPUs can include an OS SBOM plus SBOMs for customer applications.",
+          "bulletCharacter": "o",
+          "marginLeft": 533400,
+          "indent": -247650,
+          "lineSpacingPercent": 100000,
+          "spaceBefore": 667,
+          "spaceAfter": 0,
+          "resolvedTextStyle": {
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "MPUs can include an OS SBOM plus SBOMs for customer applications.",
+              "fontSize": 16
+            }
+          ]
+        },
+        {
+          "index": 4,
+          "text": "MCUs can include a bootloader SBOM plus a firmware SBOM.",
+          "bulletCharacter": "o",
+          "marginLeft": 533400,
+          "indent": -247650,
+          "lineSpacingPercent": 100000,
+          "spaceBefore": 667,
+          "spaceAfter": 0,
+          "resolvedTextStyle": {
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "MCUs can include a bootloader SBOM plus a firmware SBOM.",
+              "fontSize": 16
+            }
+          ]
+        },
+        {
+          "index": 5,
+          "text": "Components in the final SBOM are grouped accordingly.",
+          "bulletCharacter": "o",
+          "marginLeft": 533400,
+          "indent": -247650,
+          "lineSpacingPercent": 100000,
+          "spaceBefore": 667,
+          "spaceAfter": 0,
+          "resolvedTextStyle": {
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Components in the final SBOM are grouped accordingly.",
+              "fontSize": 16
+            }
+          ]
+        },
+        {
+          "index": 6,
+          "text": "Each SBOM is created with support from a dedicated ARIANNA SCA tool.",
+          "bulletCharacter": "o",
+          "marginLeft": 533400,
+          "indent": -247650,
+          "lineSpacingPercent": 100000,
+          "spaceBefore": 667,
+          "spaceAfter": 0,
+          "resolvedTextStyle": {
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Each SBOM is created with support from a dedicated ARIANNA SCA tool.",
+              "fontSize": 16
+            }
+          ]
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 2,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/n29gr2p8",
+      "id": "133",
+      "name": "Google Shape;133;p8",
+      "bbox": [
+        30.15,
+        13.85,
+        1003.58,
+        61.49
+      ],
+      "geometry": "rect",
+      "text": "Device Model creation: SBOM",
+      "textPreview": "Device Model creation: SBOM",
+      "resolvedFontSize": 42.67,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 42.67,
+        "typeface": "Montserrat",
+        "color": "lt1",
+        "bold": true,
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "textTransform": "none",
+        "wrap": "square",
+        "autoFit": "none",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        },
+        "useParagraphSpacing": true
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Device Model creation: SBOM"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Device Model creation: SBOM",
+          "marginLeft": 0,
+          "indent": 0,
+          "lineSpacingPercent": 90000,
+          "spaceBefore": 0,
+          "spaceAfter": 0,
+          "resolvedTextStyle": {
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Device Model creation: SBOM",
+              "alignment": "left"
+            }
+          ],
+          "bulletCharacter": ""
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 3,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/gbq1oryt",
+      "id": "134",
+      "name": "Google Shape;134;p8",
+      "bbox": [
+        988.72,
+        558.72,
+        68.89,
+        31.94
+      ],
+      "geometry": "rect",
+      "text": "11",
+      "textPreview": "11",
+      "resolvedFontSize": 18.67,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 18.67,
+        "typeface": "Montserrat",
+        "color": "#41BAB7",
+        "bold": true,
+        "alignment": "right",
+        "verticalAlignment": "middle",
+        "textTransform": "none",
+        "wrap": "square",
+        "autoFit": "none",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        },
+        "useParagraphSpacing": true
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "11"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "11",
+          "marginLeft": 0,
+          "indent": 0,
+          "lineSpacingPercent": 100000,
+          "spaceBefore": 0,
+          "spaceAfter": 0,
+          "resolvedTextStyle": {
+            "alignment": "right"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "11",
+              "alignment": "right"
+            }
+          ],
+          "bulletCharacter": ""
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 4,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/5wjudg7a",
+      "id": "135",
+      "name": "Google Shape;135;p8",
+      "bbox": [
+        133.69,
+        478.55,
+        264.6,
+        45.78
+      ],
+      "geometry": "roundRect",
+      "text": "PU1 | i.MX 93",
+      "textPreview": "PU1 | i.MX 93",
+      "resolvedFontSize": 18.67,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 18.67,
+        "typeface": "Arial",
+        "color": "#000000",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "textTransform": "none",
+        "wrap": "square",
+        "autoFit": "none",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        },
+        "useParagraphSpacing": true
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "PU1 | i.MX 93"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "PU1 | i.MX 93",
+          "marginLeft": 0,
+          "indent": 0,
+          "lineSpacingPercent": 100000,
+          "spaceBefore": 0,
+          "spaceAfter": 0,
+          "resolvedTextStyle": {
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "PU1 | i.MX 93",
+              "fontSize": 18.67,
+              "typeface": "Arial",
+              "color": "lt1",
+              "textTransform": "none"
+            }
+          ],
+          "bulletCharacter": ""
+        }
+      ],
+      "fillColor": "#9E9E9E",
+      "lineWidth": 0
+    },
+    {
+      "order": 5,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/y90je9cv",
+      "id": "136",
+      "name": "Google Shape;136;p8",
+      "bbox": [
+        780.11,
+        478.55,
+        150.79,
+        45.78
+      ],
+      "geometry": "roundRect",
+      "text": "PU3 | ESP32",
+      "textPreview": "PU3 | ESP32",
+      "resolvedFontSize": 18.67,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 18.67,
+        "typeface": "Arial",
+        "color": "#000000",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "textTransform": "none",
+        "wrap": "square",
+        "autoFit": "none",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        },
+        "useParagraphSpacing": true
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "PU3 | ESP32"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "PU3 | ESP32",
+          "marginLeft": 0,
+          "indent": 0,
+          "lineSpacingPercent": 100000,
+          "spaceBefore": 0,
+          "spaceAfter": 0,
+          "resolvedTextStyle": {
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "PU3 | ESP32",
+              "fontSize": 18.67,
+              "typeface": "Arial",
+              "color": "lt1",
+              "textTransform": "none"
+            }
+          ],
+          "bulletCharacter": ""
+        }
+      ],
+      "fillColor": "#9E9E9E",
+      "lineWidth": 0
+    },
+    {
+      "order": 6,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/nuxc3ylc",
+      "id": "137",
+      "name": "Google Shape;137;p8",
+      "bbox": [
+        434.22,
+        478.8,
+        310.02,
+        45.78
+      ],
+      "geometry": "roundRect",
+      "text": "PU2 | STM32F4",
+      "textPreview": "PU2 | STM32F4",
+      "resolvedFontSize": 18.67,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 18.67,
+        "typeface": "Arial",
+        "color": "#000000",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "textTransform": "none",
+        "wrap": "square",
+        "autoFit": "none",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        },
+        "useParagraphSpacing": true
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "PU2 | STM32F4"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "PU2 | STM32F4",
+          "marginLeft": 0,
+          "indent": 0,
+          "lineSpacingPercent": 100000,
+          "spaceBefore": 0,
+          "spaceAfter": 0,
+          "resolvedTextStyle": {
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "PU2 | STM32F4",
+              "fontSize": 18.67,
+              "typeface": "Arial",
+              "color": "lt1",
+              "textTransform": "none"
+            }
+          ],
+          "bulletCharacter": ""
+        }
+      ],
+      "fillColor": "#9E9E9E",
+      "lineWidth": 0
+    },
+    {
+      "order": 7,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/cbulwval",
+      "id": "138",
+      "name": "Google Shape;138;p8",
+      "bbox": [
+        787.01,
+        416.04,
+        136.53,
+        46.6
+      ],
+      "geometry": "roundRect",
+      "text": "Firmware SBOM",
+      "textPreview": "Firmware SBOM",
+      "resolvedFontSize": 18.67,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 18.67,
+        "typeface": "Arial",
+        "color": "#000000",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "textTransform": "none",
+        "wrap": "square",
+        "autoFit": "none",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        },
+        "useParagraphSpacing": true
+      },
+      "textLayout": {
+        "lineCount": 2,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Firmware"
+          },
+          {
+            "index": 2,
+            "text": "SBOM"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Firmware SBOM",
+          "marginLeft": 0,
+          "indent": 0,
+          "lineSpacingPercent": 100000,
+          "spaceBefore": 0,
+          "spaceAfter": 0,
+          "resolvedTextStyle": {
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Firmware SBOM",
+              "fontSize": 16,
+              "typeface": "Arial",
+              "color": "lt1",
+              "textTransform": "none"
+            }
+          ],
+          "bulletCharacter": ""
+        }
+      ],
+      "fillColor": "#DA92D5",
+      "lineWidth": 0
+    },
+    {
+      "order": 8,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/5sneloj2",
+      "id": "139",
+      "name": "Google Shape;139;p8",
+      "bbox": [
+        442.24,
+        416.29,
+        143.56,
+        46.6
+      ],
+      "geometry": "roundRect",
+      "text": "Bootloader SBOM",
+      "textPreview": "Bootloader SBOM",
+      "resolvedFontSize": 18.67,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 18.67,
+        "typeface": "Arial",
+        "color": "#000000",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "textTransform": "none",
+        "wrap": "square",
+        "autoFit": "none",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        },
+        "useParagraphSpacing": true
+      },
+      "textLayout": {
+        "lineCount": 2,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Bootloader"
+          },
+          {
+            "index": 2,
+            "text": "SBOM"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Bootloader SBOM",
+          "marginLeft": 0,
+          "indent": 0,
+          "lineSpacingPercent": 100000,
+          "spaceBefore": 0,
+          "spaceAfter": 0,
+          "resolvedTextStyle": {
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Bootloader SBOM",
+              "fontSize": 16,
+              "typeface": "Arial",
+              "color": "lt1",
+              "textTransform": "none"
+            }
+          ],
+          "bulletCharacter": ""
+        }
+      ],
+      "fillColor": "#E5902A",
+      "lineWidth": 0
+    },
+    {
+      "order": 9,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/1gvy90je",
+      "id": "140",
+      "name": "Google Shape;140;p8",
+      "bbox": [
+        593.81,
+        416.29,
+        143.56,
+        46.6
+      ],
+      "geometry": "roundRect",
+      "text": "Firmware SBOM",
+      "textPreview": "Firmware SBOM",
+      "resolvedFontSize": 18.67,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 18.67,
+        "typeface": "Arial",
+        "color": "#000000",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "textTransform": "none",
+        "wrap": "square",
+        "autoFit": "none",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        },
+        "useParagraphSpacing": true
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Firmware SBOM"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Firmware SBOM",
+          "marginLeft": 0,
+          "indent": 0,
+          "lineSpacingPercent": 100000,
+          "spaceBefore": 0,
+          "spaceAfter": 0,
+          "resolvedTextStyle": {
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Firmware SBOM",
+              "fontSize": 16,
+              "typeface": "Arial",
+              "color": "lt1",
+              "textTransform": "none"
+            }
+          ],
+          "bulletCharacter": ""
+        }
+      ],
+      "fillColor": "#DA92D5",
+      "lineWidth": 0
+    },
+    {
+      "order": 10,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/8z25kb6x",
+      "id": "141",
+      "name": "Google Shape;141;p8",
+      "bbox": [
+        140.22,
+        413.4,
+        250.5,
+        49.24
+      ],
+      "geometry": "roundRect",
+      "text": "YOCTO SBOM",
+      "textPreview": "YOCTO SBOM",
+      "resolvedFontSize": 18.67,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 18.67,
+        "typeface": "Arial",
+        "color": "#000000",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "textTransform": "none",
+        "wrap": "square",
+        "autoFit": "none",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        },
+        "useParagraphSpacing": true
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "YOCTO SBOM"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "YOCTO SBOM",
+          "marginLeft": 0,
+          "indent": 0,
+          "lineSpacingPercent": 100000,
+          "spaceBefore": 0,
+          "spaceAfter": 0,
+          "resolvedTextStyle": {
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "YOCTO SBOM",
+              "fontSize": 16,
+              "typeface": "Arial",
+              "color": "lt1",
+              "textTransform": "none"
+            }
+          ],
+          "bulletCharacter": ""
+        }
+      ],
+      "fillColor": "#B7D090",
+      "lineWidth": 0
+    },
+    {
+      "order": 11,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/je9cvixc",
+      "id": "142",
+      "name": "Google Shape;142;p8",
+      "bbox": [
+        140.22,
+        350.03,
+        121.77,
+        57.81
+      ],
+      "geometry": "roundRect",
+      "text": "Javascript Application\nSBOM",
+      "textPreview": "Javascript Application | SBOM",
+      "resolvedFontSize": 18.67,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 18.67,
+        "typeface": "Arial",
+        "color": "#000000",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "textTransform": "none",
+        "wrap": "square",
+        "autoFit": "none",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        },
+        "useParagraphSpacing": true
+      },
+      "textLayout": {
+        "lineCount": 3,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Javascript"
+          },
+          {
+            "index": 2,
+            "text": "Application"
+          },
+          {
+            "index": 3,
+            "text": "SBOM"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Javascript Application",
+          "marginLeft": 0,
+          "indent": 0,
+          "lineSpacingPercent": 100000,
+          "spaceBefore": 0,
+          "spaceAfter": 0,
+          "resolvedTextStyle": {
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Javascript Application",
+              "fontSize": 14.67,
+              "typeface": "Arial",
+              "color": "lt1",
+              "textTransform": "none"
+            }
+          ],
+          "bulletCharacter": ""
+        },
+        {
+          "index": 2,
+          "text": "SBOM",
+          "marginLeft": 0,
+          "indent": 0,
+          "lineSpacingPercent": 100000,
+          "spaceBefore": 0,
+          "spaceAfter": 0,
+          "resolvedTextStyle": {
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "SBOM",
+              "fontSize": 14.67,
+              "typeface": "Arial",
+              "color": "lt1",
+              "textTransform": "none"
+            }
+          ],
+          "bulletCharacter": ""
+        }
+      ],
+      "fillColor": "#D3AC97",
+      "lineWidth": 0
+    },
+    {
+      "order": 12,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/qtcj6tov",
+      "id": "143",
+      "name": "Google Shape;143;p8",
+      "bbox": [
+        266.8,
+        350.03,
+        121.37,
+        58.83
+      ],
+      "geometry": "roundRect",
+      "text": "Python Application\nSBOM",
+      "textPreview": "Python Application | SBOM",
+      "resolvedFontSize": 18.67,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 18.67,
+        "typeface": "Arial",
+        "color": "#000000",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "textTransform": "none",
+        "wrap": "square",
+        "autoFit": "none",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        },
+        "useParagraphSpacing": true
+      },
+      "textLayout": {
+        "lineCount": 3,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Python"
+          },
+          {
+            "index": 2,
+            "text": "Application"
+          },
+          {
+            "index": 3,
+            "text": "SBOM"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Python Application",
+          "marginLeft": 0,
+          "indent": 0,
+          "lineSpacingPercent": 100000,
+          "spaceBefore": 0,
+          "spaceAfter": 0,
+          "resolvedTextStyle": {
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Python Application",
+              "fontSize": 14.67,
+              "typeface": "Arial",
+              "color": "lt1",
+              "textTransform": "none"
+            }
+          ],
+          "bulletCharacter": ""
+        },
+        {
+          "index": 2,
+          "text": "SBOM",
+          "marginLeft": 0,
+          "indent": 0,
+          "lineSpacingPercent": 100000,
+          "spaceBefore": 0,
+          "spaceAfter": 0,
+          "resolvedTextStyle": {
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "SBOM",
+              "fontSize": 14.67,
+              "typeface": "Arial",
+              "color": "lt1",
+              "textTransform": "none"
+            }
+          ],
+          "bulletCharacter": ""
+        }
+      ],
+      "fillColor": "#F3B5AA",
+      "lineWidth": 0
+    },
+    {
+      "order": 13,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/xs72x4na",
+      "id": "144",
+      "name": "Google Shape;144;p8",
+      "bbox": [
+        133.69,
+        343.13,
+        264.6,
+        127.63
+      ],
+      "geometry": "roundRect",
+      "resolvedFontSize": 18.67,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 18.67,
+        "typeface": "Arial",
+        "color": "#000000",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "textTransform": "none",
+        "wrap": "square",
+        "autoFit": "none",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        },
+        "useParagraphSpacing": true
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": ""
+          }
+        ]
+      },
+      "lineColor": "#9E9E9E",
+      "lineWidth": 1.33
+    },
+    {
+      "order": 14,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/87ed8bat",
+      "id": "145",
+      "name": "Google Shape;145;p8",
+      "bbox": [
+        780.11,
+        407.85,
+        150.79,
+        62.91
+      ],
+      "geometry": "roundRect",
+      "resolvedFontSize": 18.67,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 18.67,
+        "typeface": "Arial",
+        "color": "#000000",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "textTransform": "none",
+        "wrap": "square",
+        "autoFit": "none",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        },
+        "useParagraphSpacing": true
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": ""
+          }
+        ]
+      },
+      "lineColor": "#9E9E9E",
+      "lineWidth": 1.33
+    },
+    {
+      "order": 15,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/fmlkjm1c",
+      "id": "146",
+      "name": "Google Shape;146;p8",
+      "bbox": [
+        434.22,
+        408.1,
+        310.02,
+        62.91
+      ],
+      "geometry": "roundRect",
+      "resolvedFontSize": 18.67,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 18.67,
+        "typeface": "Arial",
+        "color": "#000000",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "textTransform": "none",
+        "wrap": "square",
+        "autoFit": "none",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        },
+        "useParagraphSpacing": true
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": ""
+          }
+        ]
+      },
+      "lineColor": "#9E9E9E",
+      "lineWidth": 1.33
+    }
+  ],
+  "composeRuns": []
+}

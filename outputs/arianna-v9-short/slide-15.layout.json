@@ -1,0 +1,838 @@
+{
+  "schema": "openai.presentation.layout/v4",
+  "unit": "px",
+  "slide": {
+    "aid": "sl/7y1kre1w",
+    "id": "7y1kre1w",
+    "slide": 15,
+    "layoutId": "/ppt/slideLayouts/slideLayout2.xml",
+    "layoutName": "Content",
+    "masterLayoutId": "/ppt/slideMasters/slideMaster1.xml",
+    "frame": {
+      "left": 0,
+      "top": 0,
+      "width": 1066.67,
+      "height": 600
+    }
+  },
+  "theme": {
+    "colorSchemeName": "Security Pattern Color",
+    "colors": {
+      "accent1": "#F7F0EC",
+      "accent2": "#E2492F",
+      "accent3": "#41BAB6",
+      "accent4": "#88B04B",
+      "accent5": "#F1C300",
+      "accent6": "#5E5E5E",
+      "dk1": "#000000",
+      "lt1": "#FFFFFF",
+      "dk2": "#41BAB6",
+      "lt2": "#C5C6C7",
+      "hlink": "#41BAB6",
+      "folHlink": "#41BAB6"
+    },
+    "fontScheme": {
+      "name": "Office",
+      "majorFont": {
+        "latinTypeface": "Arial"
+      },
+      "minorFont": {
+        "latinTypeface": "Arial"
+      }
+    },
+    "typefaces": [
+      "Arial",
+      "Montserrat"
+    ]
+  },
+  "inheritedLayers": [
+    {
+      "scope": "layout",
+      "id": "/ppt/slideLayouts/slideLayout2.xml",
+      "name": "Content",
+      "parentLayoutId": "/ppt/slideMasters/slideMaster1.xml",
+      "backgroundColor": "lt1",
+      "elements": [
+        {
+          "order": 1,
+          "kind": "shape",
+          "scope": "layout",
+          "aid": "template/layout//ppt/slideLayouts/slideLayout2.xml/14",
+          "id": "14",
+          "name": "Google Shape;14;p34",
+          "bbox": [
+            0,
+            0,
+            1066.67,
+            89.2
+          ],
+          "geometry": "rect",
+          "resolvedTextStyle": {
+            "anchor": 2,
+            "verticalAlignment": "middle",
+            "wrap": "square",
+            "autoFit": "none",
+            "insets": {
+              "top": 4.8,
+              "right": 9.6,
+              "bottom": 4.8,
+              "left": 9.6
+            },
+            "useParagraphSpacing": true
+          },
+          "fillColor": "#41BAB7",
+          "lineWidth": 0
+        },
+        {
+          "order": 2,
+          "kind": "shape",
+          "scope": "layout",
+          "aid": "template/layout//ppt/slideLayouts/slideLayout2.xml/15",
+          "id": "15",
+          "name": "Google Shape;15;p34",
+          "bbox": [
+            48.89,
+            117.93,
+            966.1,
+            390.46
+          ],
+          "geometry": "rect",
+          "resolvedTextStyle": {
+            "anchor": 1,
+            "verticalAlignment": "top",
+            "wrap": "square",
+            "autoFit": "shrinkText",
+            "insets": {
+              "top": 4.8,
+              "right": 9.6,
+              "bottom": 4.8,
+              "left": 9.45
+            },
+            "useParagraphSpacing": true
+          },
+          "lineWidth": 0
+        },
+        {
+          "order": 3,
+          "kind": "shape",
+          "scope": "layout",
+          "aid": "template/layout//ppt/slideLayouts/slideLayout2.xml/16",
+          "id": "16",
+          "name": "Google Shape;16;p34",
+          "bbox": [
+            30.15,
+            13.85,
+            1003.58,
+            61.49
+          ],
+          "geometry": "rect",
+          "resolvedTextStyle": {
+            "anchor": 2,
+            "verticalAlignment": "middle",
+            "wrap": "square",
+            "autoFit": "none",
+            "insets": {
+              "top": 4.8,
+              "right": 9.6,
+              "bottom": 4.8,
+              "left": 9.6
+            },
+            "useParagraphSpacing": true
+          },
+          "lineWidth": 0
+        },
+        {
+          "order": 4,
+          "kind": "shape",
+          "scope": "layout",
+          "aid": "template/layout//ppt/slideLayouts/slideLayout2.xml/17",
+          "id": "17",
+          "name": "Google Shape;17;p34",
+          "bbox": [
+            97.97,
+            566.92,
+            882.57,
+            22.62
+          ],
+          "geometry": "rect",
+          "text": "Private & Confidential | Copyright © 2025 Security Pattern s.r.l.",
+          "textPreview": "Private & Confidential | Copyright © 2025 Security Pattern s.r.l.",
+          "resolvedTextStyle": {
+            "anchor": 1,
+            "verticalAlignment": "top",
+            "wrap": "square",
+            "autoFit": "resizeShapeToFitText",
+            "insets": {
+              "top": 4.8,
+              "right": 9.6,
+              "bottom": 4.8,
+              "left": 9.6
+            },
+            "useParagraphSpacing": true
+          },
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "Private & Confidential | Copyright © 2025 Security Pattern s.r.l.",
+              "marginLeft": 0,
+              "indent": 0,
+              "lineSpacingPercent": 100000,
+              "spaceBefore": 0,
+              "spaceAfter": 0,
+              "resolvedTextStyle": {
+                "alignment": "center"
+              },
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "Private & Confidential | Copyright © 2025 Security Pattern s.r.l.",
+                  "fontSize": 10.67,
+                  "typeface": "Montserrat",
+                  "color": "#000000",
+                  "textTransform": "none"
+                }
+              ]
+            }
+          ],
+          "lineWidth": 0
+        },
+        {
+          "order": 5,
+          "kind": "shape",
+          "scope": "layout",
+          "aid": "template/layout//ppt/slideLayouts/slideLayout2.xml/18",
+          "id": "18",
+          "name": "Google Shape;18;p34",
+          "bbox": [
+            988.72,
+            558.72,
+            68.89,
+            31.94
+          ],
+          "geometry": "rect",
+          "text": "‹nr.›",
+          "textPreview": "‹nr.›",
+          "resolvedTextStyle": {
+            "anchor": 2,
+            "verticalAlignment": "middle",
+            "wrap": "square",
+            "autoFit": "none",
+            "insets": {
+              "top": 4.8,
+              "right": 9.6,
+              "bottom": 4.8,
+              "left": 9.6
+            },
+            "useParagraphSpacing": true
+          },
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "‹nr.›",
+              "marginLeft": 0,
+              "indent": 0,
+              "spaceBefore": 0,
+              "spaceAfter": 0,
+              "resolvedTextStyle": {
+                "alignment": "right"
+              },
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "‹nr.›",
+                  "alignment": "right"
+                }
+              ]
+            }
+          ],
+          "lineWidth": 0
+        },
+        {
+          "order": 6,
+          "kind": "image",
+          "scope": "layout",
+          "aid": "template/layout//ppt/slideLayouts/slideLayout2.xml/19",
+          "id": "19",
+          "name": "Google Shape;19;p34",
+          "bbox": [
+            21.67,
+            532.9,
+            51.4,
+            51.34
+          ],
+          "contentType": "image/png",
+          "imageCrop": {
+            "left": 0,
+            "top": 0,
+            "right": 0,
+            "bottom": 0
+          },
+          "asset": {
+            "assetId": "/ppt/media/image2.png",
+            "contentType": "image/png",
+            "byteLength": 20928
+          },
+          "fillImage": {
+            "assetId": "/ppt/media/image2.png",
+            "contentType": "image/png",
+            "byteLength": 20928
+          }
+        },
+        {
+          "order": 7,
+          "kind": "image",
+          "scope": "layout",
+          "aid": "template/layout//ppt/slideLayouts/slideLayout2.xml/20",
+          "id": "20",
+          "name": "Google Shape;20;p34",
+          "bbox": [
+            22.54,
+            533.76,
+            173.88,
+            55.6
+          ],
+          "contentType": "image/png",
+          "imageCrop": {
+            "left": 0,
+            "top": 0,
+            "right": 0,
+            "bottom": 0
+          },
+          "asset": {
+            "assetId": "/ppt/media/image3.png",
+            "contentType": "image/png",
+            "byteLength": 46834
+          },
+          "fillImage": {
+            "assetId": "/ppt/media/image3.png",
+            "contentType": "image/png",
+            "byteLength": 46834
+          }
+        }
+      ]
+    },
+    {
+      "scope": "master",
+      "id": "/ppt/slideMasters/slideMaster1.xml",
+      "type": "master",
+      "backgroundColor": "lt1",
+      "elements": [
+        {
+          "order": 1,
+          "kind": "shape",
+          "scope": "master",
+          "aid": "template/master//ppt/slideMasters/slideMaster1.xml/7",
+          "id": "7",
+          "name": "Google Shape;7;p32",
+          "bbox": [
+            94.44,
+            54.17,
+            610,
+            115.97
+          ],
+          "geometry": "rect",
+          "resolvedTextStyle": {
+            "anchor": 2,
+            "verticalAlignment": "middle",
+            "wrap": "square",
+            "autoFit": "shrinkText",
+            "insets": {
+              "top": 4.8,
+              "right": 9.6,
+              "bottom": 4.8,
+              "left": 9.6
+            },
+            "useParagraphSpacing": true
+          },
+          "lineWidth": 0
+        },
+        {
+          "order": 2,
+          "kind": "shape",
+          "scope": "master",
+          "aid": "template/master//ppt/slideMasters/slideMaster1.xml/8",
+          "id": "8",
+          "name": "Google Shape;8;p32",
+          "bbox": [
+            116.57,
+            194.06,
+            886.76,
+            365.39
+          ],
+          "geometry": "rect",
+          "resolvedTextStyle": {
+            "anchor": 1,
+            "verticalAlignment": "top",
+            "wrap": "square",
+            "autoFit": "shrinkText",
+            "insets": {
+              "top": 4.8,
+              "right": 9.6,
+              "bottom": 4.8,
+              "left": 9.6
+            },
+            "useParagraphSpacing": true
+          },
+          "lineWidth": 0
+        }
+      ]
+    }
+  ],
+  "elements": [
+    {
+      "order": 1,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/gvy90je9",
+      "id": "325",
+      "name": "Google Shape;325;p23",
+      "bbox": [
+        48.89,
+        117.93,
+        966.1,
+        390.46
+      ],
+      "geometry": "rect",
+      "text": "SBOM (and HBOM) export\nStandard formats (CycloneDX or SPDX)\nNTIA Minimum Requirements satisfied\nPossibility to exclude components from the exported SBOM\nVulnerability Report export\nReport on-demand (PDF or VEX format)\nAutomatic monthly report (PDF format)\nAll actions taken on vulnerabilities are logged\nNotification date, Closure date, Status change dates\n\n\n",
+      "textPreview": "SBOM (and HBOM) export | Standard formats (CycloneDX or SPDX) | NTIA Minimum Requirements satisfied | Possibility to exclude components f...",
+      "resolvedFontSize": 32,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 32,
+        "typeface": "Montserrat",
+        "color": "dk1",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "textTransform": "none",
+        "wrap": "square",
+        "autoFit": "shrinkText",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.45
+        },
+        "useParagraphSpacing": true
+      },
+      "textLayout": {
+        "lineCount": 23,
+        "lines": [
+          {
+            "index": 1,
+            "text": "● SBOM (and HBOM) export"
+          },
+          {
+            "index": 2,
+            "text": ""
+          },
+          {
+            "index": 3,
+            "text": "o Standard formats (CycloneDX or SPDX)"
+          },
+          {
+            "index": 4,
+            "text": ""
+          },
+          {
+            "index": 5,
+            "text": "o NTIA Minimum Requirements satisfied"
+          },
+          {
+            "index": 6,
+            "text": ""
+          },
+          {
+            "index": 7,
+            "text": "o Possibility to exclude components from the exported SBOM"
+          },
+          {
+            "index": 8,
+            "text": ""
+          },
+          {
+            "index": 9,
+            "text": "● Vulnerability Report export"
+          },
+          {
+            "index": 10,
+            "text": ""
+          },
+          {
+            "index": 11,
+            "text": "o Report on-demand (PDF or VEX format)"
+          },
+          {
+            "index": 12,
+            "text": ""
+          },
+          {
+            "index": 13,
+            "text": "o Automatic monthly report (PDF format)"
+          },
+          {
+            "index": 14,
+            "text": ""
+          },
+          {
+            "index": 15,
+            "text": "o All actions taken on vulnerabilities are logged"
+          },
+          {
+            "index": 16,
+            "text": ""
+          },
+          {
+            "index": 17,
+            "text": "o Notification date, Closure date, Status change dates"
+          },
+          {
+            "index": 18,
+            "text": ""
+          },
+          {
+            "index": 19,
+            "text": ""
+          },
+          {
+            "index": 20,
+            "text": ""
+          },
+          {
+            "index": 21,
+            "text": ""
+          },
+          {
+            "index": 22,
+            "text": ""
+          },
+          {
+            "index": 23,
+            "text": ""
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "SBOM (and HBOM) export",
+          "bulletCharacter": "●",
+          "marginLeft": 269875,
+          "indent": -269875,
+          "lineSpacingPercent": 100000,
+          "spaceBefore": 0,
+          "spaceAfter": 0,
+          "resolvedTextStyle": {
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "SBOM (and HBOM) export",
+              "alignment": "left"
+            }
+          ]
+        },
+        {
+          "index": 2,
+          "text": "Standard formats (CycloneDX or SPDX)",
+          "bulletCharacter": "o",
+          "marginLeft": 533400,
+          "indent": -247650,
+          "lineSpacingPercent": 100000,
+          "spaceBefore": 667,
+          "spaceAfter": 0,
+          "resolvedTextStyle": {
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Standard formats (CycloneDX or SPDX)",
+              "alignment": "left"
+            }
+          ]
+        },
+        {
+          "index": 3,
+          "text": "NTIA Minimum Requirements satisfied",
+          "bulletCharacter": "o",
+          "marginLeft": 533400,
+          "indent": -247650,
+          "lineSpacingPercent": 100000,
+          "spaceBefore": 667,
+          "spaceAfter": 0,
+          "resolvedTextStyle": {
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "NTIA Minimum Requirements satisfied",
+              "alignment": "left"
+            }
+          ]
+        },
+        {
+          "index": 4,
+          "text": "Possibility to exclude components from the exported SBOM",
+          "bulletCharacter": "o",
+          "marginLeft": 533400,
+          "indent": -247650,
+          "lineSpacingPercent": 100000,
+          "spaceBefore": 667,
+          "spaceAfter": 0,
+          "resolvedTextStyle": {
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Possibility to exclude components from the exported SBOM",
+              "alignment": "left"
+            }
+          ]
+        },
+        {
+          "index": 5,
+          "text": "Vulnerability Report export",
+          "bulletCharacter": "●",
+          "marginLeft": 269875,
+          "indent": -269875,
+          "lineSpacingPercent": 100000,
+          "spaceBefore": 1000,
+          "spaceAfter": 0,
+          "resolvedTextStyle": {
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Vulnerability Report export",
+              "alignment": "left"
+            }
+          ]
+        },
+        {
+          "index": 6,
+          "text": "Report on-demand (PDF or VEX format)",
+          "bulletCharacter": "o",
+          "marginLeft": 533400,
+          "indent": -247650,
+          "lineSpacingPercent": 100000,
+          "spaceBefore": 667,
+          "spaceAfter": 0,
+          "resolvedTextStyle": {
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Report on-demand (PDF or VEX format)",
+              "alignment": "left"
+            }
+          ]
+        },
+        {
+          "index": 7,
+          "text": "Automatic monthly report (PDF format)",
+          "bulletCharacter": "o",
+          "marginLeft": 533400,
+          "indent": -247650,
+          "lineSpacingPercent": 100000,
+          "spaceBefore": 667,
+          "spaceAfter": 0,
+          "resolvedTextStyle": {
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Automatic monthly report (PDF format)",
+              "alignment": "left"
+            }
+          ]
+        },
+        {
+          "index": 8,
+          "text": "All actions taken on vulnerabilities are logged",
+          "bulletCharacter": "o",
+          "marginLeft": 533400,
+          "indent": -247650,
+          "lineSpacingPercent": 100000,
+          "spaceBefore": 667,
+          "spaceAfter": 0,
+          "resolvedTextStyle": {
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "All actions taken on vulnerabilities are logged",
+              "alignment": "left"
+            }
+          ]
+        },
+        {
+          "index": 9,
+          "text": "Notification date, Closure date, Status change dates",
+          "bulletCharacter": "o",
+          "marginLeft": 804863,
+          "indent": -233363,
+          "lineSpacingPercent": 100000,
+          "spaceBefore": 667,
+          "spaceAfter": 0,
+          "resolvedTextStyle": {
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Notification date, Closure date, Status change dates",
+              "alignment": "left"
+            }
+          ]
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 2,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/ra5gbq1o",
+      "id": "326",
+      "name": "Google Shape;326;p23",
+      "bbox": [
+        30.15,
+        13.85,
+        1003.58,
+        61.49
+      ],
+      "geometry": "rect",
+      "text": "Reports for customers & regulatory bodies",
+      "textPreview": "Reports for customers & regulatory bodies",
+      "resolvedFontSize": 42.67,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 42.67,
+        "typeface": "Montserrat",
+        "color": "lt1",
+        "bold": true,
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "textTransform": "none",
+        "wrap": "square",
+        "autoFit": "none",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        },
+        "useParagraphSpacing": true
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Reports for customers & regulatory bodies"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Reports for customers & regulatory bodies",
+          "marginLeft": 0,
+          "indent": 0,
+          "lineSpacingPercent": 90000,
+          "spaceBefore": 0,
+          "spaceAfter": 0,
+          "resolvedTextStyle": {
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Reports for customers & regulatory bodies",
+              "alignment": "left"
+            }
+          ],
+          "bulletCharacter": ""
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 3,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/2p8nqxs7",
+      "id": "327",
+      "name": "Google Shape;327;p23",
+      "bbox": [
+        988.72,
+        558.72,
+        68.89,
+        31.94
+      ],
+      "geometry": "rect",
+      "text": "26",
+      "textPreview": "26",
+      "resolvedFontSize": 18.67,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 18.67,
+        "typeface": "Montserrat",
+        "color": "#41BAB7",
+        "bold": true,
+        "alignment": "right",
+        "verticalAlignment": "middle",
+        "textTransform": "none",
+        "wrap": "square",
+        "autoFit": "none",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        },
+        "useParagraphSpacing": true
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "26"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "26",
+          "marginLeft": 0,
+          "indent": 0,
+          "lineSpacingPercent": 100000,
+          "spaceBefore": 0,
+          "spaceAfter": 0,
+          "resolvedTextStyle": {
+            "alignment": "right"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "26",
+              "alignment": "right"
+            }
+          ],
+          "bulletCharacter": ""
+        }
+      ],
+      "lineWidth": 0
+    }
+  ],
+  "composeRuns": []
+}

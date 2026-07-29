@@ -1281,7 +1281,7 @@
       window.setTimeout(function () {
         openOverlay();
         safeSet("arianna_newsletter_shown_at", String(Date.now()));
-      }, 5000);
+      }, 30000);
     }
 
     overlay.addEventListener("submit", function (event) {
