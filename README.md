@@ -17,7 +17,7 @@ The contact, demo, trial, partner, support, and newsletter forms are rendered by
 
 The first submission after configuring the recipient triggers a one-time activation email from FormSubmit. Open that message in `hello@ariannateam.ai` and confirm the form before relying on live delivery.
 
-Form delivery settings and fields are centralized in `site-shell.js`. The success redirect is `form-success.html`.
+Form delivery settings and fields are centralized in `site-shell.js`. After submission, FormSubmit redirects visitors directly to the ARIANNA homepage.
 
 ### Verify after deploy
 

@@ -239,7 +239,7 @@
     appendHiddenField(form, "_subject", details.subject);
     appendHiddenField(form, "_template", "table");
     appendHiddenField(form, "_captcha", "true");
-    appendHiddenField(form, "_next", "https://ariannateam.ai/form-success.html");
+    appendHiddenField(form, "_next", "https://ariannateam.ai/");
     appendHiddenField(form, "form_type", details.kind);
     appendHiddenField(form, "source_page", window.location.href);
 
