@@ -108,11 +108,11 @@
   }
 
   function formIntent(form) {
-    var container = form.closest('[id^="nutshell-form-"]');
+    var container = form.closest('[id^="arianna-form-"]');
     var containerId = container ? container.id : "";
 
-    if (containerId.indexOf("book-trial") !== -1 || containerId.indexOf("KxPDav") !== -1) return "trial";
-    if (containerId.indexOf("book-demo") !== -1 || containerId.indexOf("2UrTfL") !== -1 || containerId.indexOf("home") !== -1) return "demo";
+    if (containerId.indexOf("trial") !== -1) return "trial";
+    if (containerId.indexOf("book-demo") !== -1 || containerId.indexOf("home") !== -1) return "demo";
     if (containerId.indexOf("contact") !== -1) return "contact";
     if (containerId.indexOf("support") !== -1) return "support";
     if (containerId.indexOf("partner") !== -1) return "partner";
@@ -190,17 +190,6 @@
 
   bindFormsInNode(document, currentAttribution);
 
-  document.querySelectorAll('[id^="nutshell-form-"]').forEach(function (container) {
-    var observer = new MutationObserver(function (mutations) {
-      mutations.forEach(function (mutation) {
-        mutation.addedNodes.forEach(function (node) {
-          bindFormsInNode(node, currentAttribution);
-        });
-      });
-    });
-
-    observer.observe(container, { childList: true, subtree: true });
-  });
 
   document.addEventListener("arianna:consent-changed", function () {
     if (hasMeasurementConsent()) {

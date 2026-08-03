@@ -1,5 +1,5 @@
 (function () {
-  var EMERGENCY_FORM_PAUSE = true;
+  var FORM_DELIVERY_ENDPOINT = "https://formsubmit.co/hello@ariannateam.ai";
 
   function onReady(callback) {
     if (document.readyState === "loading") {
@@ -74,131 +74,209 @@
     document.head.appendChild(style);
   }
 
-  function ensureEmergencyFormPauseStyles() {
-    if (!EMERGENCY_FORM_PAUSE || document.getElementById("emergency-form-pause-styles")) return;
+  function ensureWebsiteFormStyles() {
+    if (document.getElementById("website-form-styles")) return;
 
     var style = document.createElement("style");
-    style.id = "emergency-form-pause-styles";
+    style.id = "website-form-styles";
     style.textContent = [
-      ".emergency-form-pause {",
+      ".arianna-website-form {",
       "  display: grid;",
       "  gap: 14px;",
-      "  padding: 22px;",
-      "  border-radius: 18px;",
-      "  background: rgba(255, 255, 255, 0.08);",
-      "  color: #ffffff;",
       "}",
-      ".newsletter-form .emergency-form-pause {",
+      ".arianna-form-grid {",
+      "  display: grid;",
+      "  grid-template-columns: repeat(2, minmax(0, 1fr));",
+      "  gap: 14px;",
+      "}",
+      ".arianna-form-field {",
+      "  display: grid;",
+      "  gap: 7px;",
+      "}",
+      ".arianna-form-field--full {",
+      "  grid-column: 1 / -1;",
+      "}",
+      ".arianna-form-field label {",
+      "  font-size: 13px;",
+      "  font-weight: 700;",
+      "}",
+      ".arianna-website-form input,",
+      ".arianna-website-form textarea {",
+      "  width: 100%;",
+      "  box-sizing: border-box;",
+      "  border: 1px solid var(--line, #d6e0e5);",
+      "  border-radius: 12px;",
+      "  padding: 12px 14px;",
       "  background: #ffffff;",
       "  color: var(--ink, #0f1e2b);",
-      "  border: 1px solid var(--line, #e2e8ec);",
+      "  font: inherit;",
       "}",
-      ".emergency-form-pause h3 {",
-      "  margin: 0;",
-      "  color: inherit;",
+      ".arianna-website-form textarea {",
+      "  min-height: 130px;",
+      "  resize: vertical;",
       "}",
-      ".emergency-form-pause p {",
-      "  margin: 0;",
-      "  color: inherit;",
-      "  opacity: 0.82;",
+      ".arianna-website-form input:focus,",
+      ".arianna-website-form textarea:focus {",
+      "  outline: 3px solid rgba(63, 186, 183, 0.25);",
+      "  border-color: #3fbab7;",
       "}",
-      ".emergency-form-pause a {",
-      "  display: inline-flex;",
-      "  align-items: center;",
-      "  justify-content: center;",
-      "  min-height: 44px;",
+      ".arianna-website-form button {",
+      "  min-height: 46px;",
       "  width: fit-content;",
-      "  padding: 12px 18px;",
+      "  padding: 12px 20px;",
       "  border-radius: 999px;",
       "  background: #f28a1a;",
       "  color: #ffffff;",
+      "  font: inherit;",
       "  font-weight: 700;",
-      "  text-decoration: none;",
+      "  cursor: pointer;",
+      "}",
+      ".arianna-form-note {",
+      "  margin: 0;",
+      "  font-size: 12px;",
+      "  opacity: 0.78;",
+      "}",
+      ".form-card .arianna-form-note {",
+      "  color: #ffffff;",
+      "}",
+      ".arianna-form-honeypot {",
+      "  position: absolute !important;",
+      "  left: -10000px !important;",
+      "  width: 1px !important;",
+      "  height: 1px !important;",
+      "  overflow: hidden !important;",
+      "}",
+      "@media (max-width: 640px) {",
+      "  .arianna-form-grid { grid-template-columns: 1fr; }",
+      "  .arianna-form-field--full { grid-column: auto; }",
       "}"
     ].join("\n");
     document.head.appendChild(style);
   }
 
-  function getEmergencyFormDetails(containerId) {
+  function getWebsiteFormDetails(containerId) {
     var path = window.location.pathname;
     var details = {
-      title: "Forms temporarily paused",
-      body: "We are temporarily handling requests by email while we investigate automated spam submissions.",
-      subject: "ARIANNA website inquiry"
+      kind: "contact",
+      subject: "ARIANNA website inquiry",
+      button: "Send inquiry",
+      messageLabel: "How can we help?"
     };
 
-    if (containerId.indexOf("book-demo") !== -1 || path.indexOf("book-a-demo") !== -1) {
-      details.title = "Demo requests by email";
-      details.body = "Please email us to book a demo while the website form is temporarily paused.";
-      details.subject = "Book an ARIANNA demo";
-    } else if (containerId.indexOf("Pn7ezl") !== -1 || path.indexOf("free-trial") !== -1) {
-      details.title = "Trial requests by email";
-      details.body = "Please email us to request a trial while the website form is temporarily paused.";
-      details.subject = "Start an ARIANNA trial";
-    } else if (containerId.indexOf("contact") !== -1 || path.indexOf("contact") !== -1) {
-      details.title = "Contact us by email";
-      details.body = "Please email us directly while the website form is temporarily paused.";
-      details.subject = "ARIANNA contact request";
-    } else if (containerId.indexOf("cFSTKE") !== -1 || path.indexOf("partners") !== -1) {
-      details.title = "Partner requests by email";
-      details.body = "Please email us about partnership opportunities while the website form is temporarily paused.";
-      details.subject = "ARIANNA partnership inquiry";
-    } else if (containerId.indexOf("ERGq7o") !== -1 || path.indexOf("support") !== -1) {
-      details.title = "Support requests by email";
-      details.body = "Please email support details while the website form is temporarily paused.";
-      details.subject = "ARIANNA support request";
-    } else if (containerId.indexOf("V1UuJ4") !== -1) {
-      details.title = "Newsletter temporarily paused";
-      details.body = "Newsletter sign-up is temporarily paused while we investigate automated spam submissions.";
+    if (containerId.indexOf("newsletter") !== -1) {
+      details.kind = "newsletter";
       details.subject = "ARIANNA newsletter request";
+      details.button = "Subscribe";
+    } else if (containerId.indexOf("book-demo") !== -1 || path.indexOf("book-a-demo") !== -1) {
+      details.kind = "demo";
+      details.subject = "Book an ARIANNA demo";
+      details.button = "Request a demo";
+      details.messageLabel = "What would you like to see in the demo?";
+    } else if (containerId.indexOf("trial") !== -1 || path.indexOf("free-trial") !== -1) {
+      details.kind = "trial";
+      details.subject = "Start an ARIANNA trial";
+      details.button = "Request a trial";
+      details.messageLabel = "Tell us about your product or trial goals";
+    } else if (containerId.indexOf("partner") !== -1 || path.indexOf("partners") !== -1) {
+      details.kind = "partner";
+      details.subject = "ARIANNA partnership inquiry";
+      details.button = "Send partnership inquiry";
+      details.messageLabel = "Tell us about the partnership opportunity";
+    } else if (containerId.indexOf("support") !== -1 || path.indexOf("support") !== -1) {
+      details.kind = "support";
+      details.subject = "ARIANNA support request";
+      details.button = "Send support request";
+      details.messageLabel = "Describe the issue";
     }
 
     return details;
   }
 
-  function replaceNutshellFormContainer(container) {
-    if (!container || container.dataset.emergencyFormPaused === "true") return;
-    if (container.id === "nutshell-form-KxPDav" || container.id === "nutshell-form-2UrTfL") return;
-
-    var details = getEmergencyFormDetails(container.id || "");
-    var wrapper = document.createElement("div");
-    var title = document.createElement("h3");
-    var body = document.createElement("p");
-    var link = document.createElement("a");
-
-    wrapper.className = "emergency-form-pause";
-    title.textContent = details.title;
-    body.textContent = details.body;
-    link.href = "mailto:hello@ariannateam.ai?subject=" + encodeURIComponent(details.subject);
-    link.textContent = "Email hello@ariannateam.ai";
-
-    wrapper.appendChild(title);
-    wrapper.appendChild(body);
-    wrapper.appendChild(link);
-
-    container.dataset.emergencyFormPaused = "true";
-    container.replaceChildren(wrapper);
+  function appendHiddenField(form, name, value) {
+    var input = document.createElement("input");
+    input.type = "hidden";
+    input.name = name;
+    input.value = value;
+    form.appendChild(input);
   }
 
-  function initEmergencyFormPause() {
-    if (!EMERGENCY_FORM_PAUSE) return;
+  function createField(name, labelText, type, required, fullWidth) {
+    var wrapper = document.createElement("div");
+    var label = document.createElement("label");
+    var field = type === "textarea" ? document.createElement("textarea") : document.createElement("input");
+    var fieldId = "arianna-" + name + "-" + Math.random().toString(36).slice(2, 8);
 
-    ensureEmergencyFormPauseStyles();
+    wrapper.className = "arianna-form-field" + (fullWidth ? " arianna-form-field--full" : "");
+    label.htmlFor = fieldId;
+    label.textContent = labelText;
+    field.id = fieldId;
+    field.name = name;
+    if (type !== "textarea") field.type = type;
+    field.required = required;
+    if (type === "email") field.autocomplete = "email";
+    if (name === "name") field.autocomplete = "name";
+    if (name === "company") field.autocomplete = "organization";
+    wrapper.appendChild(label);
+    wrapper.appendChild(field);
+    return wrapper;
+  }
 
-    function pauseAllForms() {
-      document.querySelectorAll('[id^="nutshell-form-"]').forEach(replaceNutshellFormContainer);
+  function renderWebsiteForm(container) {
+    if (!container || container.dataset.formReady === "true") return;
+
+    var details = getWebsiteFormDetails(container.id || "");
+    var form = document.createElement("form");
+    var grid = document.createElement("div");
+    var honeypot = document.createElement("input");
+    var button = document.createElement("button");
+    var note = document.createElement("p");
+
+    form.className = "arianna-website-form";
+    form.action = FORM_DELIVERY_ENDPOINT;
+    form.method = "POST";
+    grid.className = "arianna-form-grid";
+
+    appendHiddenField(form, "_subject", details.subject);
+    appendHiddenField(form, "_template", "table");
+    appendHiddenField(form, "_captcha", "true");
+    appendHiddenField(form, "_next", "https://ariannateam.ai/form-success.html");
+    appendHiddenField(form, "form_type", details.kind);
+    appendHiddenField(form, "source_page", window.location.href);
+
+    honeypot.type = "text";
+    honeypot.name = "_honey";
+    honeypot.tabIndex = -1;
+    honeypot.autocomplete = "off";
+    honeypot.setAttribute("aria-hidden", "true");
+    honeypot.hidden = true;
+    honeypot.className = "arianna-form-honeypot";
+    form.appendChild(honeypot);
+
+    if (details.kind === "newsletter") {
+      grid.appendChild(createField("email", "Email address", "email", true, true));
+    } else {
+      grid.appendChild(createField("name", "Name", "text", true, false));
+      grid.appendChild(createField("email", "Work email", "email", true, false));
+      grid.appendChild(createField("company", "Company", "text", false, true));
+      grid.appendChild(createField("message", details.messageLabel, "textarea", true, true));
     }
 
-    pauseAllForms();
+    button.type = "submit";
+    button.textContent = details.button;
+    note.className = "arianna-form-note";
+    note.textContent = "Protected by CAPTCHA. Your submission will be emailed to the ARIANNA team.";
+    form.appendChild(grid);
+    form.appendChild(button);
+    form.appendChild(note);
 
-    var observer = new MutationObserver(function () {
-      pauseAllForms();
-    });
+    container.dataset.formReady = "true";
+    container.replaceChildren(form);
+  }
 
-    observer.observe(document.body, {
-      childList: true,
-      subtree: true
-    });
+  function initWebsiteForms() {
+    ensureWebsiteFormStyles();
+
+    document.querySelectorAll('[id^="arianna-form-"]').forEach(renderWebsiteForm);
   }
 
   function ensureSharedNavStyles() {
@@ -1257,7 +1335,6 @@
   function initNewsletterOverlay() {
     var overlay = document.getElementById("newsletterOverlay");
     if (!overlay) return;
-    if (EMERGENCY_FORM_PAUSE) return;
 
     var closeButton = overlay.querySelector(".newsletter-close");
     var highIntent = document.body.getAttribute("data-newsletter-high-intent") === "true";
@@ -1367,152 +1444,12 @@
     });
   }
 
-  function initNutshellLayoutGuard() {
-    var bootNode = document.getElementById("nutshell-boot-384033");
-    if (!bootNode) return;
-
-    if (!document.getElementById("site-nutshell-layout-styles")) {
-      var nutshellStyle = document.createElement("style");
-      nutshellStyle.id = "site-nutshell-layout-styles";
-      nutshellStyle.textContent = [
-        ".nutshell-floating-widget {",
-        "  bottom: auto !important;",
-        "}",
-        "#chat-widget-button-container > div {",
-        "  position: fixed !important;",
-        "  top: 50vh !important;",
-        "  bottom: auto !important;",
-        "  right: 30px !important;",
-        "  left: auto !important;",
-        "  transform: translateY(-50%) !important;",
-        "}",
-        "@media (max-width: 720px) {",
-        "  #chat-widget-button-container > div {",
-        "    top: auto !important;",
-        "    bottom: 20px !important;",
-        "    right: 10px !important;",
-        "    transform: none !important;",
-        "  }",
-        "}",
-        "#chat-widget-button-container .nutshell-floating-widget {",
-        "  top: 50vh !important;",
-        "  bottom: auto !important;",
-        "}"
-      ].join("\n");
-      document.head.appendChild(nutshellStyle);
-    }
-
-    function getHeaderBottom() {
-      var nav = document.querySelector(".nav");
-      return nav ? nav.getBoundingClientRect().bottom : 0;
-    }
-
-    function getFooterClearance() {
-      var footer = document.querySelector("footer");
-      if (!footer) return 24;
-
-      var footerRect = footer.getBoundingClientRect();
-      var overlap = window.innerHeight - footerRect.top;
-
-      return overlap > 0 ? Math.max(24, Math.round(overlap + 16)) : 24;
-    }
-
-    function shouldAdjustElement(node) {
-      if (!node || node === bootNode) return false;
-      if (!(node instanceof HTMLElement || node instanceof HTMLIFrameElement)) return false;
-
-      var id = (node.id || "").toLowerCase();
-
-      return id === "chat-iframe" || id === "chat-widget-button-container";
-    }
-
-    function adjustElement(node) {
-      if (!shouldAdjustElement(node)) return;
-
-      var style = window.getComputedStyle(node);
-      if (style.position !== "fixed") return;
-
-      if (!node.classList.contains("nutshell-floating-widget")) {
-        node.classList.add("nutshell-floating-widget");
-      }
-
-      var minTop = Math.max(16, Math.round(getHeaderBottom() + 12));
-      var minBottom = getFooterClearance();
-      var rect = node.getBoundingClientRect();
-      var maxTop = Math.max(minTop, Math.round(window.innerHeight - minBottom - rect.height));
-      var preferredMidTop = Math.round((window.innerHeight - rect.height) / 2);
-
-      if (node.id === "chat-widget-button-container") {
-        node.style.setProperty("top", "50vh", "important");
-        node.style.setProperty("bottom", "auto", "important");
-        node.style.removeProperty("inset");
-      } else if (window.matchMedia("(max-width: 720px)").matches) {
-        if (rect.top < minTop) {
-          node.style.setProperty("top", minTop + "px", "important");
-          node.style.setProperty("bottom", "auto", "important");
-          node.style.setProperty("inset", minTop + "px auto auto auto", "important");
-        } else {
-          node.style.setProperty("top", "auto", "important");
-          node.style.setProperty("bottom", minBottom + "px", "important");
-          node.style.setProperty("inset", "auto auto " + minBottom + "px auto", "important");
-        }
-      } else {
-        var targetTop = Math.max(minTop, Math.min(preferredMidTop, maxTop));
-        node.style.setProperty("top", targetTop + "px", "important");
-        node.style.setProperty("bottom", "auto", "important");
-        node.style.setProperty("inset", targetTop + "px auto auto auto", "important");
-      }
-
-      node.style.setProperty("z-index", "9", "important");
-    }
-
-    function adjustAll() {
-      var iframe = document.getElementById("chat-iframe");
-      var widgetContainer = document.getElementById("chat-widget-button-container");
-
-      if (iframe) adjustElement(iframe);
-      if (widgetContainer) {
-        adjustElement(widgetContainer);
-
-        var descendants = widgetContainer.querySelectorAll("*");
-        descendants.forEach(function (node) {
-          var style = window.getComputedStyle(node);
-          if (style.position !== "fixed") return;
-
-          if (!node.classList.contains("nutshell-floating-widget")) {
-            node.classList.add("nutshell-floating-widget");
-          }
-
-          node.style.setProperty("top", "50vh", "important");
-          node.style.setProperty("bottom", "auto", "important");
-          node.style.setProperty("left", "auto", "important");
-          node.style.removeProperty("inset");
-        });
-      }
-    }
-
-    var observer = new MutationObserver(function () {
-      adjustAll();
-    });
-
-    observer.observe(document.body, {
-      childList: true,
-      subtree: true
-    });
-
-    window.addEventListener("resize", adjustAll);
-    window.addEventListener("scroll", adjustAll, { passive: true });
-
-    window.setTimeout(adjustAll, 300);
-    window.setTimeout(adjustAll, 1200);
-    adjustAll();
-  }
 
   onReady(function () {
     ensureMontserratFont();
     ensureUppercaseTitles();
     ensureBorderlessButtons();
-    initEmergencyFormPause();
+    initWebsiteForms();
     initGoogleAnalytics();
     initSharedNav();
     initCookieBanner();
@@ -1520,6 +1457,5 @@
     initShowcaseCarousel();
     initNewsletterOverlay();
     initMobileNav();
-    initNutshellLayoutGuard();
   });
 })();

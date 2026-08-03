@@ -11,20 +11,17 @@ Static website for ARIANNA, ready to deploy on GitHub Pages.
 
 The workflow at `.github/workflows/deploy-pages.yml` publishes this site's root files to GitHub Pages.
 
-## Nutshell form connection
+## Website form delivery
 
-The site now uses embedded Nutshell forms (form id `2eagLw`, instance `341921`) on these pages:
+The contact, demo, trial, partner, support, and newsletter forms are rendered by `site-shell.js`. They submit to FormSubmit, which forwards entries to `hello@ariannateam.ai` and applies reCAPTCHA plus a honeypot spam check.
 
-- `index.html`
-- `book-a-demo.html`
-- `contact.html`
-- `support.html`
-- `partners.html`
+The first submission after configuring the recipient triggers a one-time activation email from FormSubmit. Open that message in `hello@ariannateam.ai` and confirm the form before relying on live delivery.
 
-Each page has its own target container, initialized with the same Nutshell form.
+Form delivery settings and fields are centralized in `site-shell.js`. The success redirect is `form-success.html`.
 
 ### Verify after deploy
 
-1. Open each page and confirm the Nutshell form renders.
-2. Submit a test lead from each page.
-3. Confirm records arrive in Nutshell.
+1. Open the demo, trial, contact, support, and partner pages and confirm the correct form renders.
+2. Open a newsletter prompt and confirm it only asks for an email address.
+3. Submit a test entry, complete the CAPTCHA, and confirm the FormSubmit activation email if required.
+4. Submit a second test and confirm it arrives at `hello@ariannateam.ai` with the correct subject and source page.
