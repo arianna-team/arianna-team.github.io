@@ -248,9 +248,15 @@
     honeypot.tabIndex = -1;
     honeypot.autocomplete = "off";
     honeypot.setAttribute("aria-hidden", "true");
-    honeypot.hidden = true;
     honeypot.className = "arianna-form-honeypot";
     form.appendChild(honeypot);
+
+    form.addEventListener("submit", function (event) {
+      if (honeypot.value.trim() === "") return;
+
+      event.preventDefault();
+      form.reset();
+    });
 
     if (details.kind === "newsletter") {
       grid.appendChild(createField("email", "Email address", "email", true, true));
@@ -264,7 +270,7 @@
     button.type = "submit";
     button.textContent = details.button;
     note.className = "arianna-form-note";
-    note.textContent = "Protected by CAPTCHA. Your submission will be emailed to the ARIANNA team.";
+    note.textContent = "Protected by CAPTCHA and automated spam checks. Your submission will be emailed to the ARIANNA team.";
     form.appendChild(grid);
     form.appendChild(button);
     form.appendChild(note);

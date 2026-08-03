@@ -13,7 +13,7 @@ The workflow at `.github/workflows/deploy-pages.yml` publishes this site's root 
 
 ## Website form delivery
 
-The contact, demo, trial, partner, support, and newsletter forms are rendered by `site-shell.js`. They submit to FormSubmit, which forwards entries to `hello@ariannateam.ai` and applies reCAPTCHA plus a honeypot spam check.
+The contact, demo, trial, partner, support, and newsletter forms are rendered by `site-shell.js`. They submit to FormSubmit, which forwards entries to `hello@ariannateam.ai` and applies reCAPTCHA plus a honeypot spam check. If the hidden `_honey` field contains a value, the browser cancels the submission; FormSubmit also recognizes the field for server-side filtering.
 
 The first submission after configuring the recipient triggers a one-time activation email from FormSubmit. Open that message in `hello@ariannateam.ai` and confirm the form before relying on live delivery.
 
