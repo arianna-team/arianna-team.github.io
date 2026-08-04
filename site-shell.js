@@ -200,6 +200,24 @@
     form.appendChild(input);
   }
 
+  function isValidEmailAddress(value) {
+    if (!value || value.length > 254) return false;
+
+    var parts = value.split("@");
+    if (parts.length !== 2) return false;
+
+    var localPart = parts[0];
+    var domain = parts[1];
+    if (!localPart || localPart.length > 64 || !domain || domain.length > 253) return false;
+    if (localPart.charAt(0) === "." || localPart.charAt(localPart.length - 1) === "." || localPart.indexOf("..") !== -1) return false;
+    if (!/^[A-Z0-9.!#$%&'*+/=?^_`{|}~-]+$/i.test(localPart)) return false;
+    if (domain.indexOf(".") === -1) return false;
+
+    return domain.split(".").every(function (label) {
+      return label.length > 0 && label.length <= 63 && /^[A-Z0-9](?:[A-Z0-9-]*[A-Z0-9])?$/i.test(label);
+    });
+  }
+
   function createField(name, labelText, type, required, fullWidth) {
     var wrapper = document.createElement("div");
     var label = document.createElement("label");
@@ -213,7 +231,11 @@
     field.name = name;
     if (type !== "textarea") field.type = type;
     field.required = required;
-    if (type === "email") field.autocomplete = "email";
+    if (type === "email") {
+      field.autocomplete = "email";
+      field.inputMode = "email";
+      field.spellcheck = false;
+    }
     if (name === "name") field.autocomplete = "name";
     if (name === "company") field.autocomplete = "organization";
     wrapper.appendChild(label);
@@ -251,13 +273,6 @@
     honeypot.className = "arianna-form-honeypot";
     form.appendChild(honeypot);
 
-    form.addEventListener("submit", function (event) {
-      if (honeypot.value.trim() === "") return;
-
-      event.preventDefault();
-      form.reset();
-    });
-
     if (details.kind === "newsletter") {
       grid.appendChild(createField("email", "Email address", "email", true, true));
     } else {
@@ -266,6 +281,27 @@
       grid.appendChild(createField("company", "Company", "text", false, true));
       grid.appendChild(createField("message", details.messageLabel, "textarea", true, true));
     }
+
+    var emailField = grid.querySelector('input[name="email"]');
+
+    emailField.addEventListener("input", function () {
+      emailField.setCustomValidity("");
+    });
+
+    form.addEventListener("submit", function (event) {
+      if (honeypot.value.trim() !== "") {
+        event.preventDefault();
+        form.reset();
+        return;
+      }
+
+      emailField.value = emailField.value.trim();
+      if (isValidEmailAddress(emailField.value)) return;
+
+      event.preventDefault();
+      emailField.setCustomValidity("Enter a valid email address, including a complete domain name.");
+      emailField.reportValidity();
+    });
 
     button.type = "submit";
     button.textContent = details.button;
