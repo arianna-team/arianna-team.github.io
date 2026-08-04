@@ -1,5 +1,37 @@
 (function () {
   var FORM_DELIVERY_ENDPOINT = "https://formsubmit.co/hello@ariannateam.ai";
+  var NON_BUSINESS_EMAIL_DOMAINS = {
+    "aol.com": true,
+    "fastmail.com": true,
+    "gmail.com": true,
+    "googlemail.com": true,
+    "gmx.com": true,
+    "gmx.de": true,
+    "gmx.net": true,
+    "hey.com": true,
+    "hotmail.com": true,
+    "hotmail.co.uk": true,
+    "hotmail.fr": true,
+    "icloud.com": true,
+    "live.com": true,
+    "live.co.uk": true,
+    "mac.com": true,
+    "mail.com": true,
+    "me.com": true,
+    "msn.com": true,
+    "outlook.com": true,
+    "outlook.co.uk": true,
+    "pm.me": true,
+    "proton.me": true,
+    "protonmail.com": true,
+    "tutanota.com": true,
+    "tuta.com": true,
+    "yahoo.com": true,
+    "yahoo.co.uk": true,
+    "yahoo.de": true,
+    "yahoo.fr": true,
+    "yandex.com": true
+  };
 
   function onReady(callback) {
     if (document.readyState === "loading") {
@@ -218,6 +250,11 @@
     });
   }
 
+  function isBusinessEmailAddress(value) {
+    var domain = value.slice(value.lastIndexOf("@") + 1).toLowerCase();
+    return !Object.prototype.hasOwnProperty.call(NON_BUSINESS_EMAIL_DOMAINS, domain);
+  }
+
   function createField(name, labelText, type, required, fullWidth) {
     var wrapper = document.createElement("div");
     var label = document.createElement("label");
@@ -296,17 +333,24 @@
       }
 
       emailField.value = emailField.value.trim();
-      if (isValidEmailAddress(emailField.value)) return;
+      if (!isValidEmailAddress(emailField.value)) {
+        event.preventDefault();
+        emailField.setCustomValidity("Enter a valid email address, including a complete domain name.");
+        emailField.reportValidity();
+        return;
+      }
+
+      if (isBusinessEmailAddress(emailField.value)) return;
 
       event.preventDefault();
-      emailField.setCustomValidity("Enter a valid email address, including a complete domain name.");
+      emailField.setCustomValidity("Please use your business email address. Personal email providers are not accepted.");
       emailField.reportValidity();
     });
 
     button.type = "submit";
     button.textContent = details.button;
     note.className = "arianna-form-note";
-    note.textContent = "Protected by CAPTCHA and automated spam checks. Your submission will be emailed to the ARIANNA team.";
+    note.textContent = "Business email required. Protected by CAPTCHA and automated spam checks.";
     form.appendChild(grid);
     form.appendChild(button);
     form.appendChild(note);
