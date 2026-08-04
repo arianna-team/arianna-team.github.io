@@ -168,6 +168,18 @@
       "  font-size: 12px;",
       "  opacity: 0.78;",
       "}",
+      ".arianna-form-error {",
+      "  margin: 0;",
+      "  padding: 10px 12px;",
+      "  border-radius: 10px;",
+      "  background: #fff0f0;",
+      "  color: #9f1d1d;",
+      "  font-size: 13px;",
+      "  font-weight: 700;",
+      "}",
+      ".arianna-website-form input[aria-invalid=\"true\"] {",
+      "  border-color: #c93636;",
+      "}",
       ".form-card .arianna-form-note {",
       "  color: #ffffff;",
       "}",
@@ -288,6 +300,7 @@
     var grid = document.createElement("div");
     var honeypot = document.createElement("input");
     var button = document.createElement("button");
+    var emailError = document.createElement("p");
     var note = document.createElement("p");
 
     form.className = "arianna-website-form";
@@ -320,9 +333,49 @@
     }
 
     var emailField = grid.querySelector('input[name="email"]');
+    emailError.id = emailField.id + "-error";
+    emailError.className = "arianna-form-error";
+    emailError.setAttribute("role", "alert");
+    emailError.hidden = true;
+    emailField.setAttribute("aria-describedby", emailError.id);
+
+    function clearEmailError() {
+      emailField.setCustomValidity("");
+      emailField.removeAttribute("aria-invalid");
+      emailError.textContent = "";
+      emailError.hidden = true;
+    }
+
+    function showEmailError(message) {
+      emailField.setCustomValidity(message);
+      emailField.setAttribute("aria-invalid", "true");
+      emailError.textContent = message;
+      emailError.hidden = false;
+    }
+
+    function validateEmailField() {
+      emailField.value = emailField.value.trim();
+
+      if (!isValidEmailAddress(emailField.value)) {
+        showEmailError("Enter a valid email address, including a complete domain name.");
+        return false;
+      }
+
+      if (!isBusinessEmailAddress(emailField.value)) {
+        showEmailError("Please use your business email address. Personal email providers such as Gmail are not accepted.");
+        return false;
+      }
+
+      clearEmailError();
+      return true;
+    }
 
     emailField.addEventListener("input", function () {
-      emailField.setCustomValidity("");
+      clearEmailError();
+    });
+
+    emailField.addEventListener("blur", function () {
+      if (emailField.value.trim() !== "") validateEmailField();
     });
 
     form.addEventListener("submit", function (event) {
@@ -332,26 +385,18 @@
         return;
       }
 
-      emailField.value = emailField.value.trim();
-      if (!isValidEmailAddress(emailField.value)) {
-        event.preventDefault();
-        emailField.setCustomValidity("Enter a valid email address, including a complete domain name.");
-        emailField.reportValidity();
-        return;
-      }
-
-      if (isBusinessEmailAddress(emailField.value)) return;
+      if (validateEmailField()) return;
 
       event.preventDefault();
-      emailField.setCustomValidity("Please use your business email address. Personal email providers are not accepted.");
       emailField.reportValidity();
     });
 
     button.type = "submit";
     button.textContent = details.button;
     note.className = "arianna-form-note";
-    note.textContent = "Business email required. Protected by CAPTCHA and automated spam checks.";
+    note.textContent = "Business email required. FormSubmit reCAPTCHA may run invisibly or request verification after submission.";
     form.appendChild(grid);
+    form.appendChild(emailError);
     form.appendChild(button);
     form.appendChild(note);
 
