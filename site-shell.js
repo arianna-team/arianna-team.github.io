@@ -183,13 +183,6 @@
       ".form-card .arianna-form-note {",
       "  color: #ffffff;",
       "}",
-      ".arianna-form-honeypot {",
-      "  position: absolute !important;",
-      "  left: -10000px !important;",
-      "  width: 1px !important;",
-      "  height: 1px !important;",
-      "  overflow: hidden !important;",
-      "}",
       "@media (max-width: 640px) {",
       "  .arianna-form-grid { grid-template-columns: 1fr; }",
       "  .arianna-form-field--full { grid-column: auto; }",
@@ -316,12 +309,8 @@
     appendHiddenField(form, "form_type", details.kind);
     appendHiddenField(form, "source_page", window.location.href);
 
-    honeypot.type = "text";
+    honeypot.type = "hidden";
     honeypot.name = "_honey";
-    honeypot.tabIndex = -1;
-    honeypot.autocomplete = "off";
-    honeypot.setAttribute("aria-hidden", "true");
-    honeypot.className = "arianna-form-honeypot";
     form.appendChild(honeypot);
 
     if (details.kind === "newsletter") {
