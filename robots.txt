@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://ariannateam.ai/sitemap.xml
+Sitemap: https://www.ariannateam.ai/sitemap.xml
